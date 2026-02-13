@@ -1,0 +1,66 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_yonrxoxw5iranc3xpcvea4loie
+% Encoding created by otftotfm on Wed Apr 29 15:14:40 2020
+% Command line follows encoding
+/AutoEnc_yonrxoxw5iranc3xpcvea4loie [
+%00
+  /.notdef /Euro_SUP /.notdef /.notdef /fraction /dotaccent /hungarumlaut /ogonek
+  /.notdef /.notdef /afii61664 /uniFB04 /uniFB03 /uniFB00 /uniFB02 /uniFB01
+%10
+  /dotlessi_SUP /dotlessj_SUP /grave /acute /caron /breve /macron /ring
+  /cedilla /germandbls_SUP /ae_SUP /oe_SUP /oslash_SUP /AE_SUP /OE_SUP /Oslash_SUP
+%20
+  /space /exclam_SUP /quotedbl /numbersign_SUP /dollar_SUP /percent_SUP /ampersand_SUP /quoteright_SUP
+  /parenleft_SUP /parenright_SUP /asterisk /plus_SUP /comma_SUP /hyphen_SUP /period_SUP /slash_SUP
+%30
+  /zero_SUP /one_SUP /two_SUP /three_SUP /four_SUP /five_SUP /six_SUP /seven_SUP
+  /eight_SUP /nine_SUP /colon_SUP /semicolon_SUP /less /equal_SUP /greater /question_SUP
+%40
+  /at_SUP /A_SUP /B_SUP /C_SUP /D_SUP /E_SUP /F_SUP /G_SUP
+  /H_SUP /I_SUP /J_SUP /K_SUP /L_SUP /M_SUP /N_SUP /O_SUP
+%50
+  /P_SUP /Q_SUP /R_SUP /S_SUP /T_SUP /U_SUP /V_SUP /W_SUP
+  /X_SUP /Y_SUP /Z_SUP /bracketleft_SUP /backslash_SUP /bracketright_SUP /circumflex /underscore
+%60
+  /quoteleft_SUP /a_SUP /b_SUP /c_SUP /d_SUP /e_SUP /f_SUP /g_SUP
+  /h_SUP /i_SUP /j_SUP /k_SUP /l_SUP /m_SUP /n_SUP /o_SUP
+%70
+  /p_SUP /q_SUP /r_SUP /s_SUP /t_SUP /u_SUP /v_SUP /w_SUP
+  /x_SUP /y_SUP /z_SUP /braceleft_SUP /bar_SUP /braceright_SUP /tilde /dieresis
+%80
+  /Lslash /quotesingle /quotesinglbase /florin_SUP /quotedblbase /ellipsis /dagger_SUP /daggerdbl_SUP
+  /circumflex /perthousand_SUP /Scaron /guilsinglleft_SUP /OE_SUP /Zcaron /asciicircum /minus_SUP
+%90
+  /lslash /quoteleft_SUP /quoteright_SUP /quotedblleft /quotedblright /bullet_SUP /endash /emdash
+  /tilde /trademark /scaron /guilsinglright_SUP /oe_SUP /zcaron /asciitilde_SUP /Ydieresis
+%A0
+  /uni00A0 /exclamdown_SUP /cent /sterling_SUP /currency /yen_SUP /brokenbar_SUP /section_SUP
+  /dieresis /copyright /ordfeminine /guillemotleft_SUP /logicalnot /uni00AD /registered /macron
+%B0
+  /degree /plusminus /uni00B2 /uni00B3 /acute /mu /paragraph_SUP /periodcentered
+  /cedilla /uni00B9 /ordmasculine /guillemotright_SUP /onequarter /onehalf /threequarters /questiondown_SUP
+%C0
+  /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE_SUP /Ccedilla
+  /Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+%D0
+  /Eth_SUP /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply_SUP
+  /Oslash_SUP /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn_SUP /germandbls_SUP
+%E0
+  /agrave /aacute /acircumflex /atilde /adieresis /aring /ae_SUP /ccedilla
+  /egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+%F0
+  /eth_SUP /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide_SUP
+  /oslash_SUP /ugrave /uacute /ucircumflex /udieresis /yacute /thorn_SUP /ydieresis
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_ly1
+% --tfm-directory=texmf/fonts/tfm/public/garamond-libre
+% --vf-directory=texmf/fonts/vf/public/garamond-libre
+% --type1-directory=texmf/fonts/type1/public/garamond-libre
+% --encoding-directory=texmf/fonts/enc/dvips/garamond-libre
+% --map-file=texmf/fonts/map/dvips/garamond-libre/GaramondLibre.map
+% --no-updmap --coding-scheme=TEX TYPEWRITER AND WINDOWS ANSI --feature=kern
+% --feature=liga --feature=sups --ligkern=f i =: fi --ligkern=f l =: fl
+% --ligkern=f f =: ff --ligkern=ff i =: ffi --ligkern=ff l =: ffl
+% --ligkern=* {KL} * GaramondLibre-Regular.otf
+% GaramondLibre-Regular-sup-ly1'

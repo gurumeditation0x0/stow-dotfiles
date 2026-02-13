@@ -1,0 +1,7 @@
+;;;; -*- mode: lisp-data -*-
+(
+ (:id "sha1:6e600202e85f2192d0f7dcdcd9d3fa6e3cf5f2ed" :fingerprints ("sha1:49:56:85:99:9c:36:a3:78:b2:3f:53:cc:a0:52:79:06:49:6c:e6:da") :host "statsndm.info.ameli.fr:443" :conditions (:unknown-ca :invalid :verify-cert))
+ (:id "sha1:706608f9b7fcfdea563351d49047f296d74a5a76" :fingerprints ("sha1:64:74:fe:54:9b:c0:06:96:21:3d:d3:80:27:d8:07:0d:e7:fb:b4:65" "sha1:c9:b6:92:cc:00:f6:7c:13:a8:38:1d:9f:a5:90:95:ec:70:ed:87:b1") :host "smtp.gmail.com:587" :conditions (:same-cert))
+ (:id "sha1:1a94c2a7e1388e34669811533982537dc359dc8c" :fingerprints ("sha1:14:c2:86:06:2d:a5:07:40:7d:26:ef:e7:76:7b:93:80:c3:d2:c6:02") :conditions nil)
+ (:id "sha1:f9c47d5afd71d20d1a46b8c8223af3c600c9ac29" :fingerprints ("sha1:da:3f:17:b3:48:0c:ea:9b:5f:b0:ca:71:c7:d4:ba:d4:63:2d:15:10") :conditions nil)
+)

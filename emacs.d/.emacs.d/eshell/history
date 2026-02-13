@@ -1,0 +1,18 @@
+mem -h
+free -h
+cd
+ls -a
+gh --version
+cd
+cd dotfiles/
+git remote -v
+grep -RInE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}' .
+(defun eshell-find-emails ()  "Cherche tous les emails dans le répertoire courant et ses sous-dossiers, en excluant certains répertoires."  (interactive)  (let ((default-directory (eshell/pwd))        (excluded '("elpa" ".git" "straight" "node_modules")))    (eshell-command     (format "grep -RInE '[A-Za-z0-9._%%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}' . %s"             (mapconcat (lambda (d) (concat "--exclude-dir=" d)) excluded " ")))))
+(eshell-find-emails)
+10:10:15 AM~/dotfiles | ⎇main ✎ | 
+history 
+cd
+cd dev/JourNuit/
+ls 
+cp JourNuit-0e.el /mnt/c/Users/david/dev/JourNuit/JourNuit-0e.el 
+cp JourNuit-0e.el /mnt/c/Users/david/.emacs.d/elisp/JourNuit-0e.el 

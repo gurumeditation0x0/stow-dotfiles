@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+\usepackage[LGR,T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[osf]{garamondlibre}
+\usepackage[expansion,protrusion]{microtype}
+\usepackage{lipsum}
+
+\title{Garamond Libre}
+\date{version 1.4\\[2ex] May 3, 2020}
+\author{Daniel~Benjamin Miller\thanks{\texttt{dbmiller at dbmiller.org}} \and Bob Tennent\thanks{\texttt{rdt at cs.queensu.ca}}}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+
+Garamond Libre is a free and open-source old-style font
+family. It is a ``true Garamond,'' i.e., it is based off the
+designs of 16th-century French engraver Claude Garamond
+(also spelled Garamont). The Roman design is Garamond’s;
+the italics are from a design by Robert Granjon. The upright
+Greek font is after a design by Firmin Didot; the ``italic''
+Greek font is after a design by Alexander Wilson. The font
+family includes support for Latin, Greek (monotonic and
+polytonic) and Cyrillic scripts, as well as small capitals,
+old-style figures, superior and inferior figures, historical
+ligatures, Byzantine musical symbols, the IPA and swash
+capitals. The fonts are an extended fork based on designs by
+George Douros. 
+
+
+
+Garamond Libre is based on George Douros' text fonts
+project. The sources on which these fonts are based were
+released by their author as free for any use.
+
+The Type 1 versions of the fonts were created using \texttt{cfftot1}.
+The support files were created using \texttt{autoinst} and \texttt{otftotfm}
+and are licensed under the terms of the \LaTeX\ Project Public
+License.
+\section*{Licensing}
+\begin{quote}
+The OpenType fonts are released under the \textsc{X11}/\textsc{MIT} license
+and are Copyright © 2019--2020 by Daniel Benjamin Miller.
+
+Permission is hereby granted, free of charge, to any
+person obtaining a copy of this software and associated
+documentation files (the ``Software''), to deal in the
+Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute,
+sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall
+be included in all copies or substantial portions of the
+Software.
+\end{quote}
+
+\pagebreak
+
+\section*{Samples}
+
+\subsection*{Regular}
+
+\lipsum[1]
+
+\subsection*{Italic}
+\textit{\lipsum[2]}
+
+\subsection*{Bold}
+\textbf{\lipsum[3]}
+
+\subsection*{Bold Italic}
+\textbf{\textit{\lipsum[4]}}
+
+\subsection*{Small Caps}
+\textsc{\lipsum[5]}
+
+\subsection*{Italic Small Caps}
+\textit{\textsc{\lipsum[6]}}
+
+\subsection*{Swash Capitals}
+
+\textit{\textsw{ABCDEFGHIJKLMNOPQRSTUVWXYZ}}
+
+\subsection*{Default Numbers}
+
+1234567890
+
+\subsection*{Oldstyle Numbers}
+
+{\oldstylenums 1234567890}
+
+\subsection*{Lining Numbers}
+
+{\liningnums 1234567890}
+
+\subsection*{Superior Numbers}
+
+X\textsu{1234567890}
+
+\subsection*{Inferior Numbers}
+
+X\textin{1234567890}
+
+
+
+\subsection*{LGR}
+
+{\garamondlibrelgr\noindent
+abgdezhjiklmnxoprstufqyw\\
+ABGDEZHJIKLMNXOPRSTUFQYW\\
+0123456789
+}
+
+
+\subsection*{Cyrillic}
+
+{\ifxetex\else\ifluatex\else\fontencoding{T2A}\selectfont\fi\fi 
+
+Съешь ещё этих мягких французских булок да
+выпей чаю!}
+
+\subsection*{Ornaments}
+
+\textornaments{123456789}
+
+\end{document}

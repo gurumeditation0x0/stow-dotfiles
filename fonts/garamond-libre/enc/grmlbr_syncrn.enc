@@ -1,0 +1,65 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_syncrnex6ieeubx2y634q2jzia
+% Encoding created by otftotfm on Wed Apr 29 15:14:45 2020
+% Command line follows encoding
+/AutoEnc_syncrnex6ieeubx2y634q2jzia [
+%00
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /cedilla /ogonek /quotesinglbase /exclam /question
+%10
+  /bar /endash /quotedblbase /.notdef /.notdef /.notdef /.notdef /.notdef
+  /arrowleft /arrowright /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%20
+  /.notdef /.notdef /.notdef /.notdef /dollar /.notdef /.notdef /quotesingle
+  /.notdef /.notdef /asteriskmath /.notdef /comma /.notdef /period /fraction
+%30
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /uni27E8 /minus /uni27E9 /.notdef
+%40
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%50
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /Omega
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /arrowup /arrowdown
+%60
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /musicalnote /.notdef
+%70
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%80
+  /.notdef /.notdef /.notdef /.notdef /dagger /daggerdbl /.notdef /perthousand
+  /bullet /uni2103 /.notdef /.notdef /florin /colonmonetary /uni20A9 /.notdef
+%90
+  /.notdef /.notdef /lira /.notdef /.notdef /uni2E18 /dong /trademark
+  /.notdef /.notdef /.notdef /afii61352 /.notdef /estimated /openbullet /.notdef
+%A0
+  /.notdef /.notdef /cent /sterling /currency /yen /brokenbar /section
+  /.notdef /copyright /ordfeminine /.notdef /logicalnot /.notdef /registered /.notdef
+%B0
+  /degree /plusminus /two_os_SUP /three_os_SUP /.notdef /mu /paragraph /periodcentered
+  /uni203B /one_os_SUP /ordmasculine /radical /onequarter /onehalf /threequarters /Euro
+%C0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%D0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /multiply /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%E0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%F0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /divide /.notdef
+  /uniFB04 /uniFB03 /uniFB00 /uniFB02 /l /uniFB01 /i /f
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_ts1
+% --tfm-directory=texmf/fonts/tfm/public/garamond-libre
+% --vf-directory=texmf/fonts/vf/public/garamond-libre
+% --type1-directory=texmf/fonts/type1/public/garamond-libre
+% --encoding-directory=texmf/fonts/enc/dvips/garamond-libre
+% --map-file=texmf/fonts/map/dvips/garamond-libre/GaramondLibre.map
+% --no-updmap --coding-scheme=TEX TEXT COMPANION SYMBOLS 1---TS1
+% --feature=onum --ligkern=f i =: fi --ligkern=f l =: fl --ligkern=f f =: ff
+% --ligkern=ff i =: ffi --ligkern=ff l =: ffl GaramondLibre-Regular.otf
+% GaramondLibre-Regular-lf-ts1'

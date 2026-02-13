@@ -1,0 +1,96 @@
+This is the README for the garamond-libre package, 
+version 1.4 (2024-04-23)
+
+This package provides LaTeX, pdfLaTeX, XeLaTeX and LuaLaTeX
+support for the Garamond Libre family of fonts.
+Garamond Libre is a free and open-source old-style font
+family. It is a "true Garamond," i.e., it is based off the
+designs of 16th-century French engraver Claude Garamond
+(also spelled Garamont). The Roman design is Garamond’s;
+the italics are from a design by Robert Granjon. The upright
+Greek font is after a design by Firmin Didot; the "italic"
+Greek font is after a design by Alexander Wilson. The font
+family includes support for Latin, Greek (monotonic and
+polytonic) and Cyrillic scripts, as well as small capitals,
+old-style figures, superior and inferior figures, historical
+ligatures, Byzantine musical symbols, the IPA and swash
+capitals. The fonts are an extended fork based on designs by
+George Douros. 
+
+To install this package on a TDS-compliant
+TeX system download the file
+"tex-archive"/install/fonts/garamond-libre.tds.zip, where the
+preferred URL for "tex-archive" is http://mirror.ctan.org.
+Unzip the archive at the root of an appropriate texmf tree,
+likely a personal or local tree. If necessary, update the
+file-name database (e.g., texhash). Update the font-map
+files by enabling the Map file GaramondLibre.map.
+
+To use, add
+
+\usepackage{garamondlibre}
+
+to the preamble of your document. Options include:
+
+oldstyle,osf    old-style figures
+lining,lf       lining figures
+
+The default is lining. 
+
+Available shapes include:
+
+it              italic
+sc              small caps
+scit            italic small caps
+
+Slanted variants are not supported; the italic variants will
+be automatically substituted. Font encodings supported are
+OT1, T1, TS1, LY1, T2A, T2B, T2C and LGR.
+
+Options scaled=<number> or scale=<number> may be used to
+adjust fontsizes. The type1 option may be used by xelatex
+or lualatex users who prefer to use type1 fonts or to avoid
+fontspec.
+
+Commands \oldstylenums{...} and \liningnums{...} are defined
+to allow for local use of old-style figures or lining
+figures, respectively.
+
+Superior numbers (for footnote markers) are available
+using \sufigures or \textsu{...}. Inferior numbers (for
+subscripts) are available using \infigures or \textinf{...}.
+Swash italic glyphs (for some letters) are available using
+\textsw{...}. A few ornaments [1-9] are available using 
+\textornaments{..}
+
+Command \garamondlibrelgr activates the LGR encoding of type1
+fonts.
+
+The OpenType fonts are released under the X11/MIT license
+and are Copyright (c) 2019--2020 by Daniel Benjamin Miller.
+
+Permission is hereby granted, free of charge, to any
+person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the
+Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute,
+sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall
+be included in all copies or substantial portions of the
+Software.
+
+Garamond Libre is based on George Douros' text fonts
+project. The sources on which these fonts are based were
+released by their author as free for any use.
+
+The type1 versions of the fonts were created using cfftot1.
+The support files were created using autoinst and otftotfm
+and are licensed under the terms of the LaTeX Project Public
+License.
+
+This package is maintained by Daniel Benjamin Miller
+(dbmiller at dbmiller.org) and Bob Tennent (rdtennent at
+gmail.com).

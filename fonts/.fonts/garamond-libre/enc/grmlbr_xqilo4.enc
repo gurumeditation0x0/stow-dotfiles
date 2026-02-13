@@ -1,0 +1,66 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_xqilo4hqa3qdjc7bnjv6iqa2ec
+% Encoding created by otftotfm on Wed Apr 29 15:14:43 2020
+% Command line follows encoding
+/AutoEnc_xqilo4hqa3qdjc7bnjv6iqa2ec [
+%00
+  /Gamma /Delta /Theta /Lambda /Xi /Pi /Sigma /Upsilon
+  /Phi /Psi /Omega /.notdef /.notdef /.notdef /.notdef /.notdef
+%10
+  /dotlessi /uni0237 /grave /acute /caron /breve /macron /ring
+  /cedilla /germandbls /ae /oe /oslash /AE_swash1 /OE_swash /Oslash_swash
+%20
+  /space /exclam /quotedblright /numbersign /dollar /percent /ampersand /quoteright
+  /parenleft /parenright /asterisk /plus /comma /hyphen /period /slash
+%30
+  /zero /one /two /three /four /five /six /seven
+  /eight /nine /colon /semicolon /exclamdown /equal /questiondown /question
+%40
+  /at /A_swash1 /B_swash /C_swash /D_swash /E_swash /F_swash /G_swash
+  /H_swash /I_swash /J_swash /K_swash /L_swash /M_swash1 /N_swash /O_swash
+%50
+  /P_swash /Q_swash /R_swash /S_swash1 /T_swash1 /U_swash /V_swash1 /W_swash
+  /X_swash /Y_swash /Z_swash /bracketleft /quotedblleft /bracketright /circumflex /dotaccent
+%60
+  /quoteleft /a /b /c /d /e /f /g
+  /h /i /j /k /l /m /n /o
+%70
+  /p /q /r /s /t /u /v /w
+  /x /y /z /endash /emdash /hungarumlaut /tilde /dieresis
+%80
+  /uniFB06 /ch /ct /sb /sh /sk /sl /sp
+  /Th /uniFB00 /Lslash_swash /uniFB01 /uniFB02 /uniFB03 /uniFB04 /fj
+%90
+  /ffj /afii61248 /.notdef /C_swash1 /T_swash /A_swash /M_swash /S_swash
+  /U_swash1 /V_swash /AE_swash /K_short /N_short /R_short /Z_short /.notdef
+%A0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /lslash /.notdef /.notdef /.notdef /.notdef /.notdef
+%B0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%C0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%D0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%E0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%F0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_ot1
+% --tfm-directory=texmf/fonts/tfm/public/garamond-libre
+% --vf-directory=texmf/fonts/vf/public/garamond-libre
+% --type1-directory=texmf/fonts/type1/public/garamond-libre
+% --encoding-directory=texmf/fonts/enc/dvips/garamond-libre
+% --map-file=texmf/fonts/map/dvips/garamond-libre/GaramondLibre.map
+% --no-updmap --coding-scheme=TEX TEXT --feature=dlig --feature=kern
+% --feature=liga --feature=lnum --feature=swsh --ligkern=f i =: fi
+% --ligkern=f l =: fl --ligkern=f f =: ff --ligkern=ff i =: ffi --ligkern=ff
+% l =: ffl --include-alternates=*.swash --feature=aalt
+% GaramondLibre-Regular.otf GaramondLibre-Regular-lf-swash-ot1'

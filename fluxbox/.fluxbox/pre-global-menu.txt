@@ -1,0 +1,4 @@
+[exec] (Chroot Rescue Scan ) { x-terminal-emulator -e sudo chroot-rescue-scan --pause } Categories=X-antiX;MX-Maintenance;
+[exec] (Exit options ) { exit-options } Categories=Accessories;
+[exec] (Gestionnaire de paquet en ligne de commande basé sur apt ) { x-terminal-emulator -e sudo /usr/local/bin/cli-aptiX --pause } Categories=X-antiX;
+[exec] (Mise à jour du noyau live-usb ) { x-terminal-emulator -e sudo /usr/local/bin/live-kernel-updater --pause } Categories=X-antiX;MX-Live;

@@ -1,0 +1,4 @@
+#this function is being governed directly by nitrogen
+
+#It can be switched to a traditional Fluxbox config by uncommenting ~/.fehbg in the startup file, and commenting out nitrogen --restore
+fbsetroot|-foreground #355021 -background #355021 -solid #355021|style|:0.0

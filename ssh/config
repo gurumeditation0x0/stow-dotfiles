@@ -1,0 +1,11 @@
+Host github.com-dotfiles
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/dotfiles_id_rsa
+  IdentitiesOnly yes
+
+Host github.com-org
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/org_id_rsa
+  IdentitiesOnly yes

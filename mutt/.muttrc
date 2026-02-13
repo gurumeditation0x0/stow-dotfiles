@@ -1,0 +1,30 @@
+# Compte Gmail
+macro index,pager G "<tag-prefix><change-folder>~/.Mail/gmail/Inbox<enter>" "Go to Gmail Inbox"
+set folder="~/.Mail/gmail/"
+set spoolfile="~/.Mail/gmail/Inbox"
+set record="~/.Mail/gmail/Sent"
+set postponed="~/.Mail/gmail/Drafts"
+set trash="~/.Mail/gmail/Trash"
+
+# Compte Free.fr
+macro index,pager F "<tag-prefix><change-folder>~/.Mail/free/INBOX<enter>" "Go to Free.fr Inbox"
+set folder="~/.Mail/free/"
+set spoolfile="~/.Mail/free/INBOX"
+set record="~/.Mail/free/Sent"
+set postponed="~/.Mail/free/Drafts"
+set trash="~/.Mail/free/Trash"
+
+# Compte Laposte.net
+macro index,pager L "<tag-prefix><change-folder>~/.Mail/laposte/INBOX<enter>" "Go to Laposte.net Inbox"
+set folder="~/.Mail/laposte/"
+set spoolfile="~/.Mail/laposte/INBOX"
+set record="~/.Mail/laposte/Sent"
+set postponed="~/.Mail/laposte/Drafts"
+set trash="~/.Mail/laposte/Trash"
+
+auto_view text/html                                 # Active la vue automatique pour les e-mails HTML
+# alternative_order text/enriched text/plain text/html # Ordre de préférence pour les types de texte
+# text/html; w3m -dump -T text/html; copiousoutput     # Utilise w3m pour convertir HTML en texte brut
+
+set editor="nvim"
+

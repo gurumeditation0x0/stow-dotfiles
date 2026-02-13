@@ -1,0 +1,128 @@
+mpv   dev/Cloches/cloche7s.wav 
+cd dev/
+git clone https://git.repetitions.de/openwith
+find . -iname *.pdf
+find . -iname *.mp3
+find -r . -iname *.mp3
+find . -r -iname *.mp3
+find  -r -iname *.mp3
+find  -r -iname *.gpg
+find  -R -iname *.gpg
+find /home/niala -iname *.gpg
+find -r /home/niala -iname *.gpg
+find -R /home/niala -iname *.gpg
+find /home/niala -r -iname *.gpg
+man find
+find --help
+apt search man|grep fr
+apt search man|grep french
+cd
+stow dotfiles/mpv/
+stow dotfiles/mpv 
+cd dotfiles/
+stow mpv/ 
+apt search ytdl
+sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+apt search yt-dlp
+whereis mpv
+apt search mpris
+sudo apt install mpv-mpris
+cd  /home/alain/.config/mpv/scripts/
+ls
+ls -al
+emms-mpris-open-uri https://www.youtube.com/watch?v=LOvS90sTotI
+sudo apt install  playerctl
+emms-mpris-open-uri https://www.youtube.com/watch?v=LOvS90sTotI
+mpv  https://www.youtube.com/watch?v=LOvS90sTotI
+apt search libavformat
+sudo apt install libavformat-extra
+mpv https://youtu.be/50VNCymT-Cs
+apt search libavformat
+yt-dlp 
+yt-dlp mpv https://youtu.be/50VNCymT-Cs
+mpv Alec\ Benjamin\ -\ Let\ Me\ Down\ Slowly\ \[Official\ Music\ Video\]\ \[50VNCymT-Cs\].mp4 
+mpv --profile=fast Alec\ Benjamin\ -\ Let\ Me\ Down\ Slowly\ \[Official\ Music\ Video\]\ \[50VNCymT-Cs\].mp4 
+mpv --hwdec=auto  Alec\ Benjamin\ -\ Let\ Me\ Down\ Slowly\ \[Official\ Music\ Video\]\ \[50VNCymT-Cs\].mp4 
+ls
+find / iname mpris.so
+find / -iname mpris.so
+find / -iname "mpris.so"
+ls
+find . alec
+find . play
+find . -name "*play*" -type f -print0
+!find . -name "*play*" -type f -print0
+*find . -name "*play*" -type f -print0
+*find / -name "*yt-dl*" -type f -print0 
+*find / -name "*yt-dl*" -type f -print0 2>>/dev/null
+*find /etc -name "mpris.so" -type f -print0 2>>/dev/null
+*find /usr -name "mpris.so" -type f -print0 2>>/dev/null
+*find /usr -name "*yt*" -type f -print0 2>>/dev/null
+*find /usr -name "yt*" -type f -print0 2>>/dev/null
+*find /usr -name "yt*" -type f 2>>/dev/null
+ln 
+cd /usr/bin/
+ln -s -i -v yt-dlp youtube-dl
+sudo ln -s -i -v yt-dlp youtube-dl
+ls -al
+ls -al y
+ls -al y*
+!wherr
+whereis yt-dlp 
+cd
+cd dotfiles/
+git status
+git add emacs.d/.emacs.d/config/emms.el mpv/.config/mpv/mpv.confemacs.d/.emacs.d/init.el  mpv/.config/mpv/mpv.conf
+git add mpv/.config/mpv/mpv.conf emacs.d/.emacs.d/config/emms.el emacs.d/.emacs.d/init.el
+git commit -m "quelques petites corrections. emms.el, mpv.conf  init.et"
+git push 
+git status
+rm mpv/.config/mpv/scripts/Alec Benjamin - Let Me Down Slowly [Official Music Video] [50VNCymT-Cs].mp4
+ls
+rm mpv/.config/mpv/scripts/Alec Benjamin - Let Me Down Slowly [Official Music Video] [50VNCymT-Cs].mp4
+pkill mpv
+ps -waux
+pkill mpv
+ps -waux
+kill -9 774
+exit
+cd 
+cd dotfiles/
+git status 
+git add emacs.d/.emacs.d/init.el
+git commit -m "Ajout des buffer Gnus pour Lin"
+git push 
+sudo apt install elisp-manual
+sudo apt search manual
+sudo apt search manual |grep lisp
+sudo su root
+ls
+cp early-init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/early-init.el ; cp init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/init.el
+ls
+cd eshell/ 
+ls
+cd..
+cd ..
+cd config/ 
+ls
+cp eshell_conf.el /mnt/c/Users/david/GNU/emacs/.emacs.d/config/eshell_conf.el
+─────────────────────────────────────────────────────
+cp eshell_conf.el /mnt/c/Users/david/GNU/emacs/.emacs.d/config/eshell_conf.el
+cp early-init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/early-init.el ; cp init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/init.el
+cd ..
+cp early-init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/early-init.el ; cp init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/init.el
+ls
+cp early-init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/early-init.el ; cp init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/init.el
+history 
+cp config/eshell_conf.el /mnt/c/Users/david/GNU/emacs/.emacs.d/config/eshell_conf.el 
+ls
+ls config/
+cp config/eshell_conf.el /mnt/c/Users/david/GNU/emacs/.emacs.d/config/eshell_conf.el
+cp early-init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/early-init.el ; cp init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/init.el
+ls
+ls *desk
+cp early-init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/early-init.el ; cp init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/init.el
+cp /home/alain/dotfiles/emacs.d/.emacs.d/elisp/dashboard-perso.el /mnt/c/Users/david/GNU/emacs/elisp/dashboard-perso.el
+cp /home/alain/dotfiles/emacs.d/.emacs.d/elisp/dashboard-perso.el /mnt/c/Users/david/GNU/emacs/elisp/dashboard-perso.el
+ls
+cp early-init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/early-init.el ; cp init.el   /mnt/c/Users/david/GNU/emacs/.emacs.d/init.el

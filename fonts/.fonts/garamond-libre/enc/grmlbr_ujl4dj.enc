@@ -1,0 +1,65 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_ujl4djuensawmgbe7wsomiqc4g
+% Encoding created by otftotfm on Wed Apr 29 15:14:38 2020
+% Command line follows encoding
+/AutoEnc_ujl4djuensawmgbe7wsomiqc4g [
+%00
+  /Gamma_SUP /increment_SUP /Theta_SUP /Lambda_SUP /Xi_SUP /Pi_SUP /Sigma_SUP /Upsilon_SUP
+  /Phi_SUP /Psi_SUP /Ohm_SUP /.notdef /.notdef /.notdef /.notdef /.notdef
+%10
+  /dotlessi_SUP /dotlessj_SUP /grave /acute /caron /breve /macron /ring
+  /cedilla /germandbls_SUP /ae_SUP /oe_SUP /oslash_SUP /AE_SUP /OE_SUP /Oslash_SUP
+%20
+  /space /exclam_SUP /quotedblright /numbersign_SUP /dollar_SUP /percent_SUP /ampersand_SUP /quoteright_SUP
+  /parenleft_SUP /parenright_SUP /asterisk /plus_SUP /comma_SUP /hyphen_SUP /period_SUP /slash_SUP
+%30
+  /zero_SUP /one_SUP /two_SUP /three_SUP /four_SUP /five_SUP /six_SUP /seven_SUP
+  /eight_SUP /nine_SUP /colon_SUP /semicolon_SUP /exclamdown_SUP /equal_SUP /questiondown_SUP /question_SUP
+%40
+  /at_SUP /A_SUP /B_SUP /C_SUP /D_SUP /E_SUP /F_SUP /G_SUP
+  /H_SUP /I_SUP /J_SUP /K_SUP /L_SUP /M_SUP /N_SUP /O_SUP
+%50
+  /P_SUP /Q_SUP /R_SUP /S_SUP /T_SUP /U_SUP /V_SUP /W_SUP
+  /X_SUP /Y_SUP /Z_SUP /bracketleft_SUP /quotedblleft /bracketright_SUP /circumflex /dotaccent
+%60
+  /quoteleft_SUP /a_SUP /b_SUP /c_SUP /d_SUP /e_SUP /f_SUP /g_SUP
+  /h_SUP /i_SUP /j_SUP /k_SUP /l_SUP /m_SUP /n_SUP /o_SUP
+%70
+  /p_SUP /q_SUP /r_SUP /s_SUP /t_SUP /u_SUP /v_SUP /w_SUP
+  /x_SUP /y_SUP /z_SUP /endash /emdash /hungarumlaut /tilde /dieresis
+%80
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /Lslash /.notdef /.notdef /.notdef /.notdef /.notdef
+%90
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%A0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /lslash /.notdef /.notdef /.notdef /.notdef /.notdef
+%B0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%C0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%D0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%E0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%F0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_ot1
+% --tfm-directory=texmf/fonts/tfm/public/garamond-libre
+% --vf-directory=texmf/fonts/vf/public/garamond-libre
+% --type1-directory=texmf/fonts/type1/public/garamond-libre
+% --encoding-directory=texmf/fonts/enc/dvips/garamond-libre
+% --map-file=texmf/fonts/map/dvips/garamond-libre/GaramondLibre.map
+% --no-updmap --coding-scheme=TEX TEXT --feature=kern --feature=liga
+% --feature=sups --ligkern=f i =: fi --ligkern=f l =: fl --ligkern=f f =: ff
+% --ligkern=ff i =: ffi --ligkern=ff l =: ffl --ligkern=* {KL} *
+% GaramondLibre-Regular.otf GaramondLibre-Regular-sup-ot1'

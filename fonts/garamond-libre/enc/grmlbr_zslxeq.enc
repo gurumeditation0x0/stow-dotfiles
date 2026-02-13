@@ -1,0 +1,66 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_zslxeq7ick2rlsdvfzt4stydhe
+% Encoding created by otftotfm on Wed Apr 29 15:14:36 2020
+% Command line follows encoding
+/AutoEnc_zslxeq7ick2rlsdvfzt4stydhe [
+%00
+  /grave /acute /circumflex /tilde /dieresis /hungarumlaut /ring /caron
+  /breve /macron /dotaccent /cedilla /ogonek /quotesinglbase /guilsinglleft_sub /guilsinglright_sub
+%10
+  /quotedblleft /quotedblright /quotedblbase /guillemotleft_sub /guillemotright_sub /endash /emdash /afii61664
+  /.notdef /dotlessi_sub /dotlessj_sub /.notdef /.notdef /.notdef /.notdef /.notdef
+%20
+  /space /exclam_sub /quotedbl /numbersign_sub /dollar_sub /percent_sub /ampersand_sub /quoteright_sub
+  /parenleft_sub /parenright_sub /asterisk /plus_sub /comma_sub /hyphen_sub /period_sub /slash_sub
+%30
+  /zero_sub /one_sub /two_sub /three_sub /four_sub /five_sub /six_sub /seven_sub
+  /eight_sub /nine_sub /colon_sub /semicolon_sub /less /equal_sub /greater /question_sub
+%40
+  /at_sub /A_sub /B_sub /C_sub /D_sub /E_sub /F_sub /G_sub
+  /H_sub /I_sub /J_sub /K_sub /L_sub /M_sub /N_sub /O_sub
+%50
+  /P_sub /Q_sub /R_sub /S_sub /T_sub /U_sub /V_sub /W_sub
+  /X_sub /Y_sub /Z_sub /bracketleft_sub /backslash_sub /bracketright_sub /asciicircum /underscore
+%60
+  /quoteleft_sub /a_sub /b_sub /c_sub /d_sub /e_sub /f_sub /g_sub
+  /h_sub /i_sub /j_sub /k_sub /l_sub /m_sub /n_sub /o_sub
+%70
+  /p_sub /q_sub /r_sub /s_sub /t_sub /u_sub /v_sub /w_sub
+  /x_sub /y_sub /z_sub /braceleft_sub /bar_sub /braceright_sub /asciitilde_sub /hyphen_sub
+%80
+  /Abreve /Aogonek /Cacute /Ccaron /Dcaron /Ecaron /Eogonek /Gbreve
+  /Lacute /Lcaron /Lslash /Nacute /Ncaron /Eng_sub /Ohungarumlaut /Racute
+%90
+  /Rcaron /Sacute /Scaron /Scedilla /Tcaron /Tcommaaccent /Uhungarumlaut /Uring
+  /Ydieresis /Zacute /Zcaron /Zdotaccent /IJ /Idotaccent /dcroat /section_sub
+%A0
+  /abreve /aogonek /cacute /ccaron /dcaron /ecaron /eogonek /gbreve
+  /lacute /lcaron /lslash /nacute /ncaron /eng_sub /ohungarumlaut /racute
+%B0
+  /rcaron /sacute /scaron /scedilla /tcaron /tcommaaccent /uhungarumlaut /uring
+  /ydieresis /zacute /zcaron /zdotaccent /ij /exclamdown_sub /questiondown_sub /sterling_sub
+%C0
+  /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE_sub /Ccedilla
+  /Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+%D0
+  /Eth_sub /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /OE_sub
+  /Oslash_sub /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn_sub /.notdef
+%E0
+  /agrave /aacute /acircumflex /atilde /adieresis /aring /ae_sub /ccedilla
+  /egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+%F0
+  /eth_sub /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /oe_sub
+  /oslash_sub /ugrave /uacute /ucircumflex /udieresis /yacute /thorn_sub /germandbls_sub
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_t1
+% --tfm-directory=texmf/fonts/tfm/public/garamond-libre
+% --vf-directory=texmf/fonts/vf/public/garamond-libre
+% --type1-directory=texmf/fonts/type1/public/garamond-libre
+% --encoding-directory=texmf/fonts/enc/dvips/garamond-libre
+% --map-file=texmf/fonts/map/dvips/garamond-libre/GaramondLibre.map
+% --no-updmap --coding-scheme=EXTENDED TEX FONT ENCODING - LATIN
+% --feature=kern --feature=liga --feature=subs --ligkern=f i =: fi
+% --ligkern=f l =: fl --ligkern=f f =: ff --ligkern=ff i =: ffi --ligkern=ff
+% l =: ffl --ligkern=* {KL} * GaramondLibre-Regular.otf
+% GaramondLibre-Regular-inf-t1'

@@ -1,0 +1,7 @@
+machine smtp.gmail.com login USER@gmail.com password PASSWORD port 587
+machine smtp.free.fr login USER@free.fr password PASSWORD port 587
+machine smtp.laposte.net login USER@laposte.net password PASSWORD port 587
+machine imap.gmail.com login USER@gmail.com password PASSWORD port 465
+machine imap.free.fr login USER@free.fr password PASSWORD port 465
+machine imap.laposte.net login USER@laposte.net password PASSWORD port 465
+

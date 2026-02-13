@@ -1,0 +1,34 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".accuweather.com"
+  [url-cookie "ak_bmsc"
+	      "E2B0BB4658A744B6AD5392FD788FC505~000000000000000000000000000000~YAAQ39hLF1wPJt2bAQAA3bsb8x4C/dVkVLGJS192LJEfc4Z37Er0+9KSTROIzrv5G/bNssY9dnljheqmMbM+sIAqevzzEQJJ6n+qxWYIr5op7IczA5sKU6vQqhjDtbIexUFXCkRoAfLcgvRggYuSQ0iLF2eqGIL5FyCoujSWh2+YCP8Ry9Dt7HViLjYIJoRdZ+QLjnxZLvxIxpjCiKWfYPudGVuiGo7Q3Gc+22ifSonFXMmI/qtNP31lTCD82bto982+cktc4BOLq+qOUDygafCdfbGJ/yWKERT61erPITM9VHeUAiyNkWsJPLv56l1URO57AwJDgzJX0bydwxfgUm1ZP2NoITAoUIiOyaE6deP7X328ZDFN1k+91xknUWHJsi9nRBCN8Y7HtZfYk+yzDmg="
+	      "Sun Jan 25 05:03:58 2026 GMT" "/" ".accuweather.com"
+	      nil])
+ (".chatgpt.com"
+  [url-cookie "oai-did" "f7cac9fb-1369-4bb4-a5c0-7262fe290d5f"
+	      "Wed Nov 04 14:40:04 2026 GMT" "/" ".chatgpt.com" nil]))
+)
+(setq url-cookie-secure-storage
+ '(("www.accuweather.com"
+  [url-cookie "awx_id" "bbe2f453-3baa-4fc6-97ea-61cbb7c6f77e"
+	      "Mon, 25 Jan 2027 03:03:59 GMT" "/"
+	      "www.accuweather.com" t])
+ ("github.com"
+  [url-cookie "_device_id" "5b45b1c5f27f5f067a2745658fec2808"
+	      "Thu, 03 Dec 2026 16:34:59 GMT" "/" "github.com" t]
+  [url-cookie "logged_in" "no" "Thu, 03 Dec 2026 16:31:03 GMT" "/"
+	      "github.com" t]
+  [url-cookie "_octo" "GH1.1.1700525646.1764779463"
+	      "Thu, 03 Dec 2026 16:31:03 GMT" "/" "github.com" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; coding: utf-8-emacs-unix
+;; End:
+
+;;; cookies ends here

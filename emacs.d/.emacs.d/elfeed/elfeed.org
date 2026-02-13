@@ -1,0 +1,97 @@
+* Imported Feeds            :elfeed:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_10076.xml][Le Cours de l'histoire]] :histoire:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_14312.xml][La science, CQFD]] :science: 
+** [[https://feeds.audiomeans.fr/feed/80a39a48-f044-436e-ad5b-63d3154efa91.xml][Au Cœur de l'Histoire - Des récits pour découvrir et apprendre l'Histoire]] :histoire:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_13915.xml][Les Nuits de France Culture ]] 
+** [[https://feeds.audiomeans.fr/feed/d7c6111b-04c1-46bc-b74c-d941a90d37fb.xml][Les Grosses Têtes]] :comédie:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_11495.xml][Le Feuilleton]] :fiction:
+** [[https://feed.ausha.co/oLq8aCg6RamE][C&apos;est plus que de la SF]] :sf:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_10212.xml][La Terre au carré]] :science:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_13026.xml][Théâtre]] :théâtre:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_11498.xml][Théâtre et compagnie]] :théâtre:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_13183.xml][La tribune des critiques de disques]] :musique:
+** [[https://feeds.simplecast.com/C9U2nKZG][Les Paris RMC]] :sport:
+** [[https://feeds.podcastics.com/podcastics/podcasts/rss/3475_581da8cedec98086a7e720802a5ebdcb.rss][Le Basket Lab]] :sport:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_14726.xml][Rendez-vous avec X]] :histoire:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_13023.xml][Littérature]] :fiction:littérature:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_11496.xml][Samedi fiction]] :fiction:littérature:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_10267.xml][Carbone 14, le magazine de l&apos;archéologie]]
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_12841.xml][Affaires étrangères]] :histoire:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_13397.xml][Répliques]] :littérature:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_18929.xml][Le meilleur de la science]] :histoire:
+** [[https://feeds.acast.com/public/shows/cabcdc65-9f15-5900-a971-d6d96f16ed31][Game of Roles : Magic]] :fiction:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_20332.xml][Le van Beethoven]] :musique:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_13957.xml][La Conversation scientifique]] :science:
+** [[https://feeds.audiomeans.fr/feed/e81060fb-ff0c-45b3-bfcb-2e87b9b1f9f7.xml][Historiquement vôtre - Stéphane Bern]] :histoire:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_10467.xml][Avec philosophie]] :littérature:
+** [[https://feeds.soundcloud.com/users/soundcloud:users:147058082/sounds.rss][Passion Médiévistes]] :histoire:
+** [[https://feeds.acast.com/public/shows/64b0029d46405a0011e8efe2][Le Collimateur]] :histoire:
+** [[https://feeds.simplecast.com/L7ICjc82][Court N°1]] :sport:
+** [[https://feeds.acast.com/public/shows/6143666a4b9ee500133f2dea][Tennis Legend Podcast]] :sport:
+** [[http://parolesdhistoire.fr/index.php/feed/podcast/][Paroles d'histoire]] :histoire:
+** [[https://feeds.simplecast.com/T5ihB5Kt][Basket Time]] :sport:
+** [[https://galactifrak.lepodcast.fr/rss][GalactiFrak - podcast francophone dédié à Battlestar Galactica]] :sf:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_17309.xml][Blockbusters, le podcast natif]] :sf:
+** [[https://feed.ausha.co/b3p9dh3pEWAK][Step back]] :sport:
+** [[https://www.vodio.fr/rssmedias.php?valeur=206][La Librairie Yōkaï]] :fiction:
+** [[https://anchor.fm/s/435c0d58/podcast/rss][Hack&apos;n Speak]] :tech:
+** [[https://ephemerides.cieletespace.fr/][Ciel &amp; Espace]] :science:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_22831.xml][Le Pourquoi du comment]] :science: 
+** [[https://feeds.simplecast.com/mTIR7v2T][Les Paris RMC 100% Foot]] :sport:
+** [[https://feeds.simplecast.com/Nt6h6Ir3][Les Paris RMC 100% Tennis]] :sport:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_11921.xml][Les Cours du Collège de France]] :science:histoire:
+** [[https://feeds.acast.com/public/shows/6331807fec027e0014af5264][Passion Antiquités]] :histoire:
+** [[https://feeds.acast.com/public/shows/77a42976-dfd2-4faa-9a08-acd155e3a7d1][Quête Latérale]] :tech:
+** [[https://feeds.acast.com/public/shows/607aec11b1d7373173d66907][Podcast Science]] :science:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_19904.xml][Les Aventures de Tintin]] :fiction:
+** [[https://feeds.acast.com/public/shows/160e628a-dbd9-5655-b195-2aada7303709][6 and Daz]] :musique:
+** [[https://feeds.acast.com/public/shows/18e39181-b1d5-4a34-a8fb-f0068ff84e83][Disk8]] :tech:
+** [[https://feeds.acast.com/public/shows/d3e6d361-76c0-5ce2-be98-4a8bdd9bdfab][Qommute]] :tech:
+** [[https://feeds.acast.com/public/shows/bcb3b025-80db-5796-bbfb-deab295f7f9b][Fiqtion]] :sf:
+** [[https://podcast.college-de-france.fr/xml2/cdf1-61.xml][Atomes et Rayonnement - Jean Dalibard]] :science:
+** [[https://podcast.college-de-france.fr/xml2/cdf8-104.xml][Culture écrite de l&apos;antiquité tardive et papyrologie byzantine - Jean-Luc Fournet]] :histoire:
+** [[https://feed.ausha.co/yv8QQSY2GDd2][Origin]] :fiction:
+** [[http://www.loyalbooks.com/book/Fauteuil-hante/feed][Le Fauteuil hante by Gaston Leroux]] :fiction:
+** [[https://feeds.acast.com/public/shows/les-mondes-du-sommeil][Les Mondes Du Sommeil]] :fiction:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_11984.xml][L&apos;Atelier fiction]] :fiction:
+** [[https://feeds.podcastics.com/podcastics/podcasts/rss/3973_83f822a7779e71307312db8f5599a52f.rss][CARTHAGO]] :fiction:
+** [[http://podcast.college-de-france.fr/xml/sciencestechno.xml][Collège de France (Sciences et technologies)]] :science:
+** [[http://podcast.college-de-france.fr/xml/histoirereligions.xml][301 Moved Permanently]]
+** [[http://podcast.college-de-france.fr/xml/archeologie.xml][301 Moved Permanently]]
+** [[https://feeds.360.audion.fm/0DSsNImP8Fv0ejMrZOY0h][Engle Fictions : séries audio &amp; fictions sonores]] :fiction:
+** [[https://feeds.acast.com/public/shows/6494e703-61b2-5cf4-9ec0-28215ba5951f][Trajectoires]] :tech:
+** [[https://feeds.feedburner.com/vieartificielle][Vie Artificielle]] :tech:
+** [[http://podcast.college-de-france.fr/xmlu2/cdfu3-5.xml][Psychologie cognitive expérimentale]] :
+** [[https://feeds.acast.com/public/shows/9b8c44cc-ac49-4849-927d-e12cbb77b0b8][Qompétences]] :tech:
+** [[https://feeds.acast.com/public/shows/85292ef7-ad05-4deb-948b-28220b83c0dc][Le Log]] :tech:
+** [[https://mythes-et-legendes.lepodcast.fr/rss][Mythes, légendes et histoire]] :histoire:
+** [[http://histoires-terrifiantes.lepodcast.fr/rss][Histoires Terrifiantes]] :fiction:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_19766.xml][L'Appel des abysses]] :fiction:
+** [[https://feeds.soundcloud.com/users/soundcloud:users:229879202/sounds.rss][La Boite à Physique]] :science:
+** [[https://podcast.college-de-france.fr/xml2/cdf11-106.xml][Informatique et sciences numériques (2015-2016) - Yann LeCun]] :tech:
+** [[https://podcast.college-de-france.fr/xml2/cdf9-24.xml][Religion, institutions et société de la Rome antique - John Scheid]] :histoire:
+** [[https://radiofrance-podcast.net/podcast09/d4463877-caa3-4507-9399-f5eb00fde027/rss_13994.xml][Carrefour de Lodeon]] :musique:
+** [[https://podcast.college-de-france.fr/xml2/cdf8-20.xml][Épigraphie et histoire des cités grecques - Denis Knoepfler]] :histoire:
+** [[https://podcast.college-de-france.fr/xml2/cdf1-39.xml][Physique quantique - Serge Haroche]] :science:
+** [[https://radiofrance-podcast.net/podcast09/rss_13364.xml][Des papous dans la tête]] :comédie:
+** [[https://livreaudio.net/category/podcasts/arsene-lupin-gentleman-cambrioleur/feed/][Livreaudio.net]] :fiction:
+** [[https://www.milchior.fr/ttp/feed.xml][Ton Théorème Préféré]] :science:
+** [[https://dwh.lequipe.fr/api/edito/rss?path=/Football/][l'équipe foot]] :sport:
+** [[https://dwh.lequipe.fr/api/edito/rss?path=/Basket/][l'équipe basket]] :sport:
+** [[https://dwh.lequipe.fr/api/edito/rss?path=/Basket/Nba/][l'équipe nba]] :sport: 
+** [[https://dwh.lequipe.fr/api/edito/rss?path=/Athletisme/][l'équipe athlétisme]]  :sport:
+
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCV6uM3y-8TeO7JlCtcEN-Bg][ScienceClic]]                                 :science:ScienceClic:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCK4YnDjmmMySzXSYYiHQDxw][TrashTalk]] :sport:TrashTalk:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCcOXoA8PsaWS_1sJlxvjO8Q][Daz]]  :comédie:tech:Daz:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCWedHS9qKebauVIK2J7383g][Underscore_]] :tech:Underscore:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCaNlbnghtwlsGF-KzAFThq][ScienceEtonnante]] :science:tech:ScienceEtonnante:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCAiiOTio8Yu69c3XnR7nQB][SystemCrafter]] :tech:SystemCrafter:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC0uTPqBCFIpZxlz_Lv1tk_][Protesilaos Stavrou]] :tech:Protesilaos:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCVVngTl-rdwFeFBUTdW5G5w][First team]] :FirstTeam:sport:vidéo:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg][Distrotube]] :Distrotube:tech:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCI0xb1jQfzsd19-scG5fJ0g][Niala]]                                                     :Niala:yt:vidéo:
+** [[https://www.youtube.com/@RcstrasbourgalsaceFr][Rcsa]]                                                 :sport:rcsa:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCcMGbm0EYWh1SZZ8MsM75tw][NbaExtra]]                                              :sport:nba:yt:vidéo:
+** [[https://www.youtube.com/channel/UCfxu0LuxvMKtHjPX9faYVpg][RCSA]] :sport:rcsa:yt:vidéo:
+** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC6YwCNty0RCNeH71gxEOo6Q][Direct RACING]]                                        :sport:rcsa:yt:vidéo:

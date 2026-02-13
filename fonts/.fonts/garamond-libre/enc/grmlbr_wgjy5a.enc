@@ -1,0 +1,66 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_wgjy5an333y7pok65sjcl5lqgg
+% Encoding created by otftotfm on Wed Apr 29 15:14:37 2020
+% Command line follows encoding
+/AutoEnc_wgjy5an333y7pok65sjcl5lqgg [
+%00
+  /grave /acute /circumflex /tilde /dieresis /hungarumlaut /ring /caron
+  /breve /macron /dotaccent /cedilla /ogonek /.notdef /.notdef /.notdef
+%10
+  /quotedblleft /quotedblright /.notdef /.notdef /.notdef /endash /emdash /.notdef
+  /.notdef /dotlessi_sub /dotlessj_sub /.notdef /.notdef /.notdef /.notdef /.notdef
+%20
+  /space /exclam_sub /quotedbl /numbersign_sub /dollar_sub /percent_sub /ampersand_sub /quoteright_sub
+  /parenleft_sub /parenright_sub /asterisk /plus_sub /comma_sub /hyphen_sub /period_sub /slash_sub
+%30
+  /zero_sub /one_sub /two_sub /three_sub /four_sub /five_sub /six_sub /seven_sub
+  /eight_sub /nine_sub /colon_sub /semicolon_sub /less /equal_sub /greater /question_sub
+%40
+  /at_sub /A_sub /B_sub /C_sub /D_sub /E_sub /F_sub /G_sub
+  /H_sub /I_sub /J_sub /K_sub /L_sub /M_sub /N_sub /O_sub
+%50
+  /P_sub /Q_sub /R_sub /S_sub /T_sub /U_sub /V_sub /W_sub
+  /X_sub /Y_sub /Z_sub /bracketleft_sub /backslash_sub /bracketright_sub /asciicircum /underscore
+%60
+  /quoteleft_sub /a_sub /b_sub /c_sub /d_sub /e_sub /f_sub /g_sub
+  /h_sub /i_sub /j_sub /k_sub /l_sub /m_sub /n_sub /o_sub
+%70
+  /p_sub /q_sub /r_sub /s_sub /t_sub /u_sub /v_sub /w_sub
+  /x_sub /y_sub /z_sub /braceleft_sub /bar_sub /braceright_sub /asciitilde_sub /hyphen_sub
+%80
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /Dze_abkhasian_sub
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%90
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /afii10145_sub /.notdef
+  /.notdef /.notdef /Schwacyril_sub /.notdef /afii10023 /afii61352_sub /currency /section_sub
+%A0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /dze_abkhasian_sub
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%B0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /afii10193_sub /.notdef
+  /.notdef /.notdef /schwacyril_sub /.notdef /afii10071 /quotedblbase /guillemotleft_sub /guillemotright_sub
+%C0
+  /afii10017_sub /afii10018_sub /afii10019_sub /afii10020_sub /afii10021_sub /afii10022_sub /afii10024_sub /afii10025_sub
+  /afii10026_sub /afii10027 /afii10028_sub /afii10029_sub /afii10030_sub /afii10031_sub /afii10032_sub /afii10033_sub
+%D0
+  /afii10034_sub /afii10035_sub /afii10036_sub /afii10037_sub /afii10038_sub /afii10039_sub /afii10040_sub /afii10041_sub
+  /afii10042_sub /afii10043_sub /afii10044_sub /afii10045_sub /afii10046_sub /afii10047_sub /afii10048_sub /afii10049_sub
+%E0
+  /afii10065_sub /afii10066_sub /afii10067_sub /afii10068_sub /afii10069_sub /afii10070_sub /afii10072_sub /afii10073_sub
+  /afii10074_sub /afii10075 /afii10076_sub /afii10077_sub /afii10078_sub /afii10079_sub /afii10080_sub /afii10081_sub
+%F0
+  /afii10082_sub /afii10083_sub /afii10084_sub /afii10085_sub /afii10086_sub /afii10087_sub /afii10088_sub /afii10089_sub
+  /afii10090_sub /afii10091_sub /afii10092_sub /afii10093_sub /afii10094_sub /afii10095_sub /afii10096_sub /afii10097_sub
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_t2c
+% --tfm-directory=texmf/fonts/tfm/public/garamond-libre
+% --vf-directory=texmf/fonts/vf/public/garamond-libre
+% --type1-directory=texmf/fonts/type1/public/garamond-libre
+% --encoding-directory=texmf/fonts/enc/dvips/garamond-libre
+% --map-file=texmf/fonts/map/dvips/garamond-libre/GaramondLibre.map
+% --no-updmap --coding-scheme=TEX CYRILLIC FONT ENCODING - T2C
+% --feature=kern --feature=liga --feature=subs --ligkern=f i =: fi
+% --ligkern=f l =: fl --ligkern=f f =: ff --ligkern=ff i =: ffi --ligkern=ff
+% l =: ffl --ligkern=* {KL} * GaramondLibre-Regular.otf
+% GaramondLibre-Regular-inf-t2c'

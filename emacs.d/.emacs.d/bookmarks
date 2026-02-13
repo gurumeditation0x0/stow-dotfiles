@@ -1,0 +1,63 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("gnus"
+ (front-context-string . "\nMultiply these ")
+ (rear-context-string . " that as well. \n")
+ (position . 176805)
+ (last-modified 26982 55141 616363 21000)
+ (location . "https://www.gnu.org/software/emacs/manual/html_mono/gnus.html")
+ (handler . eww-bookmark-jump))
+("Accueil - Carnet du Hacker Guile"
+ (front-context-string . "* en\n* fr\n* it\n\n")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26353 65314 409006 890000)
+ (location . "https://jeko.frama.io/fr/index.html")
+ (handler . eww-bookmark-jump))
+("Scheme"
+ (front-context-string . "\n* [ ] \nLanguage")
+ (rear-context-string)
+ (position . 6)
+ (last-modified 26353 37187 855679 39000)
+ (location . "https://guix.gnu.org/cookbook/fr/html_node/Cours-accelere-du-langage-Scheme.html")
+ (handler . eww-bookmark-jump))
+("gustave.el"
+ (filename . "~/dotfiles/emacs.d/.emacs.d/elisp/gustave.el")
+ (front-context-string . "\n(defun gustave-")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26172 57357 173647 207000))
+("Manuel Guix fr"
+ (front-context-string . "\n* [ ] \nLanguage")
+ (rear-context-string)
+ (position . 6)
+ (last-modified 26065 28651 968581 223000)
+ (location . "https://guix.gnu.org/manual/fr/html_node/")
+ (handler . eww-bookmark-jump))
+("journuit init.el"
+ (filename . "~/dotfiles/emacs.d/.emacs.d/init.el")
+ (front-context-string . ";(load-file \"~/d")
+ (rear-context-string . "n :no-confirm)\n\n")
+ (position . 4993)
+ (last-modified 25965 54506 967592 14000))
+("mes_fonctions.el"
+ (filename . "~/dotfiles/emacs.d/.emacs.d/elisp/mes_fonctions.el")
+ (front-context-string . "\n\n;;(global-set-")
+ (rear-context-string . "'dashboard-open)")
+ (position . 356)
+ (last-modified 25885 13992 858323 370000))
+("init.el"
+ (filename . "~/dotfiles/emacs.d/.emacs.d/init.el")
+ (front-context-string . "\n;; (server-star")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 25867 61927 199936 182000))
+("org-capture-last-stored"
+ (filename . "~/org/notes.org")
+ (front-context-string . "** [[https://lin")
+ (rear-context-string . "ack Overflow]] \n")
+ (position . 2643)
+ (last-modified 25941 18098 842585 991000))
+)

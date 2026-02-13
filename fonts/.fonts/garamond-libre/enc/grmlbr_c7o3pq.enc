@@ -1,0 +1,66 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_c7o3pqr372hoykme624btu2cra
+% Encoding created by otftotfm on Wed Apr 29 15:14:47 2020
+% Command line follows encoding
+/AutoEnc_c7o3pqr372hoykme624btu2cra [
+%00
+  /grave /acute /circumflex /tilde /dieresis /hungarumlaut /ring /caron
+  /breve /macron /dotaccent /cedilla /ogonek /quotesinglbase /guilsinglleft_SC /guilsinglright_SC
+%10
+  /quotedblleft /quotedblright /quotedblbase /guillemotleft_SC /guillemotright_SC /endash /emdash /afii61664
+  /uniFB00 /dotlessi /uni0237 /uniFB01 /uniFB02 /uniFB03 /uniFB04 /fj
+%20
+  /space /exclam_SC /quotedbl /numbersign_SC /dollar_SC /percent_SC /ampersand_SC /quoteright_SC
+  /parenleft_SC /parenright_SC /asterisk /plus_SC /comma_SC /hyphen_SC /period_SC /slash_SC
+%30
+  /zero_os /one_os /two_os /three_os /four_os /five_os /six_os /seven_os
+  /eight_os /nine_os /colon_SC /semicolon_SC /less /equal_SC /greater /question_SC
+%40
+  /at_SC /A /B /C /D /E /F /G
+  /H /I /J /K /L /M /N /O
+%50
+  /P /Q /R /S /T /U /V /W
+  /X /Y /Z /bracketleft_SC /backslash_SC /bracketright_SC /asciicircum /underscore
+%60
+  /quoteleft_SC /A_SC /B_SC /C_SC /D_SC /E_SC /F_SC /G_SC
+  /H_SC /I_SC /J_SC /K_SC /L_SC /M_SC /N_SC /O_SC
+%70
+  /P_SC /Q_SC /R_SC /S_SC /T_SC /U_SC /V_SC /W_SC
+  /X_SC /Y_SC /Z_SC /braceleft_SC /bar_SC /braceright_SC /asciitilde_SC /hyphen_SC
+%80
+  /Abreve /Aogonek /Cacute /Ccaron /Dcaron /Ecaron /Eogonek /Gbreve
+  /Lacute /Lcaron /Lslash /Nacute /Ncaron /Eng /Ohungarumlaut /Racute
+%90
+  /Rcaron /Sacute /Scaron /Scedilla /Tcaron /Tcommaaccent /Uhungarumlaut /Uring
+  /Ydieresis /Zacute /Zcaron /Zdotaccent /IJ /Idotaccent /dcroat /section_SC
+%A0
+  /abreve /aogonek /cacute /ccaron /dcaron /ecaron /eogonek /gbreve
+  /lacute /lcaron /lslash /nacute /ncaron /Eng_SC /ohungarumlaut /racute
+%B0
+  /rcaron /sacute /scaron /scedilla /tcaron /tcommaaccent /uhungarumlaut /uring
+  /ydieresis /zacute /zcaron /zdotaccent /ij /exclamdown_SC /questiondown_SC /sterling_SC
+%C0
+  /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+  /Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+%D0
+  /Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /OE
+  /Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /.notdef
+%E0
+  /agrave /aacute /acircumflex /atilde /adieresis /aring /AE_SC /ccedilla
+  /egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+%F0
+  /Eth_SC /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /OE_SC
+  /Oslash_SC /ugrave /uacute /ucircumflex /udieresis /yacute /Thorn_SC /.notdef
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_t1
+% --tfm-directory=texmf/fonts/tfm/public/garamond-libre
+% --vf-directory=texmf/fonts/vf/public/garamond-libre
+% --type1-directory=texmf/fonts/type1/public/garamond-libre
+% --encoding-directory=texmf/fonts/enc/dvips/garamond-libre
+% --map-file=texmf/fonts/map/dvips/garamond-libre/GaramondLibre.map
+% --no-updmap --coding-scheme=EXTENDED TEX FONT ENCODING - LATIN
+% --feature=kern --feature=liga --feature=onum --feature=smcp --ligkern=f i
+% =: fi --ligkern=f l =: fl --ligkern=f f =: ff --ligkern=ff i =: ffi
+% --ligkern=ff l =: ffl --unicoding=germandbls =: SSsmall
+% GaramondLibre-Regular.otf GaramondLibre-Regular-osf-sc-t1'

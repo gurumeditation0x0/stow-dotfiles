@@ -1,0 +1,66 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_madlvawhpjkcjni4adgms7csug
+% Encoding created by otftotfm on Wed Apr 29 15:14:42 2020
+% Command line follows encoding
+/AutoEnc_madlvawhpjkcjni4adgms7csug [
+%00
+  /grave /acute /circumflex /tilde /dieresis /hungarumlaut /ring /caron
+  /breve /macron /dotaccent /cedilla /ogonek /uniFB01 /uniFB02 /uniFB03
+%10
+  /quotedblleft /quotedblright /uniFB04 /fj /ffj /endash /emdash /uniFB00
+  /.notdef /dotlessi /uni0237 /.notdef /.notdef /.notdef /.notdef /.notdef
+%20
+  /space /exclam_SC /quotedbl /numbersign_SC /dollar_SC /percent_SC /ampersand_SC /quoteright_SC
+  /parenleft_SC /parenright_SC /asterisk /plus_SC /comma_SC /hyphen_SC /period_SC /slash_SC
+%30
+  /zero_SC /one_SC /two_SC /three_SC /four_SC /five_SC /six_SC /seven_SC
+  /eight_SC /nine_SC /colon_SC /semicolon_SC /less /equal_SC /greater /question_SC
+%40
+  /at_SC /A /B /C /D /E /F /G
+  /H /I /J /K /L /M /N /O
+%50
+  /P /Q /R /S /T /U /V /W
+  /X /Y /Z /bracketleft_SC /backslash_SC /bracketright_SC /asciicircum /underscore
+%60
+  /quoteleft_SC /A_SC /B_SC /C_SC /D_SC /E_SC /F_SC /G_SC
+  /H_SC /I_SC /J_SC /K_SC /L_SC /M_SC /N_SC /O_SC
+%70
+  /P_SC /Q_SC /R_SC /S_SC /T_SC /U_SC /V_SC /W_SC
+  /X_SC /Y_SC /Z_SC /braceleft_SC /bar_SC /braceright_SC /asciitilde_SC /hyphen_SC
+%80
+  /afii10050 /.notdef /afii10051 /afii10060 /.notdef /.notdef /.notdef /afii10058
+  /afii10056 /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /afii10054
+%90
+  /.notdef /.notdef /afii10062 /.notdef /.notdef /.notdef /afii10145 /.notdef
+  /.notdef /afii10053 /uni04D8 /afii10059 /afii10023 /afii61352_SC /currency /section_SC
+%A0
+  /afii10050_SC /.notdef /afii10051_SC /afii10060_SC /.notdef /.notdef /.notdef /afii10058_SC
+  /afii10104 /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /afii10054_SC
+%B0
+  /.notdef /.notdef /afii10110 /.notdef /.notdef /.notdef /afii10145_SC /.notdef
+  /.notdef /afii10053_SC /Schwacyril_SC /afii10059_SC /afii10071 /quotedblbase /guillemotleft_SC /guillemotright_SC
+%C0
+  /afii10017 /afii10018 /afii10019 /afii10020 /afii10021 /afii10022 /afii10024 /afii10025
+  /afii10026 /afii10027 /afii10028 /afii10029 /afii10030 /afii10031 /afii10032 /afii10033
+%D0
+  /afii10034 /afii10035 /afii10036 /afii10037 /afii10038 /afii10039 /afii10040 /afii10041
+  /afii10042 /afii10043 /afii10044 /afii10045 /afii10046 /afii10047 /afii10048 /afii10049
+%E0
+  /afii10017_SC /afii10018_SC /afii10019_SC /afii10020_SC /afii10021_SC /afii10022_SC /afii10024_SC /afii10025_SC
+  /afii10026_SC /afii10075 /afii10028_SC /afii10029_SC /afii10030_SC /afii10031_SC /afii10032_SC /afii10033_SC
+%F0
+  /afii10034_SC /afii10035_SC /afii10036_SC /afii10037_SC /afii10038_SC /afii10039_SC /afii10040_SC /afii10041_SC
+  /afii10042_SC /afii10043_SC /afii10044_SC /afii10045_SC /afii10046_SC /afii10047_SC /afii10048_SC /afii10049_SC
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_t2a
+% --tfm-directory=texmf/fonts/tfm/public/garamond-libre
+% --vf-directory=texmf/fonts/vf/public/garamond-libre
+% --type1-directory=texmf/fonts/type1/public/garamond-libre
+% --encoding-directory=texmf/fonts/enc/dvips/garamond-libre
+% --map-file=texmf/fonts/map/dvips/garamond-libre/GaramondLibre.map
+% --no-updmap --coding-scheme=TEX CYRILLIC FONT ENCODING - T2A
+% --feature=kern --feature=liga --feature=lnum --feature=smcp --ligkern=f i
+% =: fi --ligkern=f l =: fl --ligkern=f f =: ff --ligkern=ff i =: ffi
+% --ligkern=ff l =: ffl --unicoding=germandbls =: SSsmall
+% GaramondLibre-Regular.otf GaramondLibre-Regular-lf-sc-t2a'

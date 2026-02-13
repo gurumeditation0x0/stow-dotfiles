@@ -1,0 +1,76 @@
+# Compte Google
+IMAPAccount gmail
+Host imap.gmail.com
+User USER@gmail.com
+PassCmd "gpg -q -d ~/.authinfo.gpg | awk '/imap.gmail/ {print $6; exit}'"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# Dossier IMAP par défaut (boîte de réception)
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Subfolders Verbatim
+Path ~/.Mail/gmail/
+Inbox ~/.Mail/gmail/Inbox
+
+Channel gmail
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+# Compte Free.fr
+IMAPAccount free
+Host imap.free.fr
+User USER@free.fr
+PassCmd "gpg -q -d ~/.authinfo.gpg | awk '/imap.free/ {print $6; exit}'"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# Dossier IMAP par défaut (boîte de réception)
+IMAPStore free-remote
+Account free
+
+MaildirStore free-local
+Subfolders Verbatim
+Path ~/.Mail/free/
+Inbox ~/.Mail/free/INBOX
+
+Channel free
+Master :free-remote:
+Slave :free-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+# Compte Laposte.net
+IMAPAccount laposte
+Host imap.laposte.net
+User USER@laposte.net
+PassCmd "gpg -q -d ~/.authinfo.gpg | awk '/imap.laposte/ {print $6; exit}'"
+AuthMechs LOGIN
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+SSLType IMAPS
+
+# Dossier IMAP par défaut (boîte de réception).
+IMAPStore laposte-remote
+Account laposte
+
+MaildirStore laposte-local
+Subfolders Verbatim
+Path ~/.Mail/laposte/
+Inbox ~/.Mail/laposte/INBOX
+
+Channel laposte
+Master :laposte-remote:
+Slave :laposte-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
