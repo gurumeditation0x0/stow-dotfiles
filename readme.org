@@ -1,0 +1,187 @@
+#+TITLE: Installation et configuration d’Emacs sous Windows
+#+AUTHOR:
+#+OPTIONS: toc:2 num:nil
+
+* Présentation
+
+Ce guide explique comment :
+
+- Installer Emacs sous Windows
+- Configurer la variable d’environnement HOME
+- Ajouter HOME\bin au PATH
+- Installer et configurer GnuPG (GPG)
+- Créer et chiffrer un fichier .authinfo.gpg
+
+---
+
+* 1. Installer Emacs
+
+Télécharger la version officielle pour Windows :
+
+https://www.gnu.org/software/emacs/download.html
+
+Choisir l’installateur Windows (.exe) et installer normalement.
+
+Vérifier l’installation :
+
+#+BEGIN_SRC cmd
+emacs --version
+#+END_SRC
+
+Si la commande n’est pas reconnue, ajouter Emacs au PATH :
+
+#+BEGIN_SRC cmd
+setx PATH "%PATH%;C:\Program Files\Emacs\bin"
+#+END_SRC
+
+Redémarrer le terminal.
+
+---
+
+* 2. Configurer la variable HOME
+
+Définir HOME vers votre dossier utilisateur.
+
+** CMD (persistant)
+
+#+BEGIN_SRC cmd
+setx HOME "%USERPROFILE%"
+#+END_SRC
+
+** PowerShell (persistant)
+
+#+BEGIN_SRC powershell
+[Environment]::SetEnvironmentVariable("HOME", $Env:USERPROFILE, "User")
+#+END_SRC
+
+Redémarrer le terminal.
+
+Vérifier :
+
+#+BEGIN_SRC cmd
+echo %HOME%
+#+END_SRC
+
+#+BEGIN_SRC powershell
+echo $Env:HOME
+#+END_SRC
+
+---
+
+* 3. Ajouter %HOME%\bin au PATH
+
+Créer le dossier :
+
+#+BEGIN_SRC cmd
+mkdir %HOME%\bin
+#+END_SRC
+
+** CMD
+
+#+BEGIN_SRC cmd
+setx PATH "%PATH%;%HOME%\bin"
+#+END_SRC
+
+** PowerShell
+
+#+BEGIN_SRC powershell
+[Environment]::SetEnvironmentVariable("Path", $Env:Path + ";$Env:HOME\bin", "User")
+#+END_SRC
+
+Redémarrer le terminal.
+
+---
+
+* 4. Installer GPG
+
+Télécharger Gpg4win :
+
+https://gpg4win.org/
+
+Vérifier l’installation :
+
+#+BEGIN_SRC cmd
+gpg --version
+#+END_SRC
+
+---
+
+* 5. Générer une clé GPG
+
+#+BEGIN_SRC cmd
+gpg --full-generate-key
+#+END_SRC
+
+Recommandations :
+
+- Type : RSA and RSA
+- Taille : 4096 bits
+- Phrase secrète forte
+
+Lister les clés :
+
+#+BEGIN_SRC cmd
+gpg --list-secret-keys
+#+END_SRC
+
+---
+
+* 6. Créer et chiffrer .authinfo
+
+Créer le fichier :
+
+%HOME%\.authinfo
+
+Exemple de contenu :
+
+machine smtp.gmail.com login utilisateur@gmail.com password motdepasse port 587
+machine imap.gmail.com login utilisateur@gmail.com password motdepasse port 993
+
+Chiffrer le fichier :
+
+#+BEGIN_SRC cmd
+gpg -e -r votre@email.com .authinfo
+#+END_SRC
+
+Supprimer le fichier en clair :
+
+#+BEGIN_SRC cmd
+del .authinfo
+#+END_SRC
+
+Ne conserver que :
+
+.authinfo.gpg
+
+---
+
+* 7. Configurer Emacs
+
+Ajouter dans init.el :
+
+#+BEGIN_SRC emacs-lisp
+(setq auth-sources '("~/.authinfo.gpg"))
+#+END_SRC
+
+---
+
+* Structure recommandée
+
+HOME/
+ ├── .emacs.d/
+ ├── bin/
+ ├── .authinfo.gpg
+
+---
+
+* Notes de sécurité
+
+Ne jamais committer :
+
+- .authinfo
+- .authinfo.gpg
+- Clés privées GPG
+
+Ajouter au fichier .gitignore :
+
+.authinfo
