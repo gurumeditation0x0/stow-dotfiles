@@ -1,5 +1,5 @@
 
-;;; init.el --- Configuration principale d'Emacs -*- lexical-binding: t; -*-
+;;; Init.el --- Configuration principale d'Emacs -*- lexical-binding: t; -*-
 ;;; License: GPLv3
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -22,6 +22,7 @@
 ;;             (remove-hook 'find-file-hook #'openwith-file-handler t)))
 
 
+
 ;;; init.el --- Configuration principale
 ;; Sécurité : définir my-os si absent
 (unless (boundp 'my-os)
@@ -40,57 +41,26 @@
        (t "~")))
 
 (setq default-directory home-dir)
-(message "home-dir %s" home-dir)
 
 ;; ;; Chemins importants
 (setq org-directory (concat home-dir "/org/"))
-;;(setq custom-file (concat user-emacs-directory "/emacs-custom.el"))
 (setq my-elisp-dir (concat user-emacs-directory "/elisp")) ;; pour tes fichiers elisp
 (setq my-config-dir (concat user-emacs-directory "/config")) ;; pour tes fichiers conf
 (setq my-dev-dir (concat home-dir "/dev")) ;; pour tes fichiers dev
-
-;; (message "home dir %s" home-dir)
-;; (message "emacs directory %s" user-emacs-directory)
-
+ 
 ;; ;; Ajouter dossier elisp au load-path
 (add-to-list 'load-path my-elisp-dir)
 (add-to-list 'load-path my-config-dir)
 (add-to-list 'load-path my-dev-dir)
 
 
-;; (setq calendar-latitude 48.584667    ;; latitude
-;;       calendar-longitude 7.736424    ;; longitude
-;;       calendar-location-name "Strasbourg, FR")
-
-
-;;(setq org-clock-sound "~/dev/Cloches/7s.wav")
-
-;; (add-to-list 'Info-directory-list "~/.info")
-;; (add-to-list 'Info-directory-list "~/.local/share/info")
-
-
-;; (set-language-environment "French")
-;; (prefer-coding-system 'utf-8)
-;; (setq default-buffer-file-coding-system 'utf-8
-;;       coding-system-for-write 'utf-8
-;;       buffer-file-coding-system 'utf-8
-;;       save-buffer-coding-system 'utf-8-unix
-;;       require-final-newline t)
-
-;; (setq custom-file "~/.emacs.d/emacs-custom.el")
-;; (setq frame-title-format (list "@" system-name " : %b (%f)"))
-;; (setq inhibit-startup-screen t)
-
-;; (delete-selection-mode 1)
-;; (global-auto-revert-mode 1)
-;; (setq debug-on-error nil
-;;       mouse-autoselect-window t
-;;       vc-follow-symlinks t
-;;       bookmark-save-flag 1
-;;       register-preview-delay 0.8
-;;       register-preview-function #'consult-register-format
-;;       compilation-scroll-output t
-;;       mouse-yank-at-point t)
+(set-fontset-font t 'emoji
+                  (cond
+                   ((eq system-type 'gnu/linux)
+                    "Noto Color Emoji")
+                   ((eq system-type 'windows-nt)
+                    "Segoe UI Emoji"))
+                  nil 'prepend) 
 
 ;; (global-visual-line-mode t)
 (abbrev-mode 1)
@@ -258,9 +228,6 @@
 ;; Gestion des fenêtres. workgroups, dashboard. 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Dashboard / fenêtres
-;(load "dashboard-perso.el")
-
 ;; (use-package workgroups
 ;;   :config
 ;;   (setq wg-session-file
@@ -303,7 +270,7 @@
    (format "kdeconnect-cli -n %s --share \"%s\""
            montel
            (dired-get-file-for-visit))))
-(eval-after-load 'dired
+ (eval-after-load 'dired
   '(define-key dired-mode-map (kbd "s-k") 'kdeconnect))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -415,12 +382,12 @@
 ;; Modules externes selon l'OS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;(when (eq system-type 'gnu/linux)
-(load "emms_config.el")
+
   ;; Shell
 (load "eshell_conf.el")
 
 ;; EMMS
-
+(load "emms_config.el")
 
 ;; Elfeed
 ;; (load "~/.emacs.d/config/elfeed.el")
@@ -433,7 +400,7 @@
 ;; (load "~/.emacs.d/elisp/mes_fonctions.el") 
 
 ;; Treemacs
-;;(load "treemacs.el")
+(load "treemacs.el")
 
 ;;;; Dashboard / fenêtres
 (load-file "~/.emacs.d/elisp/dashboard-perso.el")
@@ -441,8 +408,7 @@
 ;; Org Novelist
 ;;(load-file (concat my-dev-dir "/"))
 
-;;(load-file (concat my-dev-dir "/JourNuit/JourNuit-0e.el"))
-(load-file (concat my-dev-dir "/JourNuit/JourNuit-0e.el"))
+(load-file (concat my-dev-dir "/JourNuit/JourNuit-0g.el"))
 
 ;; Gnu Mails
 (load-file (concat my-dev-dir "/Gnus/gnus-conf.el"))
