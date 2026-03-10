@@ -1,4 +1,6 @@
 
+(use-package dash
+  :ensure t)
 
 (use-package eshell
   :init
