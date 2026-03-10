@@ -3,26 +3,22 @@
 #+OPTIONS: toc:2 num:nil
 
 * Présentation
-
-Ce guide explique comment :
+** Emacs pour Windows
 
 - Installer Emacs sous Windows
 - Configurer la variable d’environnement HOME
 - Ajouter HOME\bin au PATH
 - Installer et configurer GnuPG (GPG)
 - Créer et chiffrer un fichier .authinfo.gpg
+- Mplayer
 
 ---
 
 * 1. Installer Emacs
 
-Télécharger la version officielle pour Windows :
-
 https://www.gnu.org/software/emacs/download.html
 
-Choisir l’installateur Windows (.exe) et installer normalement.
-
-Vérifier l’installation :
+Vérifier l’installation dans cmd.exe / PowerShell:
 
 #+BEGIN_SRC cmd
 emacs --version
@@ -127,6 +123,7 @@ gpg --list-secret-keys
 ---
 
 * 6. Créer et chiffrer .authinfo
+(Pour gmail il faut créer unmot de passe d'application sur gmail.com)
 
 Créer le fichier :
 
@@ -150,7 +147,6 @@ del .authinfo
 #+END_SRC
 
 Ne conserver que :
-
 .authinfo.gpg
 
 ---
@@ -165,11 +161,29 @@ Ajouter dans init.el :
 
 ---
 
+* 8. Installer mplayer
+
+- Télécharger mplayer binaire pour Windows.
+- Installer dans %USERPROFILE%/bin/
+
+Créer le PATH si ça n'a pas été déjà fait.
+cmd.exe
+setx PATH "%PATH%;%HOME%\bin"
+PowerShell
+[Environment]::SetEnvironmentVariable("HOME", $Env:USERPROFILE, "User")
+
+---
+
+* 9. Fichiers à éditer
+
+- HOME/.authinfo
+- HOME/.emacs.d/config/emms_config.el
+  HOME/.emacs.d/config/ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * Structure recommandée
 
 HOME/
  ├── .emacs.d/
- ├── bin/
+ ├── bin/mplayer
  ├── .authinfo.gpg
 
 ---
@@ -181,6 +195,8 @@ Ne jamais committer :
 - .authinfo
 - .authinfo.gpg
 - Clés privées GPG
+- Clés ivy-youtube dans emms_config
+- Les adresses mail dans gnus-conf.el email.el
 
 Ajouter au fichier .gitignore :
 
