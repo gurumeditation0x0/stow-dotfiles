@@ -180,13 +180,13 @@ PowerShell
 - HOME/.emacs.d/config/emms_config.el
   HOME/.emacs.d/config/ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * Structure recommandée
-
+#+BEGIN_SRC
 HOME/
  ├── .emacs.d/
  ├── bin/mplayer
  ├── .authinfo.gpg
-
----
+...
+#+END_SRC
 
 * Notes de sécurité
 
