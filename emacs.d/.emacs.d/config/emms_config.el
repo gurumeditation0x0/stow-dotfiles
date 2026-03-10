@@ -1,3 +1,24 @@
+
+;; ;;; -----------------------------
+;; ;;; EMMS:
+;; ;;; Configuration Windows : mplayer
+;; ;;; Configuration Linux : mpv
+;; ;;; -----------------------------
+
+;; ;;;  ATTENTION !!!!
+;; ;;
+;; ;;   POUR WINDOWS MPLAYER DOIT ÊTRE DANS LES PATH 
+;; ;;
+;; ;; Windows invite de commande pour ajouter le chemin vers le binaire windows de mpv
+;; ;; setx PATH "%PATH%;C:\Users\david\bin"
+;; ;;
+;; ;; Windows Powershell 
+;; ;; [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";C:\Users\david\bin", "User")
+
+;; ;; Pour choisir la résolution youtube, uniquement pour Linux
+;; ;; echo "ytdl-format=bestvideo[height<=?480][fps<=?30][vcodec!=?vp9]+bestaudio/best" >> /home/niala/.config/mpv/mpv.conf
+
+
 (use-package emms
   :ensure t
   :init
@@ -23,26 +44,35 @@
   (when (file-directory-p emms-source-file-default-directory)
     (emms-add-directory-tree emms-source-file-default-directory))
 
+  ;; Son de l'alarmme def-custom org-clock-sound 
+  (add-hook 'org-timer-done-hook (lambda ()
+				   (emms-play-file (expand-file-name org-clock-sound))))
+  
   ;; -----------------------------
   ;; Détection OS
   ;; -----------------------------
   (pcase system-type
 
-    ;; Linux
+    ;; ---------- LINUX ----------
     ('gnu/linux
      (setq emms-player-list
            '(emms-player-mpv
              emms-player-vlc
              emms-player-mplayer))
 
-    ;; Windows
+     (setq emms-player-mpv-command-name "mpv"
+           emms-player-mpv-parameters
+           '("--quiet"
+             "--ytdl-format=bestvideo[height<=?480][fps<=?30][vcodec!=?vp9]+bestaudio/best")
+           emms-player-mpv-ipc-server "/tmp/mpv-ipc")
+          (setq emms-player-mplayer-command-name "mplayer"))
+
+    ;; ---------- WINDOWS ----------
     ('windows-nt
      (setq emms-player-list
            '(emms-player-mplayer
              emms-player-mpg321
-             emms-player-ogg123))
-
-     (setq emms-player-mplayer-command-name "mplayer"))
+             emms-player-ogg123)))
 
     ;; ---------- FALLBACK ----------
     (_
@@ -59,12 +89,12 @@
   (global-set-key (kbd "C-c e b") #'emms-previous)
   (global-set-key (kbd "C-c e SPC") #'emms-pause))
 
-;;(when (eq system-type 'gnu/linux)
-;; (use-package ivy-youtube-key
-;;   :if (eq system-type 'gnu/linux)
-;;     :ensure t
-;;     :init
-;;     (setq ivy-youtube-key 'AIzaSyDVVxgm2W1B7yydnJGe5N_y4dHVFJJoFag)
-;;     :config
-;;     ;;  (setq ivy-youtube-play-at "/home/alain/.guix-profile/bin/mpv")
-;;     (setq ivy-youtube-play-at "/usr/bin/mpv"))
+
+     (use-package ivy-youtube		;
+  :ensure t
+  :init
+  (setq ivy-youtube-key 'AIzaSyDVVxgm2W1B7yydnJGe5N_y4dHVFJJoFag)
+  :config
+;;  (setq ivy-youtube-play-at "/home/alain/.guix-profile/bin/mpv")
+  (setq ivy-youtube-play-at "/usr/bin/mpv"))
+
