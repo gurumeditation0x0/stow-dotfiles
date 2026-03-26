@@ -54,6 +54,23 @@
 (add-to-list 'load-path my-dev-dir)
 
 
+
+;; (setq ispell-program-name "C:/Users/david/GNU/hunspell/bin/hunspell.exe")
+;; (setq ispell-dictionary "fr_FR")
+;; (setq ispell-local-dictionary-alist
+;;       '(("fr_FR"
+;;          "[A-Za-zÀ-ÖØ-öø-ÿ'-]"  ;; caractères valides
+;;          "C:/Users/david/GNU/hunspell/share/hunspell/fr_FR/fr.aff"
+;;          "C:/Users/david/GNU/hunspell/share/hunspell/fr_FR/fr.dic"
+;;          nil
+;;          )))
+
+;; (setq ispell-hunspell-dictionary-alist ispell-local-dictionary-alist)
+;; (setq ispell-program-name "C:/Users/david/GNU/hunspell/bin/hunspell.exe")
+;; (setq ispell-encoding8-command "ISO8859-1")
+;; (setq ispell-really-hunspell t)
+
+
 (set-fontset-font t 'emoji
                   (cond
                    ((eq system-type 'gnu/linux)
@@ -387,14 +404,13 @@
 (load "eshell_conf.el")
 
 ;; EMMS
-(load "emms_config.el")
+ (load "emms_config.el")
 
 ;; Elfeed
 ;; (load "~/.emacs.d/config/elfeed.el")
 
 ;; Météo biome
-(load "meteo.el")
-
+(load-file (concat my-config-dir "/meteo.el"))
 
 ;; Fonctions perso
 ;; (load "~/.emacs.d/elisp/mes_fonctions.el") 
@@ -409,9 +425,13 @@
 ;;(load-file (concat my-dev-dir "/"))
 
 (load-file (concat my-dev-dir "/JourNuit/JourNuit-0g.el"))
+(journuit-apply-and-schedule)
 
 ;; Gnu Mails
 (load-file (concat my-dev-dir "/Gnus/gnus-conf.el"))
+
+;; Gustave-mode 
+(load-file (concat my-dev-dir "/gus-07.el"))
 
 ;;)
 
@@ -419,3 +439,22 @@
 ;; (when (eq system-type 'gnu/linux)
 ;; ;; Email
 ;; (load "~/.emacs.d/config/email.el"))
+
+
+;; ;; Assure que ispell est chargé avant de configurer Hunspell
+;; (with-eval-after-load 'ispell
+;;   ;; chemin vers Hunspell.exe
+;;   (setq ispell-program-name "C:/Users/david/GNU/hunspell/bin/hunspell.exe")
+
+;;   ;; dictionnaires Hunspell
+;;   (setq ispell-local-dictionary-alist
+;;         '(("fr_FR"
+;;            "[A-Za-zÀ-ÖØ-öø-ÿ'-]"   ;; caractères valides
+;;            "C:/Users/david/GNU/hunspell/share/hunspell/fr_FR/fr.aff"
+;;            "C:/Users/david/GNU/hunspell/share/hunspell/fr_FR/fr.dic"
+;;            nil
+;;            ("ISO8859-1"))))
+
+;;   ;; Hunspell moderne
+;;   (setq ispell-really-hunspell t))
+
