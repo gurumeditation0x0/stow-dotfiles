@@ -22,12 +22,19 @@
 ;; 2. Détection de l'OS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; (setq my-os
+;;       (cond
+;;        ((defconst windows (eq system-type 'windows-nt)))
+;;        ((defconst linux   (eq system-type 'gnu/linux)))
+;;        (t 'unknown)))
+
 (setq my-os
       (cond
        ((eq system-type 'windows-nt) 'windows)
        ((eq system-type 'gnu/linux)  'linux)
-       ((eq system-type 'darwin)     'mac)
        (t 'unknown)))
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 3. Définition des répertoires
@@ -41,11 +48,10 @@
         (t
          (concat (getenv "HOME") "/.emacs.d")))))
 
-
 (setq home-dir 
       (cond
        ((eq system-type 'windows-nt) (getenv "USERPROFILE"))
-       ((eq system-type 'gnu/linux)  (getenv "~"))))
+       ((eq system-type 'gnu/linux)  (getenv "HOME"))))
        
 (message home-dir)
 
@@ -117,18 +123,18 @@
 ;; 7. Police adaptée pour accents et emoji
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(cond
- ((eq my-os 'windows)   ;; Windows
-  (set-face-attribute 'default nil
-                      :family "Consolas"
-                      :height 100)
-  ;; Emoji si besoin
-  ;; (set-fontset-font t 'Emojis"Segoe UI Emoji" nil 'prepend))
-  )
- ((eq my-os 'gnu/linux)
-  (set-face-attribute 'default nil
-                      :family "Ubuntu Mono"
-                      :height 120)))
+;; (cond
+;;  ((eq my-os 'windows)   ;; Windows
+;;   (set-face-attribute 'default nil
+;;                       :family "Consolas"
+;;                       :height 100)
+;;   ;; Emoji si besoin
+;;   ;; (set-fontset-font t 'Emojis"Segoe UI Emoji" nil 'prepend))
+;;   )
+;;  ((eq my-os 'gnu/linux)
+;;   (set-face-attribute 'default nil
+;;                       :family "Consolas"
+;;                       :height 120)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 8. Paramètres généraux
