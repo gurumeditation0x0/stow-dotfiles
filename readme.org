@@ -49,14 +49,14 @@ Ajouter au .gitignore :
 https://www.gnu.org/software/emacs/download.html
 
 Vérifier l’installation dans cmd.exe / PowerShell :
-#+BEGIN_SRC cmd
+#+BEGIN_SRC shell
 emacs --version
 #+END_SRC
 Si la commande n’est pas reconnue, ajouter Emacs au PATH :
-#+BEGIN_SRC cmd
+#+BEGIN_SRC shell
 setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 #+END_SRC
-#+BEGIN_SRC 
+#+BEGIN_SRC powershell 
 [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\Emacs\bin", [EnvironmentVariableTarget]::User)
 #+END_SRC
 Redémarrer le terminal.
@@ -91,13 +91,13 @@ HOME/
 :END:
 
 Définir HOME vers votre dossier utilisateur (persistant).
-**** CMD
-#+BEGIN_SRC cmd
+**** cmd.exe
+#+BEGIN_SRC shell
 setx HOME "%USERPROFILE%"
 #+END_SRC
 Redémarrer le terminal.
 Vérifier :
-#+BEGIN_SRC cmd
+#+BEGIN_SRC shell
 echo %HOME%
 #+END_SRC
 **** PowerShell
@@ -106,7 +106,7 @@ echo %HOME%
 #+END_SRC
 Redémarrer le terminal.
 Vérifier :
-#+BEGIN_SRC cmd
+#+BEGIN_SRC powershell
 echo $Env:HOME
 #+END_SRC
 *** Ajouter %HOME%\\bin au PATH
@@ -115,20 +115,27 @@ echo $Env:HOME
 :END:
 
 Créer le dossier :
-#+BEGIN_SRC cmd
+#+BEGIN_SRC shell
 mkdir %HOME%\bin
 #+END_SRC
-**** CMD
-#+BEGIN_SRC cmd
+**** cmd.exe
+#+BEGIN_SRC shell
 setx PATH "%PATH%;%HOME%\bin"
 #+END_SRC
 Redémarrer le terminal.
+Test du PATH
+#+BEGIN_SRC shell
+echo %PATH%
+#+END_SRC
 **** PowerShell
 #+BEGIN_SRC powershell
 [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
 #+END_SRC
 Redémarrer le terminal.
-
+Test du PATH
+#+BEGIN_SRC powershell
+$env:PATH
+#+END_SRC
 ** Installer GPG 
 :PROPERTIES:
 :CUSTOM_ID: installer-gpg
@@ -136,7 +143,7 @@ Redémarrer le terminal.
 
 Télécharger Gpg4win : https://gpg4win.org/
 Vérifier l’installation :
-#+BEGIN_SRC cmd
+#+BEGIN_SRC shell
 gpg --version
 #+END_SRC
 *** Générer une clé GPG
@@ -144,7 +151,7 @@ gpg --version
 :CUSTOM_ID: generer-une-cle-gpg
 :END:
 
-#+BEGIN_SRC cmd
+#+BEGIN_SRC shell
 gpg --full-generate-key
 #+END_SRC
 Recommandations :
@@ -152,7 +159,7 @@ Recommandations :
 - Taille : 4096 bits
 - Phrase secrète forte
 Lister les clés :
-#+BEGIN_SRC cmd
+#+BEGIN_SRC shell
 gpg --list-secret-keys
 #+END_SRC
 *** Créer et chiffrer .authinfo
@@ -169,15 +176,15 @@ machine smtp.gmail.com login utilisateur@gmail.com password motdepasse port 587
 machine imap.gmail.com login utilisateur@gmail.com password motdepasse port 993
 #+END_SRC
 Chiffrer le fichier (remplacez votre@email.com par votre UID GPG) :
-#+BEGIN_SRC cmd
+#+BEGIN_SRC shell
 gpg -e -r votre@email.com .authinfo
 #+END_SRC
 Sécuriser .authinfo.gpp
-#+BEGIN_SRC
-  chmod 600 .authinfo.gpg
+#+BEGIN_SRC shell
+chmod 600 .authinfo.gpg
 #+END_SRC
 Supprimer le fichier en clair :
-#+BEGIN_SRC cmd
+#+BEGIN_SRC shell
 del .authinfo
 #+END_SRC
 
@@ -192,7 +199,7 @@ del .authinfo
 - Installer dans %USERPROFILE%\bin ou %HOME%\bin.
 Ajouter au PATH si nécessaire :
 *** CMD
-#+BEGIN_SRC cmd
+#+BEGIN_SRC shell
 setx PATH "%PATH%;%HOME%\bin"
 #+END_SRC
 Redémarrer le terminal.
