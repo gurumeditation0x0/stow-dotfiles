@@ -6,15 +6,15 @@
 3.  [Emacs pour Windows](#emacs-pour-windows)
     1.  [Installer Emacs pour Windows](#installer-emacs-pour-windows)
     2.  [Configurer Emacs](#configurer-emacs)
-        1.  [Fichiers et répertoires à copier depuis le dépôt](#org53fc4fd)
+        1.  [Fichiers et répertoires à copier depuis le dépôt](#org7a2ba37)
     3.  [Configurer la variable HOME](#configurer-home)
         1.  [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
     4.  [Installer GPG](#installer-gpg)
         1.  [Générer une clé GPG](#generer-une-cle-gpg)
         2.  [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
     5.  [Installer mplayer](#installer-mplayer)
-        1.  [CMD](#org8fc1f1c)
-        2.  [PowerShell](#orgccbd5e3)
+        1.  [CMD](#orgc5557f3)
+        2.  [PowerShell](#org64d50f1)
     6.  [9. Fichiers à éditer](#fichiers-a-editer)
 
 
@@ -79,7 +79,7 @@ Redémarrer le terminal.
 ## Configurer Emacs
 
 
-<a id="org53fc4fd"></a>
+<a id="org7a2ba37"></a>
 
 ### Fichiers et répertoires à copier depuis le dépôt
 
@@ -90,14 +90,14 @@ Redémarrer le terminal.
 -   emacs.d/sons/
 -   emacs.d/images/ (optionnel)
 
-    HOME/
-       ├── .authinfo.gpg
-       ├── bin/
-       ├── GNU/
-       ├── .emacs.d/
-                 ├─ config/
-                 ├── elisp/
-                 └── sons/
+> HOME/
+>    ├── .authinfo.gpg
+>    ├── bin/
+>    ├── GNU/
+>    ├── .emacs.d/
+>              ├─ config/
+>              ├── elisp/
+>              └── sons/
 
 
 <a id="configurer-home"></a>
@@ -208,14 +208,14 @@ Supprimer le fichier en clair :
 Ajouter au PATH si nécessaire :
 
 
-<a id="org8fc1f1c"></a>
+<a id="orgc5557f3"></a>
 
 ### CMD
 
     setx PATH "%PATH%;%HOME%\bin"
 
 
-<a id="orgccbd5e3"></a>
+<a id="org64d50f1"></a>
 
 ### PowerShell
 
