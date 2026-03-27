@@ -1,21 +1,18 @@
-
-# Table of Contents
-
-1.  [Notes de sécurité](#notes-de-securite)
-2.  [Présentation](#presentation)
-3.  [Emacs pour Windows](#emacs-pour-windows)
-    1.  [Installer Emacs pour Windows](#installer-emacs-pour-windows)
-    2.  [Configurer Emacs](#configurer-emacs)
-        1.  [Fichiers et répertoires à copier depuis le dépôt](#org7a2ba37)
-    3.  [Configurer la variable HOME](#configurer-home)
-        1.  [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
-    4.  [Installer GPG](#installer-gpg)
-        1.  [Générer une clé GPG](#generer-une-cle-gpg)
-        2.  [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
-    5.  [Installer mplayer](#installer-mplayer)
-        1.  [CMD](#orgc5557f3)
-        2.  [PowerShell](#org64d50f1)
-    6.  [9. Fichiers à éditer](#fichiers-a-editer)
+- [Notes de sécurité](#notes-de-securite)
+- [Présentation](#presentation)
+- [Emacs pour Windows](#emacs-pour-windows)
+  - [Installer Emacs pour Windows](#installer-emacs-pour-windows)
+  - [Configurer Emacs](#configurer-emacs)
+    - [Fichiers et répertoires à copier depuis le dépôt](#org3088169)
+  - [Configurer la variable HOME](#configurer-home)
+    - [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
+  - [Installer GPG](#installer-gpg)
+    - [Générer une clé GPG](#generer-une-cle-gpg)
+    - [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
+  - [Installer mplayer](#installer-mplayer)
+    - [CMD](#orgfd6baa8)
+    - [PowerShell](#org338967c)
+  - [9. Fichiers à éditer](#fichiers-a-editer)
 
 
 
@@ -65,11 +62,15 @@ Ajouter au .gitignore :
 
 Vérifier l’installation dans cmd.exe / PowerShell :
 
-    emacs --version
+```cmd
+emacs --version
+```
 
 Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 
-    setx PATH "%PATH%;C:\Program Files\Emacs\bin"
+```cmd
+setx PATH "%PATH%;C:\Program Files\Emacs\bin"
+```
 
 Redémarrer le terminal.
 
@@ -79,7 +80,7 @@ Redémarrer le terminal.
 ## Configurer Emacs
 
 
-<a id="org7a2ba37"></a>
+<a id="org3088169"></a>
 
 ### Fichiers et répertoires à copier depuis le dépôt
 
@@ -90,14 +91,7 @@ Redémarrer le terminal.
 -   emacs.d/sons/
 -   emacs.d/images/ (optionnel)
 
- HOME/
-    ├── .authinfo.gpg
-    ├── bin/
-    ├── GNU/
-    ├── .emacs.d/
-           ├─ config/
-           ├── elisp/
-           └── sons/
+> HOME/ ├── .authinfo.gpg ├── bin/ ├── GNU/ ├── .emacs.d/ ├─ config/ ├── elisp/ └── sons/
 
 
 <a id="configurer-home"></a>
@@ -108,19 +102,27 @@ Définir HOME vers votre dossier utilisateur (persistant).
 
 1.  CMD
 
-        setx HOME "%USERPROFILE%"
+    ```cmd
+    setx HOME "%USERPROFILE%"
+    ```
 
 2.  PowerShell
 
-        [Environment]::SetEnvironmentVariable("HOME", $Env:USERPROFILE, "User")
+    ```powershell
+    [Environment]::SetEnvironmentVariable("HOME", $Env:USERPROFILE, "User")
+    ```
     
     Redémarrer le terminal.
     
     Vérifier :
     
-        echo %HOME%
+    ```cmd
+    echo %HOME%
+    ```
     
-        echo $Env:HOME
+    ```powershell
+    echo $Env:HOME
+    ```
 
 
 <a id="ajouter-home-bin-au-path"></a>
@@ -129,15 +131,21 @@ Définir HOME vers votre dossier utilisateur (persistant).
 
 Créer le dossier :
 
-    mkdir %HOME%\bin
+```cmd
+mkdir %HOME%\bin
+```
 
 1.  CMD
 
-        setx PATH "%PATH%;%HOME%\bin"
+    ```cmd
+    setx PATH "%PATH%;%HOME%\bin"
+    ```
 
 2.  PowerShell
 
-        [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
+    ```powershell
+    [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
+    ```
     
     Redémarrer le terminal.
 
@@ -150,14 +158,18 @@ Télécharger Gpg4win : <https://gpg4win.org/>
 
 Vérifier l’installation :
 
-    gpg --version
+```cmd
+gpg --version
+```
 
 
 <a id="generer-une-cle-gpg"></a>
 
 ### Générer une clé GPG
 
-    gpg --full-generate-key
+```cmd
+gpg --full-generate-key
+```
 
 Recommandations :
 
@@ -167,7 +179,9 @@ Recommandations :
 
 Lister les clés :
 
-    gpg --list-secret-keys
+```cmd
+gpg --list-secret-keys
+```
 
 
 <a id="creer-et-chiffrer-authinfo"></a>
@@ -180,20 +194,28 @@ Créer le fichier : %HOME%\\.authinfo
 
 Exemple de contenu :
 
-    machine smtp.gmail.com login utilisateur@gmail.com password motdepasse port 587
-    machine imap.gmail.com login utilisateur@gmail.com password motdepasse port 993
+```
+machine smtp.gmail.com login utilisateur@gmail.com password motdepasse port 587
+machine imap.gmail.com login utilisateur@gmail.com password motdepasse port 993
+```
 
 Chiffrer le fichier (remplacez votre@email.com par votre UID GPG) :
 
-    gpg -e -r votre@email.com .authinfo
+```cmd
+gpg -e -r votre@email.com .authinfo
+```
 
 Sécuriser .authinfo.gpp
 
-    chmod 600 .authinfo.gpg
+```
+chmod 600 .authinfo.gpg
+```
 
 Supprimer le fichier en clair :
 
-    del .authinfo
+```cmd
+del .authinfo
+```
 
 **Conserver uniquement : .authinfo.gpg**
 
@@ -208,18 +230,22 @@ Supprimer le fichier en clair :
 Ajouter au PATH si nécessaire :
 
 
-<a id="orgc5557f3"></a>
+<a id="orgfd6baa8"></a>
 
 ### CMD
 
-    setx PATH "%PATH%;%HOME%\bin"
+```cmd
+setx PATH "%PATH%;%HOME%\bin"
+```
 
 
-<a id="org64d50f1"></a>
+<a id="org338967c"></a>
 
 ### PowerShell
 
-    [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
+```powershell
+[Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
+```
 
 Redémarrer le terminal.
 
@@ -234,5 +260,4 @@ Redémarrer le terminal.
 -   %HOME%/.emacs.d/config/email.el
 -   %HOME%/.emacs.d/config/meteo.el (coordonnées GPS)
 
-&#x2013; 
-
+&#x2013;
