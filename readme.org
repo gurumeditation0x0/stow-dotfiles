@@ -1,50 +1,120 @@
 #+TITLE: Installation et configuration d’Emacs sous Windows
 #+AUTHOR:
-#+OPTIONS: toc:2 num:nil
+#+STARTUP: content indent
+#+OPTIONS: toc:3 num:t
 
+
+
+* Notes de sécurité
+:PROPERTIES:
+:CUSTOM_ID: notes-de-securite
+:END:
+
+Ne jamais committer :
+- .authinfo
+- .authinfo.gpg
+- Clés privées GPG
+- Clés ivy-youtube dans emms_config
+- Les adresses mail dans gnus-conf.el et email.el
+
+Ajouter au .gitignore :
+- .authinfo
+- gnus-conf.el
+- email.el
+- emms_config
+  
 * Présentation
-** Emacs pour Windows
+:PROPERTIES:
+:CUSTOM_ID: presentation
+:END:
+
+* Emacs pour Windows
+:PROPERTIES:
+:CUSTOM_ID: emacs-pour-windows
+:END:
 
 - Installer Emacs sous Windows
+- Répertoires et fichiers à copier
 - Configurer la variable d’environnement HOME
 - Ajouter HOME\bin au PATH
 - Installer et configurer GnuPG (GPG)
 - Créer et chiffrer un fichier .authinfo.gpg
 - Mplayer
 
----
-
-* 1. Installer Emacs
+** Installer Emacs pour Windows
+:PROPERTIES:
+:CUSTOM_ID: installer-emacs-pour-windows
+:END:
 
 https://www.gnu.org/software/emacs/download.html
 
-Vérifier l’installation dans cmd.exe / PowerShell:
-
+Vérifier l’installation dans cmd.exe / PowerShell :
 #+BEGIN_SRC cmd
 emacs --version
 #+END_SRC
-
 Si la commande n’est pas reconnue, ajouter Emacs au PATH :
-
 #+BEGIN_SRC cmd
 setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 #+END_SRC
-
 Redémarrer le terminal.
 
----
+** Configurer Emacs
+:PROPERTIES:
+:CUSTOM_ID: configurer-emacs
+:END:
 
-* 2. Configurer la variable HOME
+*** Fichiers et répertoires à copier depuis le dépôt
+- emacs.d/early-init.el
+- emacs.d/init.el
+- emacs.d/elisp/
+- emacs.d/config/
+- emacs.d/sons/
+- emacs.d/images/ (optionnel)
 
-Définir HOME vers votre dossier utilisateur.
+#+BEGIN_SRC
+HOME/
+   ├── .authinfo.gpg
+   ├── bin/
+   ├── GNU/
+   ├── .emacs.d/
+             ├─ config/
+             ├── elisp/
+             └── sons/
+ 
+*** Fichiers et répertoires à copier depuis le dépôt
+- emacs.d/early-init.el
+- emacs.d/init.el
+- emacs.d/elisp/
+- emacs.d/config/
+- emacs.d/sons/
+- emacs.d/images/ (optionnel)
 
-** CMD (persistant)
+#+BEGIN_SRC
+HOME/
+ ├── .authinfo.gpg
+ ├── bin/
+ ├── GNU/
+ ├── .emacs.d/
+ │   ├── config/
+ │ ├── elisp/
+
+...
+#+END_SRC
+
+** Configurer la variable HOME
+:PROPERTIES:
+:CUSTOM_ID: configurer-home
+:END:
+
+Définir HOME vers votre dossier utilisateur (persistant).
+
+**** CMD
 
 #+BEGIN_SRC cmd
 setx HOME "%USERPROFILE%"
 #+END_SRC
 
-** PowerShell (persistant)
+**** PowerShell
 
 #+BEGIN_SRC powershell
 [Environment]::SetEnvironmentVariable("HOME", $Env:USERPROFILE, "User")
@@ -62,9 +132,10 @@ echo %HOME%
 echo $Env:HOME
 #+END_SRC
 
----
-
-* 3. Ajouter %HOME%\bin au PATH
+*** Ajouter %HOME%\\bin au PATH
+:PROPERTIES:
+:CUSTOM_ID: ajouter-home-bin-au-path
+:END:
 
 Créer le dossier :
 
@@ -72,132 +143,108 @@ Créer le dossier :
 mkdir %HOME%\bin
 #+END_SRC
 
-** CMD
+**** CMD
 
 #+BEGIN_SRC cmd
 setx PATH "%PATH%;%HOME%\bin"
 #+END_SRC
 
-** PowerShell
+**** PowerShell
 
 #+BEGIN_SRC powershell
-[Environment]::SetEnvironmentVariable("Path", $Env:Path + ";$Env:HOME\bin", "User")
+[Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
 #+END_SRC
 
 Redémarrer le terminal.
 
----
+** Installer GPG 
+:PROPERTIES:
+:CUSTOM_ID: installer-gpg
+:END:
 
-* 4. Installer GPG
-
-Télécharger Gpg4win :
-
-https://gpg4win.org/
+Télécharger Gpg4win : https://gpg4win.org/
 
 Vérifier l’installation :
-
 #+BEGIN_SRC cmd
 gpg --version
 #+END_SRC
 
----
-
-* 5. Générer une clé GPG
+*** Générer une clé GPG
+:PROPERTIES:
+:CUSTOM_ID: generer-une-cle-gpg
+:END:
 
 #+BEGIN_SRC cmd
 gpg --full-generate-key
 #+END_SRC
-
 Recommandations :
-
 - Type : RSA and RSA
 - Taille : 4096 bits
 - Phrase secrète forte
 
 Lister les clés :
-
 #+BEGIN_SRC cmd
 gpg --list-secret-keys
 #+END_SRC
 
----
+*** Créer et chiffrer .authinfo
+:PROPERTIES:
+:CUSTOM_ID: creer-et-chiffrer-authinfo
+:END:
 
-* 6. Créer et chiffrer .authinfo
-(Pour gmail il faut créer unmot de passe d'application sur gmail.com)
+//(Pour Gmail : créer un mot de passe d’application sur accounts.google.com si nécessaire.)/
 
-Créer le fichier :
-
-%HOME%\.authinfo
+Créer le fichier : %HOME%\.authinfo
 
 Exemple de contenu :
-
+#+BEGIN_SRC 
 machine smtp.gmail.com login utilisateur@gmail.com password motdepasse port 587
 machine imap.gmail.com login utilisateur@gmail.com password motdepasse port 993
-
-Chiffrer le fichier :
-
+#+END_SRC
+Chiffrer le fichier (remplacez votre@email.com par votre UID GPG) :
 #+BEGIN_SRC cmd
 gpg -e -r votre@email.com .authinfo
 #+END_SRC
-
+Sécuriser .authinfo.gpp
+#+BEGIN_SRC
+  chmod 600 .authinfo.gpg
+#+END_SRC
 Supprimer le fichier en clair :
-
 #+BEGIN_SRC cmd
 del .authinfo
 #+END_SRC
 
-Ne conserver que :
-.authinfo.gpg
+*Conserver uniquement : .authinfo.gpg*
 
----
+** Installer mplayer
+:PROPERTIES:
+:CUSTOM_ID: installer-mplayer
+:END:
 
-* 7. Configurer Emacs
+- Télécharger le binaire mplayer pour Windows.
+- Installer dans %USERPROFILE%\bin ou %HOME%\bin.
 
-Ajouter dans init.el :
-
-#+BEGIN_SRC emacs-lisp
-(setq auth-sources '("~/.authinfo.gpg"))
-#+END_SRC
-
----
-
-* 8. Installer mplayer
-
-- Télécharger mplayer binaire pour Windows.
-- Installer dans %USERPROFILE%/bin/
-
-Créer le PATH si ça n'a pas été déjà fait.
-cmd.exe
+Ajouter au PATH si nécessaire :
+*** CMD
+#+BEGIN_SRC cmd
 setx PATH "%PATH%;%HOME%\bin"
-PowerShell
-[Environment]::SetEnvironmentVariable("HOME", $Env:USERPROFILE, "User")
-
----
-
-* 9. Fichiers à éditer
-
-- HOME/.authinfo
-- HOME/.emacs.d/config/emms_config.el
-  HOME/.emacs.d/config/ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-* Structure recommandée
-#+BEGIN_SRC
-HOME/
- ├── .emacs.d/
- ├── bin/mplayer
- ├── .authinfo.gpg
-...
+#+END_SRC
+*** PowerShell
+#+BEGIN_SRC powershell
+[Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
 #+END_SRC
 
-* Notes de sécurité
+Redémarrer le terminal.
 
-Ne jamais committer :
+** 9. Fichiers à éditer
+:PROPERTIES:
+:CUSTOM_ID: fichiers-a-editer
+:END:
 
-- .authinfo
-- .authinfo.gpg
-- Clés privées GPG
-- Clés ivy-youtube dans emms_config
-- Les adresses mail dans gnus-conf.el email.el
+- %HOME%/.authinfo
+- %HOME%/.emacs.d/config/emms_config.el
+- %HOME%/.emacs.d/config/gnus_conf.el
+- %HOME%/.emacs.d/config/email.el
+- %HOME%/.emacs.d/config/meteo.el (coordonnées GPS)
 
-Ajouter au fichier .gitignore :
-
-.authinfo
+-- 

@@ -1,5 +1,6 @@
 *~
 *#
+#*
 /emacs.d/.emacs.d/elpa/
 /emacs.d/.emacs.d/eln-cache/
 /emacs.d/.emacs.d/emms/
@@ -9,6 +10,12 @@
 /emacs.d/.emacs.d/elfeed_db/
 /emacs.d/.emacs.d/games/
 emacs.d/.emacs.d/request/
+
+authinfo/.authinfo
+authinfo/.authinfo.gpg
+
+emacs.d/.emacs.d/config/gnus-conf.el
+emacs.d/.emacs.d/donfig/email.el
 
 emacs.d/.emacs.d/.#init.el
 emacs.d/.emacs.d/.mc-lists.el
