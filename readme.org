@@ -1,7 +1,7 @@
 #+TITLE: Installation et configuration d’Emacs sous Windows
 #+AUTHOR:
 #+STARTUP: content indent
-#+OPTIONS: toc:3 num:t
+#+OPTIONS: toc:t num:t
 
 
 
@@ -80,27 +80,7 @@ HOME/
              ├─ config/
              ├── elisp/
              └── sons/
- 
-*** Fichiers et répertoires à copier depuis le dépôt
-- emacs.d/early-init.el
-- emacs.d/init.el
-- emacs.d/elisp/
-- emacs.d/config/
-- emacs.d/sons/
-- emacs.d/images/ (optionnel)
-
-#+BEGIN_SRC
-HOME/
- ├── .authinfo.gpg
- ├── bin/
- ├── GNU/
- ├── .emacs.d/
- │   ├── config/
- │ ├── elisp/
-
-...
 #+END_SRC
-
 ** Configurer la variable HOME
 :PROPERTIES:
 :CUSTOM_ID: configurer-home
