@@ -3,15 +3,15 @@
 - [Emacs pour Windows](#emacs-pour-windows)
   - [Installer Emacs pour Windows](#installer-emacs-pour-windows)
   - [Configurer Emacs](#configurer-emacs)
-    - [Fichiers et répertoires à copier depuis le dépôt](#orga476c12)
+    - [Fichiers et répertoires à copier depuis le dépôt](#orgfbcb742)
   - [Configurer la variable HOME](#configurer-home)
     - [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
   - [Installer GPG](#installer-gpg)
     - [Générer une clé GPG](#generer-une-cle-gpg)
     - [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
   - [Installer mplayer](#installer-mplayer)
-    - [CMD](#org1c46326)
-    - [PowerShell](#orgb8d6027)
+    - [CMD](#org66894c8)
+    - [PowerShell](#orgf0a27c6)
   - [9. Fichiers à éditer](#fichiers-a-editer)
 
 
@@ -72,6 +72,10 @@ Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 ```
 
+```
+[Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\Emacs\bin", [EnvironmentVariableTarget]::User)
+```
+
 Redémarrer le terminal.
 
 
@@ -80,7 +84,7 @@ Redémarrer le terminal.
 ## Configurer Emacs
 
 
-<a id="orga476c12"></a>
+<a id="orgfbcb742"></a>
 
 ### Fichiers et répertoires à copier depuis le dépôt
 
@@ -116,6 +120,12 @@ Définir HOME vers votre dossier utilisateur (persistant).
     ```cmd
     setx HOME "%USERPROFILE%"
     ```
+    
+    Redémarrer le terminal. Vérifier :
+    
+    ```cmd
+    echo %HOME%
+    ```
 
 2.  PowerShell
 
@@ -123,15 +133,9 @@ Définir HOME vers votre dossier utilisateur (persistant).
     [Environment]::SetEnvironmentVariable("HOME", $Env:USERPROFILE, "User")
     ```
     
-    Redémarrer le terminal.
-    
-    Vérifier :
+    Redémarrer le terminal. Vérifier :
     
     ```cmd
-    echo %HOME%
-    ```
-    
-    ```powershell
     echo $Env:HOME
     ```
 
@@ -151,6 +155,8 @@ mkdir %HOME%\bin
     ```cmd
     setx PATH "%PATH%;%HOME%\bin"
     ```
+    
+    Redémarrer le terminal.
 
 2.  PowerShell
 
@@ -165,9 +171,7 @@ mkdir %HOME%\bin
 
 ## Installer GPG
 
-Télécharger Gpg4win : <https://gpg4win.org/>
-
-Vérifier l’installation :
+Télécharger Gpg4win : <https://gpg4win.org/> Vérifier l’installation :
 
 ```cmd
 gpg --version
@@ -199,11 +203,9 @@ gpg --list-secret-keys
 
 ### Créer et chiffrer .authinfo
 
-*/(Pour Gmail : créer un mot de passe d’application sur accounts.google.com si nécessaire.)*
+*(Pour Gmail : créer un mot de passe d’application sur accounts.google.com si nécessaire.)*
 
-Créer le fichier : %HOME%\\.authinfo
-
-Exemple de contenu :
+Créer le fichier : %HOME%\\.authinfo Exemple de contenu :
 
 ```
 machine smtp.gmail.com login utilisateur@gmail.com password motdepasse port 587
@@ -241,7 +243,7 @@ del .authinfo
 Ajouter au PATH si nécessaire :
 
 
-<a id="org1c46326"></a>
+<a id="org66894c8"></a>
 
 ### CMD
 
@@ -249,8 +251,10 @@ Ajouter au PATH si nécessaire :
 setx PATH "%PATH%;%HOME%\bin"
 ```
 
+Redémarrer le terminal.
 
-<a id="orgb8d6027"></a>
+
+<a id="orgf0a27c6"></a>
 
 ### PowerShell
 
