@@ -1,7 +1,7 @@
 #+TITLE: Installation et configuration d’Emacs sous Windows
 #+AUTHOR:
-#+OPTIONS: toc:t num:t
-#+TOC: headlines 4
+# #+OPTIONS: toc:t num:t
+# #+TOC: headlines 4
 #+STARTUP: content indent
 
 
@@ -56,8 +56,10 @@ Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 #+BEGIN_SRC cmd
 setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 #+END_SRC
+#+BEGIN_SRC 
+[Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\Emacs\bin", [EnvironmentVariableTarget]::User)
+#+END_SRC
 Redémarrer le terminal.
-
 ** Configurer Emacs
 :PROPERTIES:
 :CUSTOM_ID: configurer-emacs
@@ -71,70 +73,60 @@ Redémarrer le terminal.
 - emacs.d/sons/
 - emacs.d/images/ (optionnel)
 
-#+BEGIN_SRC
+#+BEGIN_EXAMPLE
 HOME/
    ├── .authinfo.gpg
    ├── bin/
    ├── GNU/
    ├── .emacs.d/
-             ├─ config/
-             ├── elisp/
-             └── sons/
-#+END_SRC
+          ├── early-init.el
+          ├── init.el
+          ├── config/
+          ├── elisp/
+          └── sons/
+#+END_EXAMPLE
 ** Configurer la variable HOME
 :PROPERTIES:
 :CUSTOM_ID: configurer-home
 :END:
 
 Définir HOME vers votre dossier utilisateur (persistant).
-
 **** CMD
-
 #+BEGIN_SRC cmd
 setx HOME "%USERPROFILE%"
 #+END_SRC
-
-**** PowerShell
-
-#+BEGIN_SRC powershell
-[Environment]::SetEnvironmentVariable("HOME", $Env:USERPROFILE, "User")
-#+END_SRC
-
 Redémarrer le terminal.
-
 Vérifier :
-
 #+BEGIN_SRC cmd
 echo %HOME%
 #+END_SRC
-
+**** PowerShell
 #+BEGIN_SRC powershell
+[Environment]::SetEnvironmentVariable("HOME", $Env:USERPROFILE, "User")
+#+END_SRC
+Redémarrer le terminal.
+Vérifier :
+#+BEGIN_SRC cmd
 echo $Env:HOME
 #+END_SRC
-
 *** Ajouter %HOME%\\bin au PATH
 :PROPERTIES:
 :CUSTOM_ID: ajouter-home-bin-au-path
 :END:
 
 Créer le dossier :
-
 #+BEGIN_SRC cmd
 mkdir %HOME%\bin
 #+END_SRC
-
 **** CMD
-
 #+BEGIN_SRC cmd
 setx PATH "%PATH%;%HOME%\bin"
 #+END_SRC
-
+Redémarrer le terminal.
 **** PowerShell
-
 #+BEGIN_SRC powershell
 [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
 #+END_SRC
-
 Redémarrer le terminal.
 
 ** Installer GPG 
@@ -143,12 +135,10 @@ Redémarrer le terminal.
 :END:
 
 Télécharger Gpg4win : https://gpg4win.org/
-
 Vérifier l’installation :
 #+BEGIN_SRC cmd
 gpg --version
 #+END_SRC
-
 *** Générer une clé GPG
 :PROPERTIES:
 :CUSTOM_ID: generer-une-cle-gpg
@@ -161,21 +151,18 @@ Recommandations :
 - Type : RSA and RSA
 - Taille : 4096 bits
 - Phrase secrète forte
-
 Lister les clés :
 #+BEGIN_SRC cmd
 gpg --list-secret-keys
 #+END_SRC
-
 *** Créer et chiffrer .authinfo
 :PROPERTIES:
 :CUSTOM_ID: creer-et-chiffrer-authinfo
 :END:
 
-//(Pour Gmail : créer un mot de passe d’application sur accounts.google.com si nécessaire.)/
+/(Pour Gmail : créer un mot de passe d’application sur accounts.google.com si nécessaire.)/
 
 Créer le fichier : %HOME%\.authinfo
-
 Exemple de contenu :
 #+BEGIN_SRC 
 machine smtp.gmail.com login utilisateur@gmail.com password motdepasse port 587
@@ -203,17 +190,16 @@ del .authinfo
 
 - Télécharger le binaire mplayer pour Windows.
 - Installer dans %USERPROFILE%\bin ou %HOME%\bin.
-
 Ajouter au PATH si nécessaire :
 *** CMD
 #+BEGIN_SRC cmd
 setx PATH "%PATH%;%HOME%\bin"
 #+END_SRC
+Redémarrer le terminal.
 *** PowerShell
 #+BEGIN_SRC powershell
 [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
 #+END_SRC
-
 Redémarrer le terminal.
 
 ** 9. Fichiers à éditer
