@@ -6,35 +6,17 @@
 3.  [Emacs pour Windows](#emacs-pour-windows)
     1.  [Installer Emacs pour Windows](#installer-emacs-pour-windows)
     2.  [Configurer Emacs](#configurer-emacs)
-        1.  [Fichiers et répertoires à copier depuis le dépôt](#orga6c93d7)
+        1.  [Fichiers et répertoires à copier depuis le dépôt](#org53fc4fd)
     3.  [Configurer la variable HOME](#configurer-home)
         1.  [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
     4.  [Installer GPG](#installer-gpg)
         1.  [Générer une clé GPG](#generer-une-cle-gpg)
         2.  [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
     5.  [Installer mplayer](#installer-mplayer)
-        1.  [CMD](#orgdd53f27)
-        2.  [PowerShell](#org847478d)
+        1.  [CMD](#org8fc1f1c)
+        2.  [PowerShell](#orgccbd5e3)
     6.  [9. Fichiers à éditer](#fichiers-a-editer)
 
-
-# Table of Contents
-
-1.  [Notes de sécurité](#notes-de-securite)
-2.  [Présentation](#presentation)
-3.  [Emacs pour Windows](#emacs-pour-windows)
-    1.  [Installer Emacs pour Windows](#installer-emacs-pour-windows)
-    2.  [Configurer Emacs](#configurer-emacs)
-        1.  [Fichiers et répertoires à copier depuis le dépôt](#orga6c93d7)
-    3.  [Configurer la variable HOME](#configurer-home)
-        1.  [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
-    4.  [Installer GPG](#installer-gpg)
-        1.  [Générer une clé GPG](#generer-une-cle-gpg)
-        2.  [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
-    5.  [Installer mplayer](#installer-mplayer)
-        1.  [CMD](#orgdd53f27)
-        2.  [PowerShell](#org847478d)
-    6.  [9. Fichiers à éditer](#fichiers-a-editer)
 
 
 <a id="notes-de-securite"></a>
@@ -97,7 +79,7 @@ Redémarrer le terminal.
 ## Configurer Emacs
 
 
-<a id="orga6c93d7"></a>
+<a id="org53fc4fd"></a>
 
 ### Fichiers et répertoires à copier depuis le dépôt
 
@@ -226,14 +208,14 @@ Supprimer le fichier en clair :
 Ajouter au PATH si nécessaire :
 
 
-<a id="orgdd53f27"></a>
+<a id="org8fc1f1c"></a>
 
 ### CMD
 
     setx PATH "%PATH%;%HOME%\bin"
 
 
-<a id="org847478d"></a>
+<a id="orgccbd5e3"></a>
 
 ### PowerShell
 
