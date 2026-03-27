@@ -1,8 +1,8 @@
 #+TITLE: Installation et configuration d’Emacs sous Windows
 #+AUTHOR:
-#+STARTUP: content indent
 #+OPTIONS: toc:t num:t
-
+#+TOC: headlines 4
+#+STARTUP: content indent
 
 
 * Notes de sécurité
