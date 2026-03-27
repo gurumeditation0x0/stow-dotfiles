@@ -90,14 +90,14 @@ Redémarrer le terminal.
 -   emacs.d/sons/
 -   emacs.d/images/ (optionnel)
 
-> HOME/
->    ├── .authinfo.gpg
->    ├── bin/
->    ├── GNU/
->    ├── .emacs.d/
->              ├─ config/
->              ├── elisp/
->              └── sons/
+ HOME/
+    ├── .authinfo.gpg
+    ├── bin/
+    ├── GNU/
+    ├── .emacs.d/
+           ├─ config/
+           ├── elisp/
+           └── sons/
 
 
 <a id="configurer-home"></a>
