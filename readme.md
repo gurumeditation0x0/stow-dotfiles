@@ -3,15 +3,15 @@
 - [Emacs pour Windows](#emacs-pour-windows)
   - [Installer Emacs pour Windows](#installer-emacs-pour-windows)
   - [Configurer Emacs](#configurer-emacs)
-    - [Fichiers et répertoires à copier depuis le dépôt](#org3088169)
+    - [Fichiers et répertoires à copier depuis le dépôt](#orga476c12)
   - [Configurer la variable HOME](#configurer-home)
     - [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
   - [Installer GPG](#installer-gpg)
     - [Générer une clé GPG](#generer-une-cle-gpg)
     - [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
   - [Installer mplayer](#installer-mplayer)
-    - [CMD](#orgfd6baa8)
-    - [PowerShell](#org338967c)
+    - [CMD](#org1c46326)
+    - [PowerShell](#orgb8d6027)
   - [9. Fichiers à éditer](#fichiers-a-editer)
 
 
@@ -80,7 +80,7 @@ Redémarrer le terminal.
 ## Configurer Emacs
 
 
-<a id="org3088169"></a>
+<a id="orga476c12"></a>
 
 ### Fichiers et répertoires à copier depuis le dépôt
 
@@ -91,7 +91,18 @@ Redémarrer le terminal.
 -   emacs.d/sons/
 -   emacs.d/images/ (optionnel)
 
-> HOME/ ├── .authinfo.gpg ├── bin/ ├── GNU/ ├── .emacs.d/ ├─ config/ ├── elisp/ └── sons/
+```
+HOME/
+   ├── .authinfo.gpg
+   ├── bin/
+   ├── GNU/
+   ├── .emacs.d/
+          ├── early-init.el
+          ├── init.el
+          ├── config/
+          ├── elisp/
+          └── sons/
+```
 
 
 <a id="configurer-home"></a>
@@ -230,7 +241,7 @@ del .authinfo
 Ajouter au PATH si nécessaire :
 
 
-<a id="orgfd6baa8"></a>
+<a id="org1c46326"></a>
 
 ### CMD
 
@@ -239,7 +250,7 @@ setx PATH "%PATH%;%HOME%\bin"
 ```
 
 
-<a id="org338967c"></a>
+<a id="orgb8d6027"></a>
 
 ### PowerShell
 
