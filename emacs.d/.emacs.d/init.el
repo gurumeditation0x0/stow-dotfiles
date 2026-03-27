@@ -410,7 +410,7 @@
 ;; (load "~/.emacs.d/config/elfeed.el")
 
 ;; Météo biome
-(load-file (concat my-config-dir "/meteo.el"))
+(load "meteo.el")
 
 ;; Fonctions perso
 ;; (load "~/.emacs.d/elisp/mes_fonctions.el") 
@@ -419,19 +419,19 @@
 (load "treemacs.el")
 
 ;;;; Dashboard / fenêtres
-(load-file "~/.emacs.d/elisp/dashboard-perso.el")
+(load "dashboard-perso.el")
 
 ;; Org Novelist
 ;;(load-file (concat my-dev-dir "/"))
 
-(load-file (concat my-dev-dir "/JourNuit/JourNuit-0g.el"))
+(load "JourNuit/JourNuit-0g.el")
 (journuit-apply-and-schedule)
 
 ;; Gnu Mails
-(load-file (concat my-dev-dir "/Gnus/gnus-conf.el"))
+(load "gnus-conf.el")
 
 ;; Gustave-mode 
-(load-file (concat my-dev-dir "/gus-07.el"))
+(load "gus-07.el")
 
 ;;)
 

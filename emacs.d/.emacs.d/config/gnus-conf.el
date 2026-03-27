@@ -50,9 +50,9 @@
 (setq message-send-mail-function 'smtpmail-send-it)
 
 (setq my-mail-accounts
-      '(("Free" "alainswb@free.fr" "smtp.free.fr" 587)
-        ("Laposte" "alainswb@laposte.net" "smtp.laposte.net" 587)
-        ("Gmail" "gurumeditation0x0@gmail.com" "smtp.gmail.com" 587)))
+      '(("Free" "USER@free.fr" "smtp.free.fr" 587)
+        ("Laposte" "USER@laposte.net" "smtp.laposte.net" 587)
+        ("Gmail" "USER@gmail.com" "smtp.gmail.com" 587)))
 
 (defun my-choose-mail-account ()
   "Choisir manuellement l'adresse From et le SMTP."
@@ -71,15 +71,15 @@
   (let ((group gnus-newsgroup-name))
     (cond
      ((string-match-p "nnimap\\+free:INBOX" group)
-      (setq smtpmail-smtp-user "alainswb@free.fr"
+      (setq smtpmail-smtp-user "USER@free.fr"
             smtpmail-smtp-server "smtp.free.fr"
             smtpmail-smtp-service 587))
      ((string-match-p "nnimap\\+laposte:INBOX" group)
-      (setq smtpmail-smtp-user "alainswb@laposte.net"
+      (setq smtpmail-smtp-user "USER@laposte.net"
             smtpmail-smtp-server "smtp.laposte.net"
             smtpmail-smtp-service 587))
      ((string-match-p "nnimap\\+gmail:INBOX" group)
-      (setq smtpmail-smtp-user "gurumeditation0x0@gmail.com"
+      (setq smtpmail-smtp-user "USER@gmail.com"
             smtpmail-smtp-server "smtp.gmail.com"
             smtpmail-smtp-service 587)))))
 
@@ -153,7 +153,6 @@
        " "
        "%1{%B%}"                ;; sujet (face)
        "%s\n"))
-
 
 
 

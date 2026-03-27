@@ -16,3 +16,93 @@ cd dev/JourNuit/
 ls 
 cp JourNuit-0e.el /mnt/c/Users/david/dev/JourNuit/JourNuit-0e.el 
 cp JourNuit-0e.el /mnt/c/Users/david/.emacs.d/elisp/JourNuit-0e.el 
+mpv
+cd dotfiles/
+git status 
+free -hfree -h
+git status 
+exit
+ls
+cd dotfiles/
+git status
+git add emacs.d/.emacs.d/init.el
+git commit -m "quelques modifs init.el"
+git push 
+git add emacs.d/.emacs.d/early-init.el
+git commit -m "modif early-init.el"
+git push
+git add emacs.d/.emacs.d/config/eshell_conf.el
+git commit -m "modif de eshell_conf.el"
+git push
+git status
+rm emacs.d/.emacs.d/sons/typewriter_click.wav:Zone.Identifier         emacs.d/.emacs.d/sons/cloche7s.wav:Zone.Identifier
+git status
+rm emacs.d/.emacs.d/sons/cloche1h.wav:Zone.Identifier emacs.d/.emacs.d/sons/cloche1h.mp3:Zone.Identifier emacs.d/.emacs.d/sons/RcsaQuartdHeure.wav:Zone.Identifier emacs.d/.emacs.d/sons/RcsaHeure.wav:Zone.Identifier emacs.d/.emacs.d/sons/.typewriter_click.wav.~undo-tree~:Zone.Identifier emacs.d/.emacs.d/early-init.el:Zone.Identifier emacs.d/.emacs.d/elisp/emms_config.el:Zone.Identifier
+git status
+rm emacs.d/.emacs.d/sons/cloche1h.wav:Zone.Identifier
+git status
+rm emacs.d/.emacs.d/sons/*.Identifier
+git status
+rm emacs.d/.emacs.d/sons/.typewriter_click.wav.~undo-tree~:Zone.Identifier
+git status
+rm emacs.d/.emacs.d/sons/.typewriter_click.wav.~undo-tree~:Zone.Identifier
+rm emacs.d/.emacs.d/early-init.el:Zone.Identifier
+rm emacs.d/.emacs.d/elisp/emms_config.el:Zone.Identifier
+git status
+rm emacs.d/.emacs.d/sons/.typewriter_click.wav.~undo-tree~:Zone.Identifier
+rm emacs.d/.emacs.d/sons/".typewriter_click.wav.~undo-tree~:Zone.Identifier"
+git status
+git add emacs.d/.emacs.d/sons/*  
+git status
+git commit -m " création du répertoire sons ajout des fichiers sons"
+git push 
+git status 
+cd
+cd dev/ 
+git status
+ls
+rm highlight-all-visible-buffers.el:Zone.Identifier surligne.el~:Zone.Identifier #surligne.el#:Zone.Identifier 
+ls
+rm #surligne.el#:Zone.Identifier
+rm "#surligne.el#:Zone.Identifier"
+rm tmp:Zone.Identifier
+ls
+rm "surligne.el~:Zone.Identifier"
+rm "journuit.el~:Zone.Identifier"
+ls
+cd
+ls
+ls -a
+rm *undo*
+rm *~
+rm '*~'
+ls -a
+rm *\~
+ls
+ls -a
+rm *~
+find . -maxdepth 1 -type f -name '*~' -print0 | xargs -0 rm -f --
+ls -a
+cd .emacs.d/
+ls -a
+find . -maxdepth 1 -type f -name '*~' -print0 | xargs -0 rm -f --
+ls -a
+cd
+ls -a
+cd dev/ 
+ls -a
+find . -maxdepth 1 -type f -name '*~' -print0 | xargs -0 rm -f --
+ls -a
+find . -maxdepth 1 -type f -name '#*' -print0 | xargs -0 rm -f --
+ls -a
+find . -maxdepth 1 -type f -name '*Identifier' -print0 | xargs -0 rm -f --
+ls -a
+rm .#surligne.el
+ls -a
+rm ".#surligne.el"
+ls -a
+cat grepemaildotfiles
+ls
+rm grepemaildotfiles
+cat tmp
+cat
