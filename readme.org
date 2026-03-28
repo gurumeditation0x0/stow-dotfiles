@@ -5,24 +5,6 @@
 #+STARTUP: content indent
 
 
-* Notes de sécurité
-:PROPERTIES:
-:CUSTOM_ID: notes-de-securite
-:END:
-#+BEGIN_EXAMPLE
-Ne jamais committer :
-- .authinfo
-- .authinfo.gpg
-- Clés privées GPG
-- Clés ivy-youtube dans emms_config
-- Les adresses mail dans gnus-conf.el et email.el
-
-Ajouter au .gitignore :
-- .authinfo
-- gnus-conf.el
-- email.el
-- emms_config
-#+END_EXAMPLE  
 * Présentation
 :PROPERTIES:
 :CUSTOM_ID: presentation
@@ -224,3 +206,21 @@ Redémarrer le terminal.
 - %HOME%/.emacs.d/config/meteo.el (coordonnées GPS)
 #+END_EXAMPLE
 -- 
+* Notes de sécurité
+:PROPERTIES:
+:CUSTOM_ID: notes-de-securite
+:END:
+#+BEGIN_EXAMPLE
+Ne jamais committer :
+- .authinfo
+- .authinfo.gpg
+- Clés privées GPG
+- Clés ivy-youtube dans emms_config
+- Les adresses mail dans gnus-conf.el et email.el
+
+Ajouter au .gitignore :
+- .authinfo
+- gnus-conf.el
+- email.el
+- emms_config
+#+END_EXAMPLE  

@@ -1,41 +1,21 @@
-- [Notes de sécurité](#notes-de-securite)
 - [Présentation](#presentation)
 - [Emacs pour Windows](#emacs-pour-windows)
   - [Installer Emacs pour Windows](#installer-emacs-pour-windows)
-    - [cmd.exe](#orge78dfec)
-    - [powershell](#orgfa107a3)
+    - [cmd.exe](#org4fa1b12)
+    - [powershell](#org15c98f6)
   - [Configurer Emacs](#configurer-emacs)
-    - [Fichiers et répertoires à copier depuis le dépôt](#orged1002d)
+    - [Fichiers et répertoires à copier depuis le dépôt](#org7208928)
   - [Configurer la variable HOME](#configurer-home)
     - [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
   - [Installer GPG](#installer-gpg)
     - [Générer une clé GPG](#generer-une-cle-gpg)
     - [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
   - [Installer mplayer](#installer-mplayer)
-    - [CMD](#org0cf4a77)
-    - [PowerShell](#org7671904)
+    - [CMD](#org9966274)
+    - [PowerShell](#org08798d6)
   - [9. Fichiers à éditer](#fichiers-a-editer)
+- [Notes de sécurité](#notes-de-securite)
 
-
-
-<a id="notes-de-securite"></a>
-
-# Notes de sécurité
-
-```
-Ne jamais committer :
-- .authinfo
-- .authinfo.gpg
-- Clés privées GPG
-- Clés ivy-youtube dans emms_config
-- Les adresses mail dans gnus-conf.el et email.el
-
-Ajouter au .gitignore :
-- .authinfo
-- gnus-conf.el
-- email.el
-- emms_config
-```
 
 
 <a id="presentation"></a>
@@ -71,7 +51,7 @@ emacs --version
 Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 
 
-<a id="orge78dfec"></a>
+<a id="org4fa1b12"></a>
 
 ### cmd.exe
 
@@ -80,7 +60,7 @@ setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 ```
 
 
-<a id="orgfa107a3"></a>
+<a id="org15c98f6"></a>
 
 ### powershell
 
@@ -96,7 +76,7 @@ Redémarrer le terminal.
 ## Configurer Emacs
 
 
-<a id="orged1002d"></a>
+<a id="org7208928"></a>
 
 ### Fichiers et répertoires à copier depuis le dépôt
 
@@ -263,7 +243,7 @@ del .authinfo
 Ajouter au PATH si nécessaire :
 
 
-<a id="org0cf4a77"></a>
+<a id="org9966274"></a>
 
 ### CMD
 
@@ -274,7 +254,7 @@ setx PATH "%PATH%;%HOME%\bin"
 Redémarrer le terminal.
 
 
-<a id="org7671904"></a>
+<a id="org08798d6"></a>
 
 ### PowerShell
 
@@ -298,3 +278,23 @@ Redémarrer le terminal.
 ```
 
 &#x2013;
+
+
+<a id="notes-de-securite"></a>
+
+# Notes de sécurité
+
+```
+Ne jamais committer :
+- .authinfo
+- .authinfo.gpg
+- Clés privées GPG
+- Clés ivy-youtube dans emms_config
+- Les adresses mail dans gnus-conf.el et email.el
+
+Ajouter au .gitignore :
+- .authinfo
+- gnus-conf.el
+- email.el
+- emms_config
+```
