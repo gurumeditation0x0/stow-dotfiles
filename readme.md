@@ -2,16 +2,18 @@
 - [Présentation](#presentation)
 - [Emacs pour Windows](#emacs-pour-windows)
   - [Installer Emacs pour Windows](#installer-emacs-pour-windows)
+    - [cmd.exe](#org4431e0a)
+    - [powershellx](#org54521de)
   - [Configurer Emacs](#configurer-emacs)
-    - [Fichiers et répertoires à copier depuis le dépôt](#org689268e)
+    - [Fichiers et répertoires à copier depuis le dépôt](#orgf7b5d5f)
   - [Configurer la variable HOME](#configurer-home)
     - [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
   - [Installer GPG](#installer-gpg)
     - [Générer une clé GPG](#generer-une-cle-gpg)
     - [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
   - [Installer mplayer](#installer-mplayer)
-    - [CMD](#org62ea411)
-    - [PowerShell](#org9903d95)
+    - [CMD](#orgaa7e662)
+    - [PowerShell](#org892448a)
   - [9. Fichiers à éditer](#fichiers-a-editer)
 
 
@@ -68,9 +70,19 @@ emacs --version
 
 Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 
+
+<a id="org4431e0a"></a>
+
+### cmd.exe
+
 ```shell
 setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 ```
+
+
+<a id="org54521de"></a>
+
+### powershellx
 
 ```powershell
 [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\Emacs\bin", [EnvironmentVariableTarget]::User)
@@ -84,7 +96,7 @@ Redémarrer le terminal.
 ## Configurer Emacs
 
 
-<a id="org689268e"></a>
+<a id="orgf7b5d5f"></a>
 
 ### Fichiers et répertoires à copier depuis le dépôt
 
@@ -251,7 +263,7 @@ del .authinfo
 Ajouter au PATH si nécessaire :
 
 
-<a id="org62ea411"></a>
+<a id="orgaa7e662"></a>
 
 ### CMD
 
@@ -262,7 +274,7 @@ setx PATH "%PATH%;%HOME%\bin"
 Redémarrer le terminal.
 
 
-<a id="org9903d95"></a>
+<a id="org892448a"></a>
 
 ### PowerShell
 

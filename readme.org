@@ -53,9 +53,11 @@ Vérifier l’installation dans cmd.exe / PowerShell :
 emacs --version
 #+END_SRC
 Si la commande n’est pas reconnue, ajouter Emacs au PATH :
+*** cmd.exe
 #+BEGIN_SRC shell
 setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 #+END_SRC
+*** powershell
 #+BEGIN_SRC powershell 
 [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\Emacs\bin", [EnvironmentVariableTarget]::User)
 #+END_SRC
