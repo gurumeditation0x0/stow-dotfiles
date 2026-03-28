@@ -9,7 +9,7 @@
 :PROPERTIES:
 :CUSTOM_ID: notes-de-securite
 :END:
-
+#+BEGIN_EXAMPLE
 Ne jamais committer :
 - .authinfo
 - .authinfo.gpg
@@ -22,7 +22,7 @@ Ajouter au .gitignore :
 - gnus-conf.el
 - email.el
 - emms_config
-  
+#+END_EXAMPLE  
 * Présentation
 :PROPERTIES:
 :CUSTOM_ID: presentation
@@ -216,10 +216,11 @@ Redémarrer le terminal.
 :CUSTOM_ID: fichiers-a-editer
 :END:
 
+#+BEGIN_EXAMPLE
 - %HOME%/.authinfo
 - %HOME%/.emacs.d/config/emms_config.el
 - %HOME%/.emacs.d/config/gnus_conf.el
 - %HOME%/.emacs.d/config/email.el
 - %HOME%/.emacs.d/config/meteo.el (coordonnées GPS)
-
+#+END_EXAMPLE
 -- 

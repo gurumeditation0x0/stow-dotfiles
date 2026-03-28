@@ -2,18 +2,18 @@
 - [Présentation](#presentation)
 - [Emacs pour Windows](#emacs-pour-windows)
   - [Installer Emacs pour Windows](#installer-emacs-pour-windows)
-    - [cmd.exe](#org4431e0a)
-    - [powershellx](#org54521de)
+    - [cmd.exe](#orge78dfec)
+    - [powershell](#orgfa107a3)
   - [Configurer Emacs](#configurer-emacs)
-    - [Fichiers et répertoires à copier depuis le dépôt](#orgf7b5d5f)
+    - [Fichiers et répertoires à copier depuis le dépôt](#orged1002d)
   - [Configurer la variable HOME](#configurer-home)
     - [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
   - [Installer GPG](#installer-gpg)
     - [Générer une clé GPG](#generer-une-cle-gpg)
     - [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
   - [Installer mplayer](#installer-mplayer)
-    - [CMD](#orgaa7e662)
-    - [PowerShell](#org892448a)
+    - [CMD](#org0cf4a77)
+    - [PowerShell](#org7671904)
   - [9. Fichiers à éditer](#fichiers-a-editer)
 
 
@@ -22,20 +22,20 @@
 
 # Notes de sécurité
 
+```
 Ne jamais committer :
-
--   .authinfo
--   .authinfo.gpg
--   Clés privées GPG
--   Clés ivy-youtube dans emms<sub>config</sub>
--   Les adresses mail dans gnus-conf.el et email.el
+- .authinfo
+- .authinfo.gpg
+- Clés privées GPG
+- Clés ivy-youtube dans emms_config
+- Les adresses mail dans gnus-conf.el et email.el
 
 Ajouter au .gitignore :
-
--   .authinfo
--   gnus-conf.el
--   email.el
--   emms<sub>config</sub>
+- .authinfo
+- gnus-conf.el
+- email.el
+- emms_config
+```
 
 
 <a id="presentation"></a>
@@ -71,7 +71,7 @@ emacs --version
 Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 
 
-<a id="org4431e0a"></a>
+<a id="orge78dfec"></a>
 
 ### cmd.exe
 
@@ -80,9 +80,9 @@ setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 ```
 
 
-<a id="org54521de"></a>
+<a id="orgfa107a3"></a>
 
-### powershellx
+### powershell
 
 ```powershell
 [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\Emacs\bin", [EnvironmentVariableTarget]::User)
@@ -96,7 +96,7 @@ Redémarrer le terminal.
 ## Configurer Emacs
 
 
-<a id="orgf7b5d5f"></a>
+<a id="orged1002d"></a>
 
 ### Fichiers et répertoires à copier depuis le dépôt
 
@@ -263,7 +263,7 @@ del .authinfo
 Ajouter au PATH si nécessaire :
 
 
-<a id="orgaa7e662"></a>
+<a id="org0cf4a77"></a>
 
 ### CMD
 
@@ -274,7 +274,7 @@ setx PATH "%PATH%;%HOME%\bin"
 Redémarrer le terminal.
 
 
-<a id="org892448a"></a>
+<a id="org7671904"></a>
 
 ### PowerShell
 
@@ -289,10 +289,12 @@ Redémarrer le terminal.
 
 ## 9. Fichiers à éditer
 
--   %HOME%/.authinfo
--   %HOME%/.emacs.d/config/emms<sub>config.el</sub>
--   %HOME%/.emacs.d/config/gnus<sub>conf.el</sub>
--   %HOME%/.emacs.d/config/email.el
--   %HOME%/.emacs.d/config/meteo.el (coordonnées GPS)
+```
+- %HOME%/.authinfo
+- %HOME%/.emacs.d/config/emms_config.el
+- %HOME%/.emacs.d/config/gnus_conf.el
+- %HOME%/.emacs.d/config/email.el
+- %HOME%/.emacs.d/config/meteo.el (coordonnées GPS)
+```
 
 &#x2013;
