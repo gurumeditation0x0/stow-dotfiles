@@ -187,7 +187,7 @@ Ajouter au PATH si nécessaire :
 setx PATH "%PATH%;%HOME%\bin"
 #+END_SRC
 Redémarrer le terminal.
-*** PowerShell
+²*** PowerShell
 #+BEGIN_SRC powershell
 [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
 #+END_SRC
@@ -210,8 +210,9 @@ Redémarrer le terminal.
 :PROPERTIES:
 :CUSTOM_ID: notes-de-securite
 :END:
-#+BEGIN_EXAMPLE
+
 Ne jamais committer :
+#+BEGIN_EXAMPLE
 - .authinfo
 - .authinfo.gpg
 - Clés privées GPG
@@ -219,8 +220,36 @@ Ne jamais committer :
 - Les adresses mail dans gnus-conf.el et email.el
 
 Ajouter au .gitignore :
-- .authinfo
-- gnus-conf.el
-- email.el
-- emms_config
+
+*~
+*#
+#*
+/emacs.d/.emacs.d/elpa/
+/emacs.d/.emacs.d/eln-cache/
+/emacs.d/.emacs.d/emms/
+/emacs.d/.emacs.d/multisession/
+/emacs.d/.emacs.d/request/
+/emacs.d/.emacs.d/transient/
+/emacs.d/.emacs.d/elfeed_db/
+/emacs.d/.emacs.d/games/
+emacs.d/.emacs.d/request/
+
+authinfo/.authinfo
+authinfo/.authinfo.gpg
+
+emacs.d/.emacs.d/config/gnus-conf.el
+emacs.d/.emacs.d/donfig/email.el
+
+
+
 #+END_EXAMPLE  
+
+* A faire
+:PROPERTIES:
+:CUSTOM_ID: a-faire
+:END:
+
+- font
+- calendar
+- sync orgzly
+- dictionnaires fr
