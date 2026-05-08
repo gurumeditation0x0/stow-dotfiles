@@ -21,21 +21,29 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 2. Détection de l'OS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;; (setq my-os
 ;;       (cond
-;;        ((defconst windows (eq system-type 'windows-nt)))
-;;        ((defconst linux   (eq system-type 'gnu/linux)))
+;;        ((eq system-type 'windows-nt) 'windows)
+;;        ((eq system-type 'gnu/linux)  'linux)
 ;;        (t 'unknown)))
 
-(setq my-os
-      (cond
-       ((eq system-type 'windows-nt) 'windows)
-       ((eq system-type 'gnu/linux)  'linux)
-       (t 'unknown)))
+(defun read-wsl-default-name ()
+  "Détecte si wsl-distributin existe, prend le nom de la distribution et ajoute wsl au nom détecté"
+  (when (file-exists-p "/etc/wsl-distribution.conf")
+    (with-temp-buffer
+      (insert-file-contents-literally "/etc/wsl-distribution.conf")
+      (goto-char (point-min))
+      (when (re-search-forward "^\\s-*defaultName\\s-*=[ \t]*\\([^ \t\r\n]+\\)\\s-*$" nil t)
+        (match-string-no-properties 1)))))
 
-
-
+(let ((wsl-name (and (eq system-type 'gnu/linux) (read-wsl-default-name))))
+  (setq my-os
+        (cond
+         ((eq system-type 'windows-nt) 'windows)
+         ((and wsl-name) (intern (concat "wsl-" wsl-name)))
+         ((eq system-type 'gnu/linux) 'linux)
+         (t 'unknown)))
+  (message "my-os = %s" my-os))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 3. Définition des répertoires
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -67,6 +75,9 @@
 
 ;; (when (eq system-type 'windows-nt)
 ;;   (add-to-list 'exec-path "C:/Program Files/Git/usr/bin"))
+
+(when (eq system-type 'windows-nt)
+  (add-to-list 'exec-path "C:\gnu\cygwin64\bin"))
 
 
 ;; Ajout des chemin vers git et ses utilitaires (diff.exe ...)
@@ -108,7 +119,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 6. Langue et encodage (UTF-8 complet)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+ 
 (setenv "LANG" "fr_FR.UTF-8")
 (setq system-time-locale "fr_FR.UTF-8")
 (set-language-environment "French")
@@ -184,5 +195,5 @@
         ("gnu"    . "https://elpa.gnu.org/packages/")
         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 (package-initialize)
-(require 'use-package)
-(setq use-package-always-ensure t)
+;; (require 'use-package)
+;; (setq use-package-always-ensure t)
