@@ -8,9 +8,10 @@
 
 (require 'gnus)
 (require 'message)
+(require 'org)
 
-
-(setq org-show-notification-handler 'ignore)
+(require 'use-package)
+(setq use-package-always-ensure t)
 (setq alert-default-style 'message)
 
 ;; --------------------------------------------------
@@ -218,8 +219,10 @@
         undo-tree-visualizer-diff t)
   (global-undo-tree-mode t))
 
+
 ;; multiple-cursors : édition multiple
 (use-package multiple-cursors)
+
 
 ;; smartparens : gestion avancée des paires
 (use-package smartparens
@@ -343,28 +346,59 @@
 ;; Org-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Paramètres visuels et fontification
-(custom-set-variables '(org-fontify-quote-and-verse-blocks t))
-(custom-set-faces
- '(org-level-1 ((t (:inherit outline-1 :family "Ubuntu" :height 1.6))))
- '(org-level-2 ((t (:inherit outline-1 :family "Ubuntu" :height 1.4))))
- '(org-level-3 ((t (:inherit outline-3 :family "Ubuntu" :height 1.2))))
- '(org-level-4 ((t (:inherit outline-4 :family "Ubuntu" :height 1.1))))
- '(org-level-5 ((t (:inherit outline-5 :family "Ubuntu" :height 1.1)))))
+;; (setq org-src-fontify-natively t)
+;; (setq org-show-notification-handler 'ignore)
 
-(setq org-hide-emphasis-markers nil
-      org-descriptive-links t
-      org-hide-leading-stars nil
-      org-fontify-quote-and-verse-blocks t
-      org-directory "~/org/"
-      ;; org-agenda-files (list "~/org/todo.org")
-      org-todo-keywords '((sequence "A FAIRE" "EN COURS" "|" "FAIT" "ABANDONNÉ"))
-      org-todo-keyword-faces '(("TODO" . org-warning)
-                               ("EN COURS" . "yellow")
-                               ("ABANDONNÉ" . "blue")))
+;; ;; Active l'affichage des images dans Org
+;; (setq org-startup-with-inline-images t)
+
+;; (use-package ob-mermaid)
+
+;; (require 'ob-mermaid) ;; si installé
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((mermaid . t)
+;;    (dot . t)))
+
+;; ;; Évite de bloquer Emacs pendant la génération
+;; (use-package ob-async
+;;   :ensure t
+;;   :config (add-to-list 'org-src-lang-modes '("mermaid" . plantuml)))
+
+;; ;; Chemin vers mmdc (à adapter si nécessaire)
+;; (setq org-babel-mermaid-command "mmdc -i - -o %s ")
+
+;; ;; Paramètres visuels et fontification
+;; (custom-set-variables '(org-fontify-quote-and-verse-blocks t))
+;; (custom-set-faces
+;;  '(org-level-1 ((t (:inherit outline-1 :family "Ubuntu" :height 1.6))))
+;;  '(org-level-2 ((t (:inherit outline-1 :family "Ubuntu" :height 1.4))))
+;;  '(org-level-3 ((t (:inherit outline-3 :family "Ubuntu" :height 1.2))))
+;;  '(org-level-4 ((t (:inherit outline-4 :family "Ubuntu" :height 1.1))))
+;;  '(org-level-5 ((t (:inherit outline-5 :family "Ubuntu" :height 1.1)))))
+
+;; (setq org-hide-emphasis-markers nil
+;;       org-descriptive-links t
+;;       org-hide-leading-stars nil
+;;       org-fontify-quote-and-verse-blocks t
+;;       org-directory "~/org/"
+;;       ;; org-agenda-files (list "~/org/todo.org")
+;;       org-todo-keywords '((sequence "A FAIRE" "EN COURS" "|" "FAIT" "ABANDONNÉ"))
+;;       org-todo-keyword-faces '(("TODO" . org-warning)
+;;                                ("EN COURS" . "yellow")
+;;                                ("ABANDONNÉ" . "blue")))
 
 ;; Son d'alarme de org-timer-set-timer
-(setq org-clock-sound "~/dev/Cloches/cloche7s.wav")
+;;(setq org-clock-sound "~/dev/Cloches/cloche7s.wav")
+
+;;(setq org-timer-default-file "~/dev/Cloches/cloche7s.wav")
+
+
+
+;joue un son quand  org-timer est fini.
+(add-hook 'org-timer-done-hook (lambda ()
+                                 (shell-command "mplayer -really-quiet ~/dev/Cloches/RcsaQuartdHeure.wav")))
+
 
 ;; org-capture templates
 (add-hook 'org-capture-after-finalize-hook 'my-org-capture-hook)
@@ -400,6 +434,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;(when (eq system-type 'gnu/linux)
 
+(load "config-org.el")
+
+(load "config-org-babel.el")
+
+(load "config-python.el")
+
+
   ;; Shell
 (load "eshell_conf.el")
 
@@ -421,10 +462,7 @@
 ;;;; Dashboard / fenêtres
 (load "dashboard-perso.el")
 
-;; Org Novelist
-;;(load-file (concat my-dev-dir "/"))
-
-(load "JourNuit/JourNuit-0g.el")
+(load "JourNuit-0g.el")
 (journuit-apply-and-schedule)
 
 ;; Gnu Mails
@@ -433,7 +471,83 @@
 ;; Gustave-mode 
 (load "gus-07.el")
 
+;; Org-Novelist
+(load "org-novelist.el")
+
+;; Yasnippets
+(load "config-yasnippets.el")
+
+
+
+;; Julia language + lsp 
+;; (load "julia.el")
+
+;; Maxima + Octave
+;;(load "config-maths.el")
 ;;)
+
+
+
+(use-package workgroups
+;;  :ensure t
+;;  :defer t
+  :init
+  (defvar wg-session-file
+    (expand-file-name "wgwindows/wg_default_start" user-emacs-directory)
+    "Fichier de session pour workgroups.")
+  :config
+;;  (unless (file-exists-p (file-name-directory wg-session-file))
+;;    (make-directory (file-name-directory wg-session-file) t))
+  ;; bindings simples (appeler manuellement sauvegarde/chargement)
+  (global-set-key (kbd "C-c w c") 'wg-create-workgroup)
+  (global-set-key (kbd "C-c w s") 'wg-save)
+  (global-set-key (kbd "C-c w o") 'wg-load)
+  (global-set-key (kbd "C-c w l") 'wg-list-workgroups)
+  (global-set-key (kbd "C-c w n") 'wg-switch-workgroup))
+
+;; Charger une session workgroups spécifique au démarrage (sans sauvegarde automatique)
+(setq wg-session-file
+      (concat user-emacs-directory "/wgwindows/wg_default_start")
+      wg-restore-position t)
+
+(defun charge-wg_default_start ()
+  (let ((f (concat user-emacs-directory "/wgwindows/wg_default_start")))
+    (when (and (fboundp 'wg-load) (file-exists-p f))
+      (condition-case err
+          (wg-load f)
+        (error (message "Échec chargement session workgroups : %s" err))))))
+   (run-at-time "2 sec" nil #'charge-wg_default_start))
+;;(add-hook 'emacs-startup-hook #'charge-wg_default_start)
+
+
+
+;; (let ((session-file (concat user-emacs-directory "workgroups/default-session.wg")))
+;;   (when (and (fboundp 'wg-load) (file-exists-p session-file))
+;;     (add-hook 'emacs-startup-hook
+;;               (lambda ()
+;;                 (condition-case err
+;;                     (wg-load session-file)
+;;                   (error (message "Échec chargement session workgroups : %s" err)))))))
+
+;; (use-package workgroups2
+;;   :ensure t
+;;   :defer t
+;;   :init
+;;   (defvar wg-session-file
+;;     (expand-file-name "workgroups/last-session.wg" user-emacs-directory)
+;;     "Fichier de session workgroups2.")
+;;   :config
+;;   (unless (file-exists-p (file-name-directory wg-session-file))
+;;     (make-directory (file-name-directory wg-session-file) t))
+;;   ;; bindings simples
+;;   (global-set-key (kbd "C-c w c") 'wg-create)
+;;   (global-set-key (kbd "C-c w s") 'wg-save-session)  ;; appeler manuellement
+;;   (global-set-key (kbd "C-c w o") 'wg-load-session)  ;; appeler manuellement
+;;   (global-set-key (kbd "C-c w l") 'wg-list)
+;;   (global-set-key (kbd "C-c w n") 'wg-switch-to)
+
+;;   (workgroups-mode 1))
+
 
 ;; ;; Si on est sous Linux on peut charger mu4e 
 ;; (when (eq system-type 'gnu/linux)
