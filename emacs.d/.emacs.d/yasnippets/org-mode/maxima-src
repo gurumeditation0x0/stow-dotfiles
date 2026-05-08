@@ -1,0 +1,10 @@
+# name: maxima babel
+# key: mx
+# --
+#+BEGIN_SRC maxima :file result.png
+display (
+
+$0
+
+);
+#+END_SRC

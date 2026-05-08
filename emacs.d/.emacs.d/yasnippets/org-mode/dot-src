@@ -1,0 +1,8 @@
+# name: dot babel
+# key: dot
+# --
+#+BEGIN_SRC dot :file graph.png
+digraph G {
+    $0
+}
+#+END_SRC

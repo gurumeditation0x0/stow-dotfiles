@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: octave babel
+# key: oct
+# --
+#+BEGIN_SRC octave :session *oct :results output
+$0
+#+END_SRC
