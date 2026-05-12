@@ -4,26 +4,32 @@
 1.  [Présentation](#presentation)
 2.  [Emacs pour Windows](#emacs-pour-windows)
     1.  [Installer Emacs pour Windows](#installer-emacs-pour-windows)
-        1.  [cmd.exe](#org55081d5)
-        2.  [powershell](#orgcd4c7ba)
+        1.  [cmd.exe](#org6298fb7)
+        2.  [powershell](#orgc654e4d)
     2.  [Configurer Emacs](#configurer-emacs)
-        1.  [Fichiers et répertoires à copier depuis le dépôt](#org7379f60)
-    3.  [Configurer la variable HOME](#configurer-home)
-        1.  [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
-    4.  [Installer GPG](#installer-gpg)
-        1.  [Générer une clé GPG](#generer-une-cle-gpg)
-        2.  [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
-    5.  [Installer mplayer](#installer-mplayer)
-        1.  [CMD](#org11bcd14)
-    6.  [9. Fichiers à éditer](#fichiers-a-editer)
-3.  [Notes de sécurité](#notes-de-securite)
-4.  [A faire](#a-faire)
+        1.  [Fichiers et répertoires à copier depuis le dépôt](#org4cb79d7)
+        2.  [Configurer la variable HOME](#configurer-home)
+        3.  [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
+        4.  [Installer GPG](#installer-gpg)
+        5.  [Générer une clé GPG](#generer-une-cle-gpg)
+        6.  [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
+        7.  [Installer mplayer](#installer-mplayer)
+        8.  [CMD](#org0c240c2)
+        9.  [Fichiers à éditer](#fichiers-a-editer)
+3.  [Prise de notes Orgzly Emacs-Pour-Windows](#org0a89f2a)
+    1.  [Shéma de synnchronisation avec SyncThing](#org2055947)
+    2.  [Orglzly](#org536f05e)
+    3.  [Denote](#org4c0e446)
+4.  [Notes de sécurité](#notes-de-securite)
+5.  [](#org795aecd)
 
 
 
 <a id="presentation"></a>
 
 # Présentation
+
+Configuration Emacs pour Windows et Linux. 
 
 
 <a id="emacs-pour-windows"></a>
@@ -52,14 +58,14 @@ Vérifier l’installation dans cmd.exe / PowerShell :
 Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 
 
-<a id="org55081d5"></a>
+<a id="org6298fb7"></a>
 
 ### cmd.exe
 
     setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 
 
-<a id="orgcd4c7ba"></a>
+<a id="orgc654e4d"></a>
 
 ### powershell
 
@@ -73,7 +79,7 @@ Redémarrer le terminal.
 ## Configurer Emacs
 
 
-<a id="org7379f60"></a>
+<a id="org4cb79d7"></a>
 
 ### Fichiers et répertoires à copier depuis le dépôt
 
@@ -98,7 +104,7 @@ Redémarrer le terminal.
 
 <a id="configurer-home"></a>
 
-## Configurer la variable HOME
+### Configurer la variable HOME
 
 Définir HOME vers votre dossier utilisateur (persistant).
 
@@ -150,7 +156,7 @@ Créer le dossier :
 
 <a id="installer-gpg"></a>
 
-## Installer GPG
+### Installer GPG
 
 Télécharger Gpg4win : <https://gpg4win.org/>
 Vérifier l’installation :
@@ -204,7 +210,7 @@ Supprimer le fichier en clair :
 
 <a id="installer-mplayer"></a>
 
-## Installer mplayer
+### Installer mplayer
 
 -   Télécharger le binaire mplayer pour Windows.
 -   Installer dans %USERPROFILE%\bin ou %HOME%\bin.
@@ -212,7 +218,7 @@ Supprimer le fichier en clair :
 Ajouter au PATH si nécessaire :
 
 
-<a id="org11bcd14"></a>
+<a id="org0c240c2"></a>
 
 ### CMD
 
@@ -228,7 +234,7 @@ Redémarrer le terminal.
 
 <a id="fichiers-a-editer"></a>
 
-## 9. Fichiers à éditer
+### Fichiers à éditer
 
     - %HOME%/.authinfo
     - %HOME%/.emacs.d/config/emms_config.el
@@ -236,7 +242,73 @@ Redémarrer le terminal.
     - %HOME%/.emacs.d/config/email.el
     - %HOME%/.emacs.d/config/meteo.el (coordonnées GPS)
 
-&#x2013; 
+&#x2013;
+
+
+<a id="org0a89f2a"></a>
+
+# Prise de notes Orgzly Emacs-Pour-Windows
+
+-   Orgzly
+
+Emacs possède une version Android, mais sur un téléphone c'est un peu petit. J'ai donc choisi Orgzly pour la prise de notes rapide que je synchronise avec SyncThing.
+<https://www.orgzly.com/>
+
+-   Denote
+
+<https://protesilaos.com/emacs/denote>
+Outils Emacs pour la prise de notes et l'orginisation.
+
+-   my-os est défini dans early-init.el
+
+
+<a id="org2055947"></a>
+
+## Shéma de synnchronisation avec SyncThing
+
+![img](graph_prise_de_note.png)
+
+
+<a id="org536f05e"></a>
+
+## Orglzly
+
+Télécharger:
+<https://www.orgzly.com/>
+La configuration se fait par l'interface
+
+
+<a id="org4c0e446"></a>
+
+## Denote
+
+Manuel:
+<https://protesilaos.com/emacs/denote>
+
+Choix du répertoire de travail de Denote 
+
+    (defvar my-denote-directory
+      (expand-file-name
+       (cond
+        ;; Windows natif
+        ((eq my-os 'windows)
+         (expand-file-name "Documents/Denote" home-dir))
+    
+        ;; WSL Linux
+        ((and (symbolp my-os)
+              (string-prefix-p "wsl-" (symbol-name my-os)))
+         (expand-file-name
+          (format "/mnt/c/Users/%s/Documents/Denote"
+                  my-windows-username)))
+    
+        ;; Linux natif
+        ((eq my-os 'linux)
+         (expand-file-name "Documents/Denote" home-dir))
+    
+        ;; fallback
+        (t
+         (expand-file-name "Documents/Denote" home-dir))))
+      "Répertoire Denote selon OS.")
 
 
 <a id="notes-de-securite"></a>
@@ -273,12 +345,14 @@ Ne jamais committer :
     emacs.d/.emacs.d/donfig/email.el
 
 
-<a id="a-faire"></a>
+<a id="org795aecd"></a>
 
-# A faire
+# A FAIRE 
 
--   font
--   calendar
--   sync orgzly
--   dictionnaires fr
+-   Configuration SyncThing, Denote, Orglzly.
+-   Installation des Fonts.
+-   Corfu.
+-   Synchronisation Google Calendar avec le calendrier Emacs.
+-   Import, Export des contacts.
+-   Visiter Pompéi.
 
