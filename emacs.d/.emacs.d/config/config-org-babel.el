@@ -1,32 +1,12 @@
 ;;; config-org-babel.el --- Org Babel languages -*- lexical-binding: t; -*-
 
-
-(use-package graphviz-dot-mode
-  :ensure t
-  :config
-  (setq graphviz-dot-indent-width 4)
-  (setq font-lock-maximum-decoration t)
-  :hook
-  (graphviz-dot-mode . flycheck-mode))
-
-(use-package maxima)
-;;(use-package matlab-mode)
-
-
 (with-eval-after-load 'org
-
-    ;; mapping coloration
-  (add-to-list 'org-src-lang-modes '("dot" . graphviz-dot))
-  (add-to-list 'org-src-lang-modes '("octave" . matlab))
-  (add-to-list 'org-src-lang-modes '("maxima" . maxima))
-  (add-to-list 'org-src-lang-modes '("python" . python))
 
   ;; Activer les langages UNE SEULE FOIS (sans écraser)
   (dolist (lang '(
                   ;; général
                   (emacs-lisp . t)
                   (shell . t)
-		  (python . t)
 
                   ;; maths
                   (maxima . t)
