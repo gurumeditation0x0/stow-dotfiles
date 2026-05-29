@@ -3,30 +3,30 @@
 
 1.  [Présentation](#presentation)
 2.  [Installer Emacs pour Linux](#emacs-pour-linux)
-    1.  [Installer emacs selon la distribution.](#org881e1f5)
-    2.  [On peut utiliser stow au lieu de copier les répertoires manuellement.](#org9ec3eca)
-    3.  [Configuration Gpg  .authinfo](#orgebd5948)
-    4.  [Fichiers à éditer](#org9c8a139)
+    1.  [Installer emacs selon la distribution.](#orgfd4166b)
+    2.  [On peut utiliser stow au lieu de copier les répertoires manuellement.](#org5b301c1)
+    3.  [Configuration Gpg  .authinfo](#orge961892)
+    4.  [Fichiers à éditer](#org512f3cd)
 3.  [Installer Emacs pour Windows](#installer-emacs-pour-windows)
-        1.  [cmd.exe](#orgfbc2fbd)
-        2.  [powershell](#org3b11bf7)
+        1.  [cmd.exe](#org641e6a7)
+        2.  [powershell](#org5ac0874)
 4.  [Configurer Emacs](#configurer-emacs)
-    1.  [Fichiers et répertoires à copier depuis le dépôt](#org3849a2c)
+    1.  [Fichiers et répertoires à copier depuis le dépôt](#org4068c44)
     2.  [Configurer la variable HOME pour Windows](#configurer-home-pour-Windows)
     3.  [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
         1.  [Installer GPG](#installer-gpg)
         2.  [Générer une clé GPG](#generer-une-cle-gpg)
         3.  [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
         4.  [Installer mplayer](#installer-mplayer)
-        5.  [CMD](#orgc5e4c23)
-        6.  [PowerShell](#orgb5bbe7c)
+        5.  [CMD](#org3c17ed6)
+        6.  [PowerShell](#org21cf4c7)
         7.  [Fichiers à éditer](#fichiers-a-editer)
-5.  [Prise de notes Orgzly Emacs-Pour-Windows](#org5e430fb)
-    1.  [Shéma de synnchronisation avec SyncThing](#orga9a556a)
-    2.  [Orglzly](#orga8000d9)
-    3.  [Denote](#org87ab2a8)
+5.  [Prise de notes Orgzly Emacs-Pour-Windows](#org4f42a23)
+    1.  [Shéma de synnchronisation avec SyncThing](#org6357eae)
+    2.  [Orglzly](#orgf8d71ff)
+    3.  [Denote](#org49c76f2)
 6.  [Notes](#notes-de-securite)
-    1.  [](#orgfa14ec0)
+    1.  [](#orgc2e365e)
 
 
 
@@ -42,14 +42,14 @@ Configuration Emacs pour Windows et Linux et WSL Linux.
 # Installer Emacs pour Linux
 
 
-<a id="org881e1f5"></a>
+<a id="orgfd4166b"></a>
 
 ## Installer emacs selon la distribution.
 
 <https://www.gnu.org/software/emacs/download.html>
 
 
-<a id="org9ec3eca"></a>
+<a id="org5b301c1"></a>
 
 ## On peut utiliser stow au lieu de copier les répertoires manuellement.
 
@@ -59,7 +59,7 @@ Configuration Emacs pour Windows et Linux et WSL Linux.
     stow emacs
 
 
-<a id="orgebd5948"></a>
+<a id="orge961892"></a>
 
 ## Configuration Gpg  .authinfo
 
@@ -67,7 +67,7 @@ Configuration Emacs pour Windows et Linux et WSL Linux.
 -   [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
 
 
-<a id="org9c8a139"></a>
+<a id="org512f3cd"></a>
 
 ## Fichiers à éditer
 
@@ -87,7 +87,7 @@ Vérifier l’installation dans cmd.exe / PowerShell :
 Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 
 
-<a id="orgfbc2fbd"></a>
+<a id="org641e6a7"></a>
 
 ### cmd.exe
 
@@ -96,7 +96,7 @@ Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 Redémarrer le terminal ou windows.
 
 
-<a id="org3b11bf7"></a>
+<a id="org5ac0874"></a>
 
 ### powershell
 
@@ -110,7 +110,7 @@ Redémarrer le terminal ou windows.
 # Configurer Emacs
 
 
-<a id="org3849a2c"></a>
+<a id="org4068c44"></a>
 
 ## Fichiers et répertoires à copier depuis le dépôt
 
@@ -249,7 +249,7 @@ Supprimer le fichier en clair :
 Ajouter au PATH si nécessaire :
 
 
-<a id="orgc5e4c23"></a>
+<a id="org3c17ed6"></a>
 
 ### CMD
 
@@ -258,7 +258,7 @@ Ajouter au PATH si nécessaire :
 Redémarrer le terminal.
 
 
-<a id="orgb5bbe7c"></a>
+<a id="org21cf4c7"></a>
 
 ### PowerShell
 
@@ -280,7 +280,7 @@ Redémarrer le terminal.
 &#x2013;
 
 
-<a id="org5e430fb"></a>
+<a id="org4f42a23"></a>
 
 # Prise de notes Orgzly Emacs-Pour-Windows
 
@@ -297,14 +297,14 @@ Outils Emacs pour la prise de notes et l'orginisation.
 -   my-os est défini dans early-init.el
 
 
-<a id="orga9a556a"></a>
+<a id="org6357eae"></a>
 
 ## Shéma de synnchronisation avec SyncThing
 
 ![img](graph_prise_de_note.png)
 
 
-<a id="orga8000d9"></a>
+<a id="orgf8d71ff"></a>
 
 ## Orglzly
 
@@ -313,7 +313,7 @@ Télécharger:
 La configuration se fait par l'interface
 
 
-<a id="org87ab2a8"></a>
+<a id="org49c76f2"></a>
 
 ## Denote
 
@@ -384,7 +384,7 @@ Ne jamais committer :
     emacs.d/.emacs.d/donfig/email.el
 
 
-<a id="orgfa14ec0"></a>
+<a id="orgc2e365e"></a>
 
 ## A FAIRE 
 
