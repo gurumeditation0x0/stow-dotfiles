@@ -90,6 +90,7 @@ Redémarrer le terminal.
 -   emacs.d/sons/
 -   emacs.d/images/ (optionnel)
 
+```
     HOME/
        ├── .authinfo.gpg
        ├── bin/
@@ -100,7 +101,7 @@ Redémarrer le terminal.
               ├── config/
               ├── elisp/
               └── sons/
-
+```
 
 <a id="configurer-home"></a>
 
