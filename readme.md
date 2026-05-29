@@ -2,26 +2,31 @@
 # Table of Contents
 
 1.  [Présentation](#presentation)
-2.  [Emacs pour Windows](#emacs-pour-windows)
-    1.  [Installer Emacs pour Windows](#installer-emacs-pour-windows)
-        1.  [cmd.exe](#org6298fb7)
-        2.  [powershell](#orgc654e4d)
-    2.  [Configurer Emacs](#configurer-emacs)
-        1.  [Fichiers et répertoires à copier depuis le dépôt](#org4cb79d7)
-        2.  [Configurer la variable HOME](#configurer-home)
-        3.  [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
-        4.  [Installer GPG](#installer-gpg)
-        5.  [Générer une clé GPG](#generer-une-cle-gpg)
-        6.  [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
-        7.  [Installer mplayer](#installer-mplayer)
-        8.  [CMD](#org0c240c2)
-        9.  [Fichiers à éditer](#fichiers-a-editer)
-3.  [Prise de notes Orgzly Emacs-Pour-Windows](#org0a89f2a)
-    1.  [Shéma de synnchronisation avec SyncThing](#org2055947)
-    2.  [Orglzly](#org536f05e)
-    3.  [Denote](#org4c0e446)
-4.  [Notes de sécurité](#notes-de-securite)
-5.  [](#org795aecd)
+2.  [Installer Emacs pour Linux](#emacs-pour-linux)
+    1.  [Installer emacs selon la distribution.](#org881e1f5)
+    2.  [On peut utiliser stow au lieu de copier les répertoires manuellement.](#org9ec3eca)
+    3.  [Configuration Gpg  .authinfo](#orgebd5948)
+    4.  [Fichiers à éditer](#org9c8a139)
+3.  [Installer Emacs pour Windows](#installer-emacs-pour-windows)
+        1.  [cmd.exe](#orgfbc2fbd)
+        2.  [powershell](#org3b11bf7)
+4.  [Configurer Emacs](#configurer-emacs)
+    1.  [Fichiers et répertoires à copier depuis le dépôt](#org3849a2c)
+    2.  [Configurer la variable HOME pour Windows](#configurer-home-pour-Windows)
+    3.  [Ajouter %HOME%\\\bin au PATH](#ajouter-home-bin-au-path)
+        1.  [Installer GPG](#installer-gpg)
+        2.  [Générer une clé GPG](#generer-une-cle-gpg)
+        3.  [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
+        4.  [Installer mplayer](#installer-mplayer)
+        5.  [CMD](#orgc5e4c23)
+        6.  [PowerShell](#orgb5bbe7c)
+        7.  [Fichiers à éditer](#fichiers-a-editer)
+5.  [Prise de notes Orgzly Emacs-Pour-Windows](#org5e430fb)
+    1.  [Shéma de synnchronisation avec SyncThing](#orga9a556a)
+    2.  [Orglzly](#orga8000d9)
+    3.  [Denote](#org87ab2a8)
+6.  [Notes](#notes-de-securite)
+    1.  [](#orgfa14ec0)
 
 
 
@@ -29,25 +34,49 @@
 
 # Présentation
 
-Configuration Emacs pour Windows et Linux. 
+Configuration Emacs pour Windows et Linux et WSL Linux. 
 
 
-<a id="emacs-pour-windows"></a>
+<a id="emacs-pour-linux"></a>
 
-# Emacs pour Windows
+# Installer Emacs pour Linux
 
--   Installer Emacs sous Windows
--   Répertoires et fichiers à copier
--   Configurer la variable d’environnement HOME
--   Ajouter HOME\bin au PATH
--   Installer et configurer GnuPG (GPG)
--   Créer et chiffrer un fichier .authinfo.gpg
--   Mplayer
+
+<a id="org881e1f5"></a>
+
+## Installer emacs selon la distribution.
+
+<https://www.gnu.org/software/emacs/download.html>
+
+
+<a id="org9ec3eca"></a>
+
+## On peut utiliser stow au lieu de copier les répertoires manuellement.
+
+<https://www.gnu.org/software/stow/>
+
+    cd stow-dotfiles && 
+    stow emacs
+
+
+<a id="orgebd5948"></a>
+
+## Configuration Gpg  .authinfo
+
+-   [Générer une clé GPG](#generer-une-cle-gpg)
+-   [Créer et chiffrer .authinfo](#creer-et-chiffrer-authinfo)
+
+
+<a id="org9c8a139"></a>
+
+## Fichiers à éditer
+
+-   [Fichiers à éditer](#fichiers-a-editer)
 
 
 <a id="installer-emacs-pour-windows"></a>
 
-## Installer Emacs pour Windows
+# Installer Emacs pour Windows
 
 <https://www.gnu.org/software/emacs/download.html>
 
@@ -58,30 +87,32 @@ Vérifier l’installation dans cmd.exe / PowerShell :
 Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 
 
-<a id="org6298fb7"></a>
+<a id="orgfbc2fbd"></a>
 
 ### cmd.exe
 
     setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 
+Redémarrer le terminal ou windows.
 
-<a id="orgc654e4d"></a>
+
+<a id="org3b11bf7"></a>
 
 ### powershell
 
     [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\Emacs\bin", [EnvironmentVariableTarget]::User)
 
-Redémarrer le terminal.
+Redémarrer le terminal ou windows.
 
 
 <a id="configurer-emacs"></a>
 
-## Configurer Emacs
+# Configurer Emacs
 
 
-<a id="org4cb79d7"></a>
+<a id="org3849a2c"></a>
 
-### Fichiers et répertoires à copier depuis le dépôt
+## Fichiers et répertoires à copier depuis le dépôt
 
 -   emacs.d/early-init.el
 -   emacs.d/init.el
@@ -90,7 +121,6 @@ Redémarrer le terminal.
 -   emacs.d/sons/
 -   emacs.d/images/ (optionnel)
 
-```
     HOME/
        ├── .authinfo.gpg
        ├── bin/
@@ -101,11 +131,11 @@ Redémarrer le terminal.
               ├── config/
               ├── elisp/
               └── sons/
-```
 
-<a id="configurer-home"></a>
 
-### Configurer la variable HOME
+<a id="configurer-home-pour-Windows"></a>
+
+## Configurer la variable HOME pour Windows
 
 Définir HOME vers votre dossier utilisateur (persistant).
 
@@ -130,7 +160,7 @@ Définir HOME vers votre dossier utilisateur (persistant).
 
 <a id="ajouter-home-bin-au-path"></a>
 
-### Ajouter %HOME%\\\bin au PATH
+## Ajouter %HOME%\\\bin au PATH
 
 Créer le dossier :
 
@@ -219,14 +249,18 @@ Supprimer le fichier en clair :
 Ajouter au PATH si nécessaire :
 
 
-<a id="org0c240c2"></a>
+<a id="orgc5e4c23"></a>
 
 ### CMD
 
     setx PATH "%PATH%;%HOME%\bin"
 
 Redémarrer le terminal.
-²\*\*\* PowerShell
+
+
+<a id="orgb5bbe7c"></a>
+
+### PowerShell
 
     [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
 
@@ -246,7 +280,7 @@ Redémarrer le terminal.
 &#x2013;
 
 
-<a id="org0a89f2a"></a>
+<a id="org5e430fb"></a>
 
 # Prise de notes Orgzly Emacs-Pour-Windows
 
@@ -263,14 +297,14 @@ Outils Emacs pour la prise de notes et l'orginisation.
 -   my-os est défini dans early-init.el
 
 
-<a id="org2055947"></a>
+<a id="orga9a556a"></a>
 
 ## Shéma de synnchronisation avec SyncThing
 
 ![img](graph_prise_de_note.png)
 
 
-<a id="org536f05e"></a>
+<a id="orga8000d9"></a>
 
 ## Orglzly
 
@@ -279,14 +313,18 @@ Télécharger:
 La configuration se fait par l'interface
 
 
-<a id="org4c0e446"></a>
+<a id="org87ab2a8"></a>
 
 ## Denote
 
 Manuel:
 <https://protesilaos.com/emacs/denote>
 
-Choix du répertoire de travail de Denote 
+Choix du répertoire de travail de Denote. \n
+Fonction pour décider quel sera le répertoire de destination des notes Denote.\n
+⚠️ Attention my-os est défini dans early-init.el .
+
+-   dans emacs.d/config/config/denote.el
 
     (defvar my-denote-directory
       (expand-file-name
@@ -314,7 +352,7 @@ Choix du répertoire de travail de Denote
 
 <a id="notes-de-securite"></a>
 
-# Notes de sécurité
+# Notes
 
 Ne jamais committer :
 
@@ -346,13 +384,11 @@ Ne jamais committer :
     emacs.d/.emacs.d/donfig/email.el
 
 
-<a id="org795aecd"></a>
+<a id="orgfa14ec0"></a>
 
-# A FAIRE 
+## A FAIRE 
 
--   Configuration SyncThing, Denote, Orglzly.
--   Installation des Fonts.
--   Corfu.
+-   Installation des emoji et fonts.
 -   Synchronisation Google Calendar avec le calendrier Emacs.
 -   Import, Export des contacts.
 -   Visiter Pompéi.
