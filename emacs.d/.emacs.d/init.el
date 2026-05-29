@@ -1,4 +1,3 @@
-
 ;;; Init.el --- Configuration principale d'Emacs -*- lexical-binding: t; -*-
 ;;; License: GPLv3
 
@@ -23,62 +22,44 @@
 ;;             (remove-hook 'find-file-hook #'openwith-file-handler t)))
 
 
-
 ;;; init.el --- Configuration principale
 ;; Sécurité : définir my-os si absent
-(unless (boundp 'my-os)
-  (setq my-os
-        (cond
-         ((eq system-type 'windows-nt) 'windows)
-         ((eq system-type 'gnu/linux)  'linux)
-         ((eq system-type 'darwin)     'mac)
-         (t 'unknown))))
-;; Home normal
-(setq home-dir
-      (cond
-       ((eq my-os 'windows) (getenv "USERPROFILE"))
-       ((eq my-os 'linux) (getenv "HOME"))
-       ((eq my-os 'mac) (getenv "HOME"))
-       (t "~")))
+;; (unless (boundp 'my-os)
+;;   (setq my-os
+;; 	(cond
+;; 	 ((eq system-type 'windows-nt) 'windows)
+;; 	 ((eq system-type 'gnu/linux)  'linux)
+;; 	 ((eq system-type 'darwin)     'mac)
+;; 	 (t 'unknown))))
+;; ;; Home normal
+;; (setq home-dir
+;;       (cond
+;;        ((eq my-os 'windows) (getenv "USERPROFILE"))
+;;        ((eq my-os 'linux) (getenv "HOME"))
+;;        ((eq my-os 'mac) (getenv "HOME"))
+;;        (t "~")))
 
-(setq default-directory home-dir)
+;; (setq default-directory home-dir)
 
-;; ;; Chemins importants
-(setq org-directory (concat home-dir "/org/"))
-(setq my-elisp-dir (concat user-emacs-directory "/elisp")) ;; pour tes fichiers elisp
-(setq my-config-dir (concat user-emacs-directory "/config")) ;; pour tes fichiers conf
-(setq my-dev-dir (concat home-dir "/dev")) ;; pour tes fichiers dev
- 
-;; ;; Ajouter dossier elisp au load-path
-(add-to-list 'load-path my-elisp-dir)
-(add-to-list 'load-path my-config-dir)
-(add-to-list 'load-path my-dev-dir)
+;; ;; ;; Chemins importants
+;; (setq org-directory (concat home-dir "/org/"))
+;; (setq my-elisp-dir (concat user-emacs-directory "/elisp")) ;; pour tes fichiers elisp
+;; (setq my-config-dir (concat user-emacs-directory "/config")) ;; pour tes fichiers conf
+;; (setq my-dev-dir (concat home-dir "/dev")) ;; pour tes fichiers dev
 
-
-
-;; (setq ispell-program-name "C:/Users/david/GNU/hunspell/bin/hunspell.exe")
-;; (setq ispell-dictionary "fr_FR")
-;; (setq ispell-local-dictionary-alist
-;;       '(("fr_FR"
-;;          "[A-Za-zÀ-ÖØ-öø-ÿ'-]"  ;; caractères valides
-;;          "C:/Users/david/GNU/hunspell/share/hunspell/fr_FR/fr.aff"
-;;          "C:/Users/david/GNU/hunspell/share/hunspell/fr_FR/fr.dic"
-;;          nil
-;;          )))
-
-;; (setq ispell-hunspell-dictionary-alist ispell-local-dictionary-alist)
-;; (setq ispell-program-name "C:/Users/david/GNU/hunspell/bin/hunspell.exe")
-;; (setq ispell-encoding8-command "ISO8859-1")
-;; (setq ispell-really-hunspell t)
+;; ;; ;; Ajouter dossier elisp au load-path
+;; (add-to-list 'load-path my-elisp-dir)
+;; (add-to-list 'load-path my-config-dir)
+;; (add-to-list 'load-path my-dev-dir)
 
 
 (set-fontset-font t 'emoji
-                  (cond
-                   ((eq system-type 'gnu/linux)
-                    "Noto Color Emoji")
-                   ((eq system-type 'windows-nt)
-                    "Segoe UI Emoji"))
-                  nil 'prepend) 
+		  (cond
+		   ((eq system-type 'gnu/linux)
+		    "Noto Color Emoji")
+		   ((eq system-type 'windows-nt)
+		    "Segoe UI Emoji"))
+		  nil 'prepend)
 
 ;; (global-visual-line-mode t)
 (abbrev-mode 1)
@@ -92,13 +73,13 @@
 ;; (setq package-archives
 ;;       '(("melpa" . "https://melpa.org/packages/")
 ;;         ("gnu"   . "https://elpa.gnu.org/packages/")
-;; 	("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+;;	("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 ;; (package-initialize)
 
 ;; ;; use-package natif depuis Emacs 30+
 ;; (require 'use-package)
 ;; (setq use-package-always-ensure t)
-      
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Debugging tools
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -107,35 +88,35 @@
 (use-package bug-hunter)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Association de fichiers 
+;; Association de fichiers
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package openwith
   :config
   (setq openwith-associations
-        (list
-         (list (openwith-make-extension-regexp
-                '("mpg" "mpeg" "mp3" "mp4"
-                  "avi" "wmv" "wav" "mov" "flv"
-                  "ogm" "ogg" "mkv"))
-               "mpv"
-               '(file))
-         ;; (list (openwith-make-extension-regexp
-         ;;        '("xbm" "pbm" "pgm" "ppm" "pnm"
-         ;;          "png" "gif" "bmp" "tif" "jpeg" "jpg"))
-         ;;       "geeqie"
-         ;;       '(file))
-         (list (openwith-make-extension-regexp
-                '("doc" "xls" "ppt" "odt" "ods" "odg" "odp"))
-               "libreoffice"
-               '(file))
-         '("\\.lyx" "lyx" (file))
-         '("\\.chm" "kchmviewer" (file))
-         (list (openwith-make-extension-regexp
-                '("pdf" "ps" "ps.gz" "dvi"))
-               "evince"
-               '(file))
-         ))
+	(list
+	 (list (openwith-make-extension-regexp
+		'("mpg" "mpeg" "mp3" "mp4"
+		  "avi" "wmv" "wav" "mov" "flv"
+		  "ogm" "ogg" "mkv"))
+	       "mpv"
+	       '(file))
+	 ;; (list (openwith-make-extension-regexp
+	 ;;        '("xbm" "pbm" "pgm" "ppm" "pnm"
+	 ;;          "png" "gif" "bmp" "tif" "jpeg" "jpg"))
+	 ;;       "geeqie"
+	 ;;       '(file))
+	 (list (openwith-make-extension-regexp
+		'("doc" "xls" "ppt" "odt" "ods" "odg" "odp"))
+	       "libreoffice"
+	       '(file))
+	 '("\\.lyx" "lyx" (file))
+	 '("\\.chm" "kchmviewer" (file))
+	 (list (openwith-make-extension-regexp
+		'("pdf" "ps" "ps.gz" "dvi"))
+	       "evince"
+	       '(file))
+	 ))
   (add-to-list  'mm-inhibit-file-name-handlers 'openwith-file-handler)
   (openwith-mode 1))
 
@@ -176,14 +157,14 @@
   :config
   (setq lin-face "lin-green")
   (setq lin-mode-hooks
-        '(emms-playlist-mode-hook emms-browser-mode-hook
-          biome-grid-mode-hook bongo-mode-hook dired-mode-hook
-          elfeed-search-mode-hook git-rebase-mode-hook grep-mode-hook
-          ibuffer-mode-hook ilist-mode-hook ledger-report-mode-hook
-          log-view-mode-hook magit-log-mode-hook mu4e-headers-mode-hook
-          notmuch-search-mode-hook notmuch-tree-mode-hook
-          occur-mode-hook org-agenda-mode-hook pdf-outline-buffer-mode-hook
-          proced-mode-hook tabulated-list-mode-hook gnus-mode-hook))
+	'(emms-playlist-mode-hook emms-browser-mode-hook
+	  biome-grid-mode-hook bongo-mode-hook dired-mode-hook
+	  elfeed-search-mode-hook git-rebase-mode-hook grep-mode-hook
+	  ibuffer-mode-hook ilist-mode-hook ledger-report-mode-hook
+	  log-view-mode-hook magit-log-mode-hook mu4e-headers-mode-hook
+	  notmuch-search-mode-hook notmuch-tree-mode-hook
+	  occur-mode-hook org-agenda-mode-hook pdf-outline-buffer-mode-hook
+	  proced-mode-hook tabulated-list-mode-hook gnus-mode-hook))
   (lin-global-mode 1))
 
 ;; beacon : indique la position du curseur lors du scrolling
@@ -199,15 +180,6 @@
   :config
   (setq ef-themes-to-toggle '(ef-elea-light ef-autumn)))
 
-;; JourNuit : changement automatique de thème jour/nuit
-;; (use-package JourNuit
-;;   :ensure nil
-;;   :load-path "~/dev/JourNuit/JourNuit-0.el"
-;;   :config
-;;   (setq JourNuit-light-theme 'modus-operandi-tinted
-;;         JourNuit-dark-theme  'ef-elea-dark)
-;;   (JourNuit))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Undo et édition
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -216,7 +188,7 @@
 (use-package undo-tree
   :config
   (setq undo-tree-visualizer-timestamps t
-        undo-tree-visualizer-diff t)
+	undo-tree-visualizer-diff t)
   (global-undo-tree-mode t))
 
 
@@ -244,34 +216,35 @@
   :if (display-graphic-p)
   :hook (dired-mode . all-the-icons-dired-mode))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Gestion des fenêtres. workgroups, dashboard. 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;--------------------------------------------------
+;; Gestion des sauvegardes automatiques
+;;--------------------------------------------------
 
-;; (use-package workgroups
-;;   :config
-;;   (setq wg-session-file
-;;         (concat user-emacs-directory "/emacs_desktops")
-;;         wg-restore-position t)
-;;   (defun charge-wg_default_start ()
-;;     (wg-load (concat user-emacs-directory "/emacs_desktops")))
-;;   (run-at-time "2 sec" nil #'charge-wg_default_start))
+;; Créer le dossier de backups
+(make-directory "~/.emacs.d/backups/" t)
+
+;; Rediriger tous les ~ vers ce dossier
+(setq backup-directory-alist
+      '(("." . "~/.emacs.d/backups/")))
+
+;; Auto-saves aussi dans ~/.emacs.d/backups/
+(setq auto-save-file-name-transforms
+      '((".*" "~/.emacs.d/backups/" t)))
+
+;; Options pour les auto-saves
+(setq auto-save-interval 100
+      auto-save-timeout 900)
+
+;; Options recommandées
+(setq backup-by-copying t
+      delete-old-versions t
+      kept-new-versions 10
+      kept-old-versions 5
+      version-control t)
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Dired — gestion des fichiers et navigation
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; ----------------------------------------------------------------
-;; Paramètres d'affichage
-;; ----------------------------------------------------------------
-;; - dired-omit-files : cacher les fichiers temporaires ou cachés
-;; - dired-listing-switches : format d'affichage des fichiers
-;; - dired-kill-when-opening-new-dired-buffer : remplacer le buffer courant
-;; - dired-dwim-target : devine automatiquement le répertoire cible
-
-(setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$"
-      dired-listing-switches "-aBhl --group-directories-first"
+(setq dired-omit-files "^\\.[^.]|^#|#$|~$"
+      dired-listing-switches "-alh --group-directories-first"
       dired-kill-when-opening-new-dired-buffer t
       dired-dwim-target t)
 
@@ -288,8 +261,8 @@
   (interactive)
   (dired-shell-command
    (format "kdeconnect-cli -n %s --share \"%s\""
-           montel
-           (dired-get-file-for-visit))))
+	   montel
+	   (dired-get-file-for-visit))))
  (eval-after-load 'dired
   '(define-key dired-mode-map (kbd "s-k") 'kdeconnect))
 
@@ -310,28 +283,12 @@
   :init
   (vertico-mode))
 
-;; corfu : completion inline
-(use-package corfu
-  :custom
-  (corfu-cycle t)
-  (corfu-auto t)
-  (corfu-auto-delay 0.2)
-  (corfu-auto-prefix 3)
-  (completion-styles '(basic))
-  :init
-  (global-corfu-mode))
-
-;; cape : completion supplémentaire pour corfu
-(use-package cape
-  :config
-  (add-to-list 'completion-at-point-functions #'cape-dabbrev))
-
 ;; orderless : style de completion flexible
 (use-package orderless
   :init
   (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+	completion-category-defaults nil
+	completion-category-overrides '((file (styles partial-completion)))))
 
 ;; marginalia : annotations dans minibuffer
 (use-package marginalia
@@ -343,133 +300,49 @@
 (use-package embark-consult)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Org-mode
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; (setq org-src-fontify-natively t)
-;; (setq org-show-notification-handler 'ignore)
-
-;; ;; Active l'affichage des images dans Org
-;; (setq org-startup-with-inline-images t)
-
-;; (use-package ob-mermaid)
-
-;; (require 'ob-mermaid) ;; si installé
-;; (org-babel-do-load-languages
-;;  'org-babel-load-languages
-;;  '((mermaid . t)
-;;    (dot . t)))
-
-;; ;; Évite de bloquer Emacs pendant la génération
-;; (use-package ob-async
-;;   :ensure t
-;;   :config (add-to-list 'org-src-lang-modes '("mermaid" . plantuml)))
-
-;; ;; Chemin vers mmdc (à adapter si nécessaire)
-;; (setq org-babel-mermaid-command "mmdc -i - -o %s ")
-
-;; ;; Paramètres visuels et fontification
-;; (custom-set-variables '(org-fontify-quote-and-verse-blocks t))
-;; (custom-set-faces
-;;  '(org-level-1 ((t (:inherit outline-1 :family "Ubuntu" :height 1.6))))
-;;  '(org-level-2 ((t (:inherit outline-1 :family "Ubuntu" :height 1.4))))
-;;  '(org-level-3 ((t (:inherit outline-3 :family "Ubuntu" :height 1.2))))
-;;  '(org-level-4 ((t (:inherit outline-4 :family "Ubuntu" :height 1.1))))
-;;  '(org-level-5 ((t (:inherit outline-5 :family "Ubuntu" :height 1.1)))))
-
-;; (setq org-hide-emphasis-markers nil
-;;       org-descriptive-links t
-;;       org-hide-leading-stars nil
-;;       org-fontify-quote-and-verse-blocks t
-;;       org-directory "~/org/"
-;;       ;; org-agenda-files (list "~/org/todo.org")
-;;       org-todo-keywords '((sequence "A FAIRE" "EN COURS" "|" "FAIT" "ABANDONNÉ"))
-;;       org-todo-keyword-faces '(("TODO" . org-warning)
-;;                                ("EN COURS" . "yellow")
-;;                                ("ABANDONNÉ" . "blue")))
-
-;; Son d'alarme de org-timer-set-timer
-;;(setq org-clock-sound "~/dev/Cloches/cloche7s.wav")
-
-;;(setq org-timer-default-file "~/dev/Cloches/cloche7s.wav")
-
-
-
-;joue un son quand  org-timer est fini.
-(add-hook 'org-timer-done-hook (lambda ()
-                                 (shell-command "mplayer -really-quiet ~/dev/Cloches/RcsaQuartdHeure.wav")))
-
-
-;; org-capture templates
-(add-hook 'org-capture-after-finalize-hook 'my-org-capture-hook)
-(setq org-capture-templates
-      `(("p" "Protocol" entry
-         (file+headline ,(concat org-directory "notes.org") "Inbox")
-         "* [[%:link][%:description]] \n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n%?")
-        ("L" "Protocol Link" entry
-         (file+headline ,(concat org-directory "notes.org") "Inbox")
-         "* [[%:link][%:description]] \n%?")
-        ("o" "Link capture" entry
-         (file+headline ,(concat org-directory "notes.org") "Inbox")
-         "* %a %U")))
-
-;; org-appear : afficher les emphases seulement à l'édition
-(use-package org-appear
-  :hook (org-mode . org-appear-mode)
-  :config
-  (setq org-startup-folded t))
-
-(use-package org-transclusion
-  :ensure t)
-(require 'org-protocol)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Magit / Git
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package magit)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Modules externes selon l'OS
+;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;(when (eq system-type 'gnu/linux)
 
+;; Corfu
+(load "config-corfu.el")
+
+;; Org-Mode
 (load "config-org.el")
 
+;; Org-Babel
 (load "config-org-babel.el")
 
-(load "config-python.el")
+;; Python
+;; (load "config-python.el")
 
-
-  ;; Shell
-(load "eshell_conf.el")
+;; Eshell
+(load "config-eshell.el")
 
 ;; EMMS
- (load "emms_config.el")
-
-;; Elfeed
-;; (load "~/.emacs.d/config/elfeed.el")
+ (load "config-emms.el")
 
 ;; Météo biome
-(load "meteo.el")
-
-;; Fonctions perso
-;; (load "~/.emacs.d/elisp/mes_fonctions.el") 
+(load "config-biome.el")
 
 ;; Treemacs
-(load "treemacs.el")
+(load "config-treemacs.el")
 
-;;;; Dashboard / fenêtres
-(load "dashboard-perso.el")
+;; Dashboard
+(load "config-dashboard.el")
 
-(load "JourNuit-0g.el")
+;; JourNuit
+(load "jour-nuit.el")
 (journuit-apply-and-schedule)
 
 ;; Gnu Mails
-(load "gnus-conf.el")
-
-;; Gustave-mode 
-(load "gus-07.el")
+(load "config-gnus.el")
 
 ;; Org-Novelist
 (load "org-novelist.el")
@@ -477,57 +350,70 @@
 ;; Yasnippets
 (load "config-yasnippets.el")
 
+;; Denote
+(load "config-denote.el")
+
+;; Perspective
+(load "config-persp.el")
 
 
-;; Julia language + lsp 
-;; (load "julia.el")
+;;
+;; Elfeed
+;; (load "~/.emacs.d/config/config-elfeed.el")
+
+;; Julia language + lsp
+;; (load "config-julia.el")
 
 ;; Maxima + Octave
-;;(load "config-maths.el")
-;;)
+;;(load "config-octave.el")
+
+;; Gustave-mode
+;;(load "gus-07.el")
+
+;; Fonctions perso
+;; (load "~/.emacs.d/elisp/mes_fonctions.el")
+
+
+(message " 🖥️ Operating System my-os %s" my-os)
+(message " 🐧 my-windows-username = %s" my-windows-username)
+(message " 🐧 Nom Utilisateurs Emacs = %s" user-login-name)
+(message " 📁 Répertoire home-dir %s" home-dir)
+(message " 📁 Répertoire user-emacs-directory %s" user-emacs-directory)
+
+(message " 📁 Répertoire = %s" my-denote-directory)
 
 
 
-(use-package workgroups
-;;  :ensure t
-;;  :defer t
-  :init
-  (defvar wg-session-file
-    (expand-file-name "wgwindows/wg_default_start" user-emacs-directory)
-    "Fichier de session pour workgroups.")
-  :config
-;;  (unless (file-exists-p (file-name-directory wg-session-file))
-;;    (make-directory (file-name-directory wg-session-file) t))
-  ;; bindings simples (appeler manuellement sauvegarde/chargement)
-  (global-set-key (kbd "C-c w c") 'wg-create-workgroup)
-  (global-set-key (kbd "C-c w s") 'wg-save)
-  (global-set-key (kbd "C-c w o") 'wg-load)
-  (global-set-key (kbd "C-c w l") 'wg-list-workgroups)
-  (global-set-key (kbd "C-c w n") 'wg-switch-workgroup))
+;; (use-package workgroups
+;; ;;  :ensure t
+;; ;;  :defer t
+;;   :init
+;;   (defvar wg-session-file
+;;     (expand-file-name "wgwindows/wg_default_start" user-emacs-directory)
+;;     "Fichier de session pour workgroups.")
+;;   :config
+;; ;;  (unless (file-exists-p (file-name-directory wg-session-file))
+;; ;;    (make-directory (file-name-directory wg-session-file) t))
+;;   ;; bindings simples (appeler manuellement sauvegarde/chargement)
+;;   (global-set-key (kbd "C-c w c") 'wg-create-workgroup)
+;;   (global-set-key (kbd "C-c w s") 'wg-save)
+;;   (global-set-key (kbd "C-c w o") 'wg-load)
+;;   (global-set-key (kbd "C-c w l") 'wg-list-workgroups)
+;;   (global-set-key (kbd "C-c w n") 'wg-switch-workgroup))
 
-;; Charger une session workgroups spécifique au démarrage (sans sauvegarde automatique)
-(setq wg-session-file
-      (concat user-emacs-directory "/wgwindows/wg_default_start")
-      wg-restore-position t)
+;; ;; Charger une session workgroups spécifique au démarrage (sans sauvegarde automatique)
+;; (setq wg-session-file
+;;       (concat user-emacs-directory "/wgwindows/wg_default_start")
+;;       wg-restore-position t)
 
-(defun charge-wg_default_start ()
-  (let ((f (concat user-emacs-directory "/wgwindows/wg_default_start")))
-    (when (and (fboundp 'wg-load) (file-exists-p f))
-      (condition-case err
-          (wg-load f)
-        (error (message "Échec chargement session workgroups : %s" err))))))
-   (run-at-time "2 sec" nil #'charge-wg_default_start))
-;;(add-hook 'emacs-startup-hook #'charge-wg_default_start)
-
-
-
-;; (let ((session-file (concat user-emacs-directory "workgroups/default-session.wg")))
-;;   (when (and (fboundp 'wg-load) (file-exists-p session-file))
-;;     (add-hook 'emacs-startup-hook
-;;               (lambda ()
-;;                 (condition-case err
-;;                     (wg-load session-file)
-;;                   (error (message "Échec chargement session workgroups : %s" err)))))))
+;; (defun charge-wg_default_start ()
+;;   (let ((f (concat user-emacs-directory "/wgwindows/wg_default_start")))
+;;     (when (and (fboundp 'wg-load) (file-exists-p f))
+;;       (condition-case err
+;; 	  (wg-load f)
+;; 	(error (message "Échec chargement session workgroups : %s" err))))))
+;;    (run-at-time "2 sec" nil #'charge-wg_default_start)
+;; ;;(add-hook 'emacs-startup-hook #'charge-wg_default_start)
 
 ;; (use-package workgroups2
 ;;   :ensure t
@@ -546,10 +432,7 @@
 ;;   (global-set-key (kbd "C-c w l") 'wg-list)
 ;;   (global-set-key (kbd "C-c w n") 'wg-switch-to)
 
-;;   (workgroups-mode 1))
-
-
-;; ;; Si on est sous Linux on peut charger mu4e 
+;; ;; Si on est sous Linux on peut charger mu4e
 ;; (when (eq system-type 'gnu/linux)
 ;; ;; Email
 ;; (load "~/.emacs.d/config/email.el"))
@@ -571,4 +454,3 @@
 
 ;;   ;; Hunspell moderne
 ;;   (setq ispell-really-hunspell t))
-

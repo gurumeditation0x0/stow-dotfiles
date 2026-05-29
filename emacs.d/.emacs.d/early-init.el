@@ -44,6 +44,22 @@
          ((eq system-type 'gnu/linux) 'linux)
          (t 'unknown)))
   (message "my-os = %s" my-os))
+
+
+(defvar my-windows-username
+  (when (and (boundp 'my-os)
+             (symbolp my-os)
+             (string-prefix-p "wsl-" (symbol-name my-os)))
+    (string-trim
+     (shell-command-to-string
+      "env -i /mnt/c/Windows/System32/cmd.exe /c echo %USERNAME%")))
+  "Nom utilisateur Windows en WSL.")
+
+;; fallback si échec
+(unless (and my-windows-username
+             (not (string-empty-p my-windows-username)))
+  (setq my-windows-username "david")) ;; fallback safe
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 3. Définition des répertoires
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -55,14 +71,15 @@
          (concat (getenv "USERPROFILE") "/.emacs.d"))
         (t
          (concat (getenv "HOME") "/.emacs.d")))))
+(message "Répertoire user-emacs-directory %s" user-emacs-directory)
 
 (setq home-dir 
       (cond
        ((eq system-type 'windows-nt) (getenv "USERPROFILE"))
        ((eq system-type 'gnu/linux)  (getenv "HOME"))))
-       
-(message home-dir)
+      (message "Répertoire home-dir %s" home-dir)
 
+       
 
 (setq org-directory (concat home-dir "/org/"))
 (setq my-elisp-dir (concat user-emacs-directory "/elisp"))
@@ -194,6 +211,6 @@
       '(("melpa"  . "https://melpa.org/packages/")
         ("gnu"    . "https://elpa.gnu.org/packages/")
         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
-(package-initialize)
+;; (package-initialize)
 ;; (require 'use-package)
 ;; (setq use-package-always-ensure t)

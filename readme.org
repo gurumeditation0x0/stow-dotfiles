@@ -9,21 +9,28 @@
 :PROPERTIES:
 :CUSTOM_ID: presentation
 :END:
-Configuration Emacs pour Windows et Linux. 
-* Emacs pour Windows
+Configuration Emacs pour Windows et Linux et WSL Linux. 
+
+
+* Installer Emacs pour Linux
 :PROPERTIES:
-:CUSTOM_ID: emacs-pour-windows
+:CUSTOM_ID: emacs-pour-linux
 :END:
 
-- Installer Emacs sous Windows
-- Répertoires et fichiers à copier
-- Configurer la variable d’environnement HOME
-- Ajouter HOME\bin au PATH
-- Installer et configurer GnuPG (GPG)
-- Créer et chiffrer un fichier .authinfo.gpg
-- Mplayer
-
-** Installer Emacs pour Windows
+** Installer emacs selon la distribution.
+https://www.gnu.org/software/emacs/download.html
+** On peut utiliser stow au lieu de copier les répertoires manuellement. 
+https://www.gnu.org/software/stow/
+#+BEGIN_SRC bash
+  cd stow-dotfiles && 
+  stow emacs
+#+END_SRC
+**  Configuration Gpg  .authinfo
+- [[#generer-une-cle-gpg][Générer une clé GPG]]
+- [[#creer-et-chiffrer-authinfo][Créer et chiffrer .authinfo]] 
+** Fichiers à éditer
+- [[#fichiers-a-editer][Fichiers à éditer]]
+* Installer Emacs pour Windows
 :PROPERTIES:
 :CUSTOM_ID: installer-emacs-pour-windows
 :END:
@@ -39,17 +46,18 @@ Si la commande n’est pas reconnue, ajouter Emacs au PATH :
 #+BEGIN_SRC shell
 setx PATH "%PATH%;C:\Program Files\Emacs\bin"
 #+END_SRC
+Redémarrer le terminal ou windows.
 *** powershell
 #+BEGIN_SRC powershell 
-[Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\Emacs\bin", [EnvironmentVariableTarget]::User)
+  [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\Emacs\bin", [EnvironmentVariableTarget]::User)
 #+END_SRC
-Redémarrer le terminal.
-** Configurer Emacs
+Redémarrer le terminal ou windows.
+* Configurer Emacs
 :PROPERTIES:
 :CUSTOM_ID: configurer-emacs
 :END:
 
-*** Fichiers et répertoires à copier depuis le dépôt
+** Fichiers et répertoires à copier depuis le dépôt
 - emacs.d/early-init.el
 - emacs.d/init.el
 - emacs.d/elisp/
@@ -69,9 +77,9 @@ HOME/
           ├── elisp/
           └── sons/
 #+END_EXAMPLE
-*** Configurer la variable HOME
+** Configurer la variable HOME pour Windows
 :PROPERTIES:
-:CUSTOM_ID: configurer-home
+:CUSTOM_ID: configurer-home-pour-Windows
 :END:
 
 Définir HOME vers votre dossier utilisateur (persistant).
@@ -93,7 +101,7 @@ Vérifier :
 #+BEGIN_SRC powershell
 echo $Env:HOME
 #+END_SRC
-*** Ajouter %HOME%\\bin au PATH
+** Ajouter %HOME%\\bin au PATH
 :PROPERTIES:
 :CUSTOM_ID: ajouter-home-bin-au-path
 :END:
@@ -182,12 +190,12 @@ del .authinfo
 - Télécharger le binaire mplayer pour Windows.
 - Installer dans %USERPROFILE%\bin ou %HOME%\bin.
 Ajouter au PATH si nécessaire :
-*** CMD
+**** CMD
 #+BEGIN_SRC shell
 setx PATH "%PATH%;%HOME%\bin"
 #+END_SRC
 Redémarrer le terminal.
-²*** PowerShell
+**** PowerShell
 #+BEGIN_SRC powershell
 [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";" + "$Env:HOME\bin", "User")
 #+END_SRC
@@ -215,81 +223,8 @@ https://www.orgzly.com/
 https://protesilaos.com/emacs/denote
 Outils Emacs pour la prise de notes et l'orginisation.
 - my-os est défini dans early-init.el
-** Shéma de synnchronisation avec SyncThing
-#+BEGIN_SRC dot :file graph_prise_de_note.png
 
-  digraph NotesSync {
-      rankdir=TB;
-      splines=true;
-
-      /* ---------- POLICES ---------- */
-      node [fontsize=12, fontname="Arial"];
-      graph [label=<<I>Shéma de prise de notes avec Emacs/Orgzly et SyncThing.</I>>,
-    	   labelloc=t,
-    	   fontsize=12,
-    	   fontname="Arial",
-  	   size="7.7!"
-    	   bgcolor="wheat"];
-
-      /* ---------- NODES ---------- */
-      // Cellule Orgzly
-      orgzly [shape=box, color=darkgreen, label=<<B>Orgzly</B><BR/>(prise de notes)>];
-
-      // Cellule du répertoire de sauvegarde Orgzly
-      orgzly_database [shape=folder,
-     		     color=darkgreen,
-     		     label="Synchronisation de la base de donnée Orgzly \n vers un répertoire surveillé par SyncThing"];
-
-      // Cellule SyncThing
-      syncthing [shape=diamond, margin=0, label=<<B>SyncThing</B><BR/> (synchronisation, ajout, suppression des fichiers <BR/> dans les répertoires surveillés par SyncThing Android/PC)>];
-
-      //Cellule Emacs
-      emacs [shape=box, color=deepskyblue, label=<<B>Emacs</B><BR/>(prise de notes org-mode)>];
-
-      // Cellule Répertoire de sauvegarde Emacs
-      emacs_save [shape=folder, color=deepskyblue, label=<Enregistrement dans un répertoire surveillé par SyncThing<SUP>1</SUP>>]
-
-      /* ---------- FLUX ---------- */
-      orgzly -> orgzly_database [color=darkgreen];
-      orgzly_database -> orgzly [color=darkgreen];
-      orgzly_database -> syncthing; // [color=darkgreen];
-
-      syncthing -> emacs_save;  //[dir=both]
-      syncthing -> orgzly_database;  //[dir=both]
-
-      emacs -> emacs_save [color=deepskyblue];
-      emacs_save -> emacs [color=deepskyblue];
-      emacs_save -> syncthing; //[color=deepskyblue]
-
-      { rank=sink;
-  	note [shape=plaintext,
-                fontsize=10,
-                label=<<B>Note:</B><BR/><SUP>1</SUP> : Pour WSL Linux, j'utilise le même répertoire que pour Windows>];}
-  	
-
-  	/* ---------- CLUSTER ---------- */
-  	// Orgzly cluster
-  	subgraph cluster_orgzly {
-    	    label=<<B>Orgzly + SyncThing</B> (Android)>;
-    	    style=rounded;
-    	    color=darkgreen;
-    	    orgzly,orgzly_database;
-  	}
-
-  	// Emacs cluster
-  	subgraph cluster_emacs {
-    	    label=<<B>Emacs + SyncThing</B>/ (Linux/Windows)>;
-    	    style="rounded";
-    	    penwidth=1.5;
-    	    color=deepskyblue;
-    	    emacs,emacs_save;
-  	}
-      }
-
-#+END_SRC
-
-#+RESULTS:
-[[file:graph_prise_de_note.png]]
+  [[file:graph_prise_de_note.png]]
 
 ** Orglzly
 Télécharger:
@@ -299,7 +234,12 @@ La configuration se fait par l'interface
 Manuel:
 https://protesilaos.com/emacs/denote
 
-Choix du répertoire de travail de Denote 
+Choix du répertoire de travail de Denote. \n
+Fonction pour décider quel sera le répertoire de destination des notes Denote.\n
+⚠️ Attention my-os est défini dans early-init.el .
+
+- dans emacs.d/config/config/denote.el
+  
 #+BEGIN_SRC lisp
 (defvar my-denote-directory
   (expand-file-name
@@ -326,7 +266,7 @@ Choix du répertoire de travail de Denote
 #+END_SRC
 
 
-* Notes de sécurité
+* Notes
 :PROPERTIES:
 :CUSTOM_ID: notes-de-securite
 :END:
@@ -360,10 +300,8 @@ emacs.d/.emacs.d/config/gnus-conf.el
 emacs.d/.emacs.d/donfig/email.el
 #+END_EXAMPLE  
 
-* A FAIRE 
-- Configuration SyncThing, Denote, Orglzly.
-- Installation des Fonts.
-- Corfu.   
+** A FAIRE 
+- Installation des emoji et fonts.
 - Synchronisation Google Calendar avec le calendrier Emacs.
 - Import, Export des contacts.
 - Visiter Pompéi.

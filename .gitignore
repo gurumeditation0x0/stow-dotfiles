@@ -15,7 +15,9 @@ authinfo/.authinfo
 authinfo/.authinfo.gpg
 
 emacs.d/.emacs.d/config/gnus-conf.el
-emacs.d/.emacs.d/donfig/email.el
+emacs.d/.emacs.d/config/email.el
+emacs.d/.emacs.d/config/config-gnus.el
+
 
 emacs.d/.emacs.d/.#init.el
 emacs.d/.emacs.d/.mc-lists.el

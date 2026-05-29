@@ -2,6 +2,7 @@
 # key: dot
 # --
 #+BEGIN_SRC dot :file graph.png
+
 digraph G {
     $0
 }
