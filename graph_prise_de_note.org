@@ -1,0 +1,73 @@
+ Shéma de synnchronisation avec SyncThing
+
+ #+BEGIN_SRC dot :file graph_prise_de_note.png :exports results
+
+  digraph NotesSync {
+      rankdir=TB;
+      splines=true;
+
+      /* ---------- POLICES ---------- */
+      node [fontsize=12, fontname="Arial"];
+      graph [label=<<I>Shéma de prise de notes avec Emacs/Orgzly et SyncThing.</I>>,
+    	   labelloc=t,
+    	   fontsize=12,
+    	   fontname="Arial",
+  	   size="7.7!"
+    	   bgcolor="wheat"];
+
+      /* ---------- NODES ---------- */
+      // Cellule Orgzly
+      orgzly [shape=box, color=darkgreen, label=<<B>Orgzly</B><BR/>(prise de notes)>];
+
+      // Cellule du répertoire de sauvegarde Orgzly
+      orgzly_database [shape=folder,
+     		     color=darkgreen,
+     		     label="Synchronisation de la base de donnée Orgzly \n vers un répertoire surveillé par SyncThing"];
+
+      // Cellule SyncThing
+      syncthing [shape=diamond, margin=0, label=<<B>SyncThing</B><BR/> (synchronisation, ajout, suppression des fichiers <BR/> dans les répertoires surveillés par SyncThing Android/PC)>];
+
+      //Cellule Emacs
+      emacs [shape=box, color=deepskyblue, label=<<B>Emacs</B><BR/>(prise de notes org-mode)>];
+
+      // Cellule Répertoire de sauvegarde Emacs
+      emacs_save [shape=folder, color=deepskyblue, label=<Enregistrement dans un répertoire surveillé par SyncThing<SUP>1</SUP>>]
+
+      /* ---------- FLUX ---------- */
+      orgzly -> orgzly_database [color=darkgreen];
+      orgzly_database -> orgzly [color=darkgreen];
+      orgzly_database -> syncthing; // [color=darkgreen];
+
+      syncthing -> emacs_save;  //[dir=both]
+      syncthing -> orgzly_database;  //[dir=both]
+
+      emacs -> emacs_save [color=deepskyblue];
+      emacs_save -> emacs [color=deepskyblue];
+      emacs_save -> syncthing; //[color=deepskyblue]
+
+      { rank=sink;
+  	note [shape=plaintext,
+                fontsize=10,
+                label=<<B>Note:</B><BR/><SUP>1</SUP> : Pour WSL Linux, j'utilise le même répertoire que pour Windows>];}
+  	
+
+  	/* ---------- CLUSTER ---------- */
+  	// Orgzly cluster
+  	subgraph cluster_orgzly {
+    	    label=<<B>Orgzly + SyncThing</B> (Android)>;
+    	    style=rounded;
+    	    color=darkgreen;
+    	    orgzly,orgzly_database;
+  	}
+
+  	// Emacs cluster
+  	subgraph cluster_emacs {
+    	    label=<<B>Emacs + SyncThing</B>/ (Linux/Windows)>;
+    	    style="rounded";
+    	    penwidth=1.5;
+    	    color=deepskyblue;
+    	    emacs,emacs_save;
+  	}
+      }
+
+#+END_SRC
