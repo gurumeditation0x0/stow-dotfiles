@@ -1,37 +1,3 @@
-*~
-*#
-#*
-/emacs.d/.emacs.d/elpa/
-/emacs.d/.emacs.d/eln-cache/
-/emacs.d/.emacs.d/emms/
-/emacs.d/.emacs.d/multisession/
-/emacs.d/.emacs.d/request/
-/emacs.d/.emacs.d/transient/
-/emacs.d/.emacs.d/elfeed_db/
-/emacs.d/.emacs.d/games/
-emacs.d/.emacs.d/request/
-
-authinfo/.authinfo
-authinfo/.authinfo.gpg
-
-emacs.d/.emacs.d/config/gnus-conf.el
-emacs.d/.emacs.d/config/email.el
-emacs.d/.emacs.d/config/config-gnus.el
-
-
-emacs.d/.emacs.d/.#init.el
-emacs.d/.emacs.d/.mc-lists.el
-emacs.d/.emacs.d/company-statistics-cache.el
-emacs.d/.emacs.d/emacs-custom.el
-emacs.d/.emacs.d/grammalecte-cache.el
-emacs.d/.emacs.d/history
-emacs.d/.emacs.d/ido.last
-emacs.d/.emacs.d/ivy-youtube-history
-emacs.d/.emacs.d/recentf
-emacs.d/.emacs.d/tramp
-emacs.d/.emacs.d/timelog
-emacs.d/.emacs.d/tramp
-fonts/.fonts/.uuid
 
 # =========================
 # FICHIERS TEMPORAIRES EMACS
@@ -111,7 +77,6 @@ fonts/.fonts/.uuid
 # =========================
 
 /emacs.d/.emacs.d/url/cookies
-/emacs.d/.emacs.d/eww-bookmarks
 /emacs.d/.emacs.d/nov-places
 
 # =========================

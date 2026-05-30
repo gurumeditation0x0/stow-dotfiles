@@ -120,7 +120,7 @@ Redémarrer le terminal ou windows.
 -   emacs.d/config/
 -   emacs.d/sons/
 -   emacs.d/images/ (optionnel)
-
+```
     HOME/
        ├── .authinfo.gpg
        ├── bin/
@@ -131,7 +131,7 @@ Redémarrer le terminal ou windows.
               ├── config/
               ├── elisp/
               └── sons/
-
+```
 
 <a id="configurer-home-pour-Windows"></a>
 
