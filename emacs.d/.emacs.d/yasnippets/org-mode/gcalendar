@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: Google Calendar event (org-gcal default)
+# key: gcal
+# --
+* ${1:Rendez-vous}
+:PROPERTIES:
+:org-gcal-managed: org
+:calendar-id: gurumeditation0x0@gmail.com
+:END:
+
+<${2:2026-06-10 Wed 14:00-15:00}>
+$0

@@ -1,93 +1,204 @@
 
 # =========================
-# FICHIERS TEMPORAIRES EMACS
+# TEMP FILES
 # =========================
-
 *~
 \#*\#
 .\#*
 
 # =========================
-# PACKAGES / CACHE EMACS
+# EMACS PACKAGES / CACHE
 # =========================
-
-/emacs.d/.emacs.d/elpa/
-/emacs.d/.emacs.d/eln-cache/
-/emacs.d/.emacs.d/emms/
-/emacs.d/.emacs.d/multisession/
-/emacs.d/.emacs.d/request/
-/emacs.d/.emacs.d/transient/
-/emacs.d/.emacs.d/elfeed_db/
-/emacs.d/.emacs.d/games/
-
-# =========================
-# AUTH / PASSWORDS
-# =========================
-
-/authinfo/.authinfo
-/authinfo/.authinfo.gpg
+elpa/
+eln-cache/
+emms/
+multisession/
+request/
+transient/
+elfeed_db/
+games/
+emacs.d/.emacs.d/var/package-vc/
 
 # =========================
-# CONFIGS SENSIBLES
+# EMACS STATE FILES
 # =========================
+recentf
+history
+tramp
+ido.last
+ivy-youtube-history
+timelog
+emacs-custom.el
+company-statistics-cache.el
+grammalecte-cache.el
 
+# =========================
+# EMACS SESSIONS
+# =========================
+persp-state.el
+emacs_desktops
+workspaces/
+wgwindows/
+
+# =========================
+# ESHELL
+# =========================
+eshell/history
+eshell/lastdir
+
+# =========================
+# ORG
+# =========================
+.org-id-locations
+
+# =========================
+# WEB
+# =========================
+url/cookies
+nov-places
+
+# =========================
+# AUTH (SENSITIVE)
+# =========================
+authinfo
+.authinfo
+.authinfo.gpg
+
+# =========================
+# SSH (KEEP CONFIG, IGNORE KEYS)
+# =========================
+ssh/*.key
+ssh/*.rsa
+ssh/*.pub
+ssh/id_rsa*
+ssh/id_ed25519*
+
+# =========================
+# SENSITIVE CONFIG FILES
+# =========================
 /emacs.d/.emacs.d/config/gnus-conf.el
 /emacs.d/.emacs.d/config/email.el
 /emacs.d/.emacs.d/config/config-gnus.el
 
 # =========================
-# FICHIERS EMACS LOCAUX
+# LOCAL MACHINE FILES
 # =========================
-
-/emacs.d/.emacs.d/.mc-lists.el
-/emacs.d/.emacs.d/company-statistics-cache.el
-/emacs.d/.emacs.d/emacs-custom.el
-/emacs.d/.emacs.d/grammalecte-cache.el
-/emacs.d/.emacs.d/history
-/emacs.d/.emacs.d/ido.last
-/emacs.d/.emacs.d/ivy-youtube-history
-/emacs.d/.emacs.d/recentf
-/emacs.d/.emacs.d/timelog
-/emacs.d/.emacs.d/tramp
-
-# =========================
-# SESSIONS / WORKSPACES
-# =========================
-
-/emacs.d/.emacs.d/persp-state.el
-/emacs.d/.emacs.d/emacs_desktops
-/emacs.d/.emacs.d/workspaces/
-/emacs.d/.emacs.d/wgwindows/
-
-# =========================
-# ESHELL
-# =========================
-
-/emacs.d/.emacs.d/eshell/history
-/emacs.d/.emacs.d/eshell/lastdir
-
-# =========================
-# ORG MODE
-# =========================
-
-/emacs.d/.emacs.d/.org-id-locations
-
-# =========================
-# WEB / EWW / URL
-# =========================
-
-/emacs.d/.emacs.d/url/cookies
-/emacs.d/.emacs.d/nov-places
+local/
 
 # =========================
 # WINDOWS
 # =========================
-
 *.lnk
 *:Zone.Identifier
 
 # =========================
-# FONTS
+# OPTIONAL CLEANUP
 # =========================
+*.log
+*.cache
 
-/fonts/.fonts/.uuid
+
+
+
+
+# # =========================
+# # FICHIERS TEMPORAIRES EMACS
+# # =========================
+
+# *~
+# \#*\#
+# .\#*
+
+# # =========================
+# # PACKAGES / CACHE EMACS
+# # =========================
+
+# /emacs.d/.emacs.d/elpa/
+# /emacs.d/.emacs.d/eln-cache/
+# /emacs.d/.emacs.d/emms/
+# /emacs.d/.emacs.d/multisession/
+# /emacs.d/.emacs.d/request/
+# /emacs.d/.emacs.d/transient/
+# /emacs.d/.emacs.d/elfeed_db/
+# /emacs.d/.emacs.d/games/
+
+# # =========================
+# # AUTH / PASSWORDS
+# # =========================
+
+# /authinfo/.authinfo
+# /authinfo/.authinfo.gpg
+
+# /ssh/dotfiles__rsa
+# /ssh/dotfiles__rsa.pub
+# /ssh/org.rsa
+# /ssh/org__rsa.pub
+# /ssh/stow_rsa
+# /ssh/stow_rsa.pub
+# /ssh/know_hosts
+# /ssh/dotfiles__rsa.old
+# # =========================
+# # =========================
+# # CONFIGS SENSIBLES
+# # =========================
+
+# /emacs.d/.emacs.d/config/gnus-conf.el
+# /emacs.d/.emacs.d/config/email.el
+# /emacs.d/.emacs.d/config/config-gnus.el
+
+# # =========================
+# # FICHIERS EMACS LOCAUX
+# # =========================
+
+# /emacs.d/.emacs.d/.mc-lists.el
+# /emacs.d/.emacs.d/company-statistics-cache.el
+# /emacs.d/.emacs.d/emacs-custom.el
+# /emacs.d/.emacs.d/grammalecte-cache.el
+# /emacs.d/.emacs.d/history
+# /emacs.d/.emacs.d/ido.last
+# /emacs.d/.emacs.d/ivy-youtube-history
+# /emacs.d/.emacs.d/recentf
+# /emacs.d/.emacs.d/timelog
+# /emacs.d/.emacs.d/tramp
+
+# # =========================
+# # SESSIONS / WORKSPACES
+# # =========================
+
+# /emacs.d/.emacs.d/persp-state.el
+# /emacs.d/.emacs.d/emacs_desktops
+# /emacs.d/.emacs.d/workspaces/
+# /emacs.d/.emacs.d/wgwindows/
+
+# # =========================
+# # ESHELL
+# # =========================
+
+# /emacs.d/.emacs.d/eshell/history
+# /emacs.d/.emacs.d/eshell/lastdir
+
+# # =========================
+# # ORG MODE
+# # =========================
+
+# /emacs.d/.emacs.d/.org-id-locations
+
+# # =========================
+# # WEB / EWW / URL
+# # =========================
+
+# /emacs.d/.emacs.d/url/cookies
+# /emacs.d/.emacs.d/nov-places
+
+# # =========================
+# # WINDOWS
+# # =========================
+
+# *.lnk
+# *:Zone.Identifier
+
+# # =========================
+# # FONTS
+# # =========================
+
+# /fonts/.fonts/.uuid

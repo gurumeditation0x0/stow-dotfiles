@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-06-04 Thu 10:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Installation et configuration d’Emacs sous Windows</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Installation et configuration d’Emacs sous Windows</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#presentation">1. Présentation</a></li>
+<li><a href="#emacs-pour-linux">2. Installer Emacs pour Linux</a>
+<ul>
+<li><a href="#orgcf11b00">2.1. Installer emacs selon la distribution.</a></li>
+<li><a href="#org43dfebd">2.2. Utilisation de Stow.</a></li>
+<li><a href="#org0141dc4">2.3. Configuration Gpg  .authinfo</a></li>
+<li><a href="#org535c34d">2.4. Fichiers à éditer</a></li>
+</ul>
+</li>
+<li><a href="#installer-emacs-pour-windows">3. Installer Emacs pour Windows</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orge85ae8f">3.0.1. cmd.exe</a></li>
+<li><a href="#org9ddc2e8">3.0.2. powershell</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#configurer-emacs">4. Configurer Emacs</a>
+<ul>
+<li><a href="#orga57d489">4.1. Fichiers et répertoires à copier depuis le dépôt</a></li>
+<li><a href="#configurer-home-pour-Windows">4.2. Configurer la variable HOME pour Windows</a></li>
+<li><a href="#ajouter-home-bin-au-path">4.3. Ajouter %HOME%\\bin au PATH</a>
+<ul>
+<li><a href="#generer-une-cle-gpg">4.3.1. Générer une clé GPG</a></li>
+<li><a href="#creer-et-chiffrer-authinfo">4.3.2. Créer et chiffrer .authinfo</a></li>
+<li><a href="#installer-mplayer">4.3.3. Installer mplayer</a></li>
+<li><a href="#fichiers-a-editer">4.3.4. Fichiers à éditer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0b4c852">5. Prise de notes Orgzly Emacs-Pour-Windows</a>
+<ul>
+<li><a href="#org1dd5ce3">5.1. Orglzly</a></li>
+<li><a href="#org0bef49b">5.2. Denote</a></li>
+</ul>
+</li>
+<li><a href="#orgefc2cb5">6. Synchronisation Agenda Google et Emacs</a>
+<ul>
+<li><a href="#orga00006e">6.1. Configuration Google Cloud agenda</a></li>
+<li><a href="#orgd2c02fb">6.2. Org-gcal</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-presentation" class="outline-2">
+<h2 id="presentation"><span class="section-number-2">1.</span> Présentation</h2>
+<div class="outline-text-2" id="text-presentation">
+<p>
+Configuration Emacs pour Windows et Linux et WSL Linux.
+Fichiers à éditer.
+#+BEGIN<sub>EXAMPLE</sub>
+</p>
+<ul class="org-ul">
+<li>%HOME%/.authinfo</li>
+<li>%HOME%/.emacs.d/config/config-emms.el (Clé ivy )</li>
+<li>%HOME%/.emacs.d/config/config-org.el (Agenda org-gcal)</li>
+<li>%HOME%/.emacs.d/config/config-gnus.el (gnus mails, newsgroup)</li>
+<li>%HOME%/.emacs.d/config/config-biome.el (Coordonnées GPS)</li>
+</ul>
+<p>
+#+END_
+</p>
+</div>
+</div>
+<div id="outline-container-emacs-pour-linux" class="outline-2">
+<h2 id="emacs-pour-linux"><span class="section-number-2">2.</span> Installer Emacs pour Linux</h2>
+<div class="outline-text-2" id="text-emacs-pour-linux">
+</div>
+<div id="outline-container-orgcf11b00" class="outline-3">
+<h3 id="orgcf11b00"><span class="section-number-3">2.1.</span> Installer emacs selon la distribution.</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+<a href="https://www.gnu.org/software/emacs/download.html">https://www.gnu.org/software/emacs/download.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org43dfebd" class="outline-3">
+<h3 id="org43dfebd"><span class="section-number-3">2.2.</span> Utilisation de Stow.</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<a href="https://www.gnu.org/software/stow/">https://www.gnu.org/software/stow/</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #6a4a9f;">cd</span> stow-dotfiles &amp;&amp; 
+stow emacs
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0141dc4" class="outline-3">
+<h3 id="org0141dc4"><span class="section-number-3">2.3.</span> Configuration Gpg  .authinfo</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li><a href="#generer-une-cle-gpg">Générer une clé GPG</a></li>
+<li><a href="#creer-et-chiffrer-authinfo">Créer et chiffrer .authinfo</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org535c34d" class="outline-3">
+<h3 id="org535c34d"><span class="section-number-3">2.4.</span> Fichiers à éditer</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li><a href="#fichiers-a-editer">Fichiers à éditer</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-installer-emacs-pour-windows" class="outline-2">
+<h2 id="installer-emacs-pour-windows"><span class="section-number-2">3.</span> Installer Emacs pour Windows</h2>
+<div class="outline-text-2" id="text-installer-emacs-pour-windows">
+<p>
+<a href="https://www.gnu.org/software/emacs/download.html">https://www.gnu.org/software/emacs/download.html</a>
+</p>
+
+<p>
+Vérifier l’installation dans cmd.exe / PowerShell :
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">emacs --version
+</pre>
+</div>
+<p>
+Si la commande n’est pas reconnue, ajouter Emacs au PATH :
+</p>
+</div>
+<div id="outline-container-orge85ae8f" class="outline-4">
+<h4 id="orge85ae8f"><span class="section-number-4">3.0.1.</span> cmd.exe</h4>
+<div class="outline-text-4" id="text-3-0-1">
+<div class="org-src-container">
+<pre class="src src-shell">setx PATH <span style="color: #007047;">"%PATH%;C:\Program Files\Emacs\bin"</span>
+</pre>
+</div>
+<p>
+Redémarrer le terminal ou windows.
+</p>
+</div>
+</div>
+<div id="outline-container-org9ddc2e8" class="outline-4">
+<h4 id="org9ddc2e8"><span class="section-number-4">3.0.2.</span> powershell</h4>
+<div class="outline-text-4" id="text-3-0-2">
+<div class="org-src-container">
+<pre class="src src-powershell"><span style="color: #162f8f;">[Environment]</span>::SetEnvironmentVariable(<span style="color: #007047;">"PATH"</span>, <span style="color: #80308f;">$</span><span style="color: #162f8f; text-decoration: underline;">env</span><span style="color: #80308f;">:PATH</span> + <span style="color: #007047;">";C:\Program Files\Emacs\bin"</span>, <span style="color: #162f8f;">[EnvironmentVariableTarget]</span>::User)
+</pre>
+</div>
+<p>
+Redémarrer le terminal ou windows.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-configurer-emacs" class="outline-2">
+<h2 id="configurer-emacs"><span class="section-number-2">4.</span> Configurer Emacs</h2>
+<div class="outline-text-2" id="text-configurer-emacs">
+</div>
+<div id="outline-container-orga57d489" class="outline-3">
+<h3 id="orga57d489"><span class="section-number-3">4.1.</span> Fichiers et répertoires à copier depuis le dépôt</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>emacs.d/early-init.el</li>
+<li>emacs.d/init.el</li>
+<li>emacs.d/elisp/</li>
+<li>emacs.d/config/</li>
+<li>emacs.d/sons/</li>
+<li>emacs.d/images/ (optionnel)</li>
+</ul>
+
+<pre class="example" id="org39d8b86">
+HOME/
+   ├── .authinfo.gpg
+   ├── bin/
+   ├── GNU/
+   ├── .emacs.d/
+          ├── early-init.el
+          ├── init.el
+          ├── config/
+          ├── elisp/
+          └── sons/
+</pre>
+</div>
+</div>
+<div id="outline-container-configurer-home-pour-Windows" class="outline-3">
+<h3 id="configurer-home-pour-Windows"><span class="section-number-3">4.2.</span> Configurer la variable HOME pour Windows</h3>
+<div class="outline-text-3" id="text-configurer-home-pour-Windows">
+<p>
+Définir HOME vers votre dossier utilisateur (persistant).
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org2a02d4b"></a>cmd.exe<br />
+<div class="outline-text-5" id="text-4-2-0-1">
+<div class="org-src-container">
+<pre class="src src-shell">setx HOME <span style="color: #007047;">"%USERPROFILE%"</span>
+</pre>
+</div>
+<p>
+Redémarrer le terminal.
+Vérifier :
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #6a4a9f;">echo</span> %HOME%
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org7dbe84d"></a>PowerShell<br />
+<div class="outline-text-5" id="text-4-2-0-2">
+<div class="org-src-container">
+<pre class="src src-powershell"><span style="color: #162f8f;">[Environment]</span>::SetEnvironmentVariable(<span style="color: #007047;">"HOME"</span>, <span style="color: #80308f;">$</span><span style="color: #162f8f; text-decoration: underline;">Env</span><span style="color: #80308f;">:USERPROFILE</span>, <span style="color: #007047;">"User"</span>)
+</pre>
+</div>
+<p>
+Redémarrer le terminal.
+Vérifier :
+</p>
+<div class="org-src-container">
+<pre class="src src-powershell">echo <span style="color: #80308f;">$</span><span style="color: #162f8f; text-decoration: underline;">Env</span><span style="color: #80308f;">:HOME</span>
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-ajouter-home-bin-au-path" class="outline-3">
+<h3 id="ajouter-home-bin-au-path"><span class="section-number-3">4.3.</span> Ajouter %HOME%\\bin au PATH</h3>
+<div class="outline-text-3" id="text-ajouter-home-bin-au-path">
+<p>
+Créer le dossier :
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">mkdir %HOME%\bin
+</pre>
+</div>
+</div>
+<ol class="org-ol">
+<li><a id="org9f55d08"></a>cmd.exe<br />
+<div class="outline-text-5" id="text-4-3-0-1">
+<div class="org-src-container">
+<pre class="src src-shell">setx PATH <span style="color: #007047;">"%PATH%;%HOME%\bin"</span>
+</pre>
+</div>
+<p>
+Télécharger Gpg4win : <a href="https://gpg4win.org/">https://gpg4win.org/</a>
+Vérifier l’installation :
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">gpg --version
+</pre>
+</div>
+</div>
+</li>
+</ol>
+<div id="outline-container-generer-une-cle-gpg" class="outline-4">
+<h4 id="generer-une-cle-gpg"><span class="section-number-4">4.3.1.</span> Générer une clé GPG</h4>
+<div class="outline-text-4" id="text-generer-une-cle-gpg">
+<div class="org-src-container">
+<pre class="src src-shell">gpg --full-generate-key
+</pre>
+</div>
+<p>
+Recommandations :
+</p>
+<ul class="org-ul">
+<li>Type : RSA and RSA</li>
+<li>Taille : 4096 bits</li>
+<li>Phrase secrète forte</li>
+</ul>
+<p>
+Lister les clés :
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">gpg --list-secret-keys
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-creer-et-chiffrer-authinfo" class="outline-4">
+<h4 id="creer-et-chiffrer-authinfo"><span class="section-number-4">4.3.2.</span> Créer et chiffrer .authinfo</h4>
+<div class="outline-text-4" id="text-creer-et-chiffrer-authinfo">
+<p>
+⚠️ Pour Gmail : créer un mot de passe d’application <a href="https://support.google.com/accounts/answer/185833">https://support.google.com/accounts/answer/185833</a>.
+</p>
+
+<p>
+Créer le fichier : %HOME%\.authinfo
+Exemple de contenu :
+</p>
+<div class="org-src-container">
+<pre class="src src-nil">machine smtp.gmail.com login utilisateur@gmail.com password motdepasse port 587
+machine imap.gmail.com login utilisateur@gmail.com password motdepasse port 993
+</pre>
+</div>
+<p>
+Chiffrer le fichier (remplacez votre@email.com par votre UID GPG) :
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">gpg -e -r votre@email.com .authinfo
+</pre>
+</div>
+<p>
+Sécuriser .authinfo.gpp
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">chmod 600 .authinfo.gpg
+</pre>
+</div>
+<p>
+Supprimer le fichier en clair :
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">del .authinfo
+</pre>
+</div>
+
+<p>
+<b>Conserver uniquement : .authinfo.gpg</b>
+</p>
+</div>
+</div>
+<div id="outline-container-installer-mplayer" class="outline-4">
+<h4 id="installer-mplayer"><span class="section-number-4">4.3.3.</span> Installer mplayer</h4>
+<div class="outline-text-4" id="text-installer-mplayer">
+<ul class="org-ul">
+<li>Télécharger le binaire mplayer pour Windows.</li>
+<li>Installer dans %USERPROFILE%\bin ou %HOME%\bin.</li>
+</ul>
+<p>
+Ajouter au PATH si nécessaire :
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgdebf5a0"></a>CMD<br />
+<div class="outline-text-5" id="text-4-3-3-1">
+<div class="org-src-container">
+<pre class="src src-shell">setx PATH <span style="color: #007047;">"%PATH%;%HOME%\bin"</span>
+</pre>
+</div>
+<p>
+Redémarrer le terminal.
+</p>
+</div>
+</li>
+<li><a id="org14e4b07"></a>PowerShell<br />
+<div class="outline-text-5" id="text-4-3-3-2">
+<div class="org-src-container">
+<pre class="src src-powershell"><span style="color: #162f8f;">[Environment]</span>::SetEnvironmentVariable(<span style="color: #007047;">"Path"</span>, <span style="color: #80308f;">$</span><span style="color: #162f8f; text-decoration: underline;">Env</span><span style="color: #80308f;">:Path</span> + <span style="color: #007047;">";"</span> + <span style="color: #007047;">"$Env:HOME\bin"</span>, <span style="color: #007047;">"User"</span>)
+</pre>
+</div>
+<p>
+Redémarrer le terminal.
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-fichiers-a-editer" class="outline-4">
+<h4 id="fichiers-a-editer"><span class="section-number-4">4.3.4.</span> Fichiers à éditer</h4>
+<div class="outline-text-4" id="text-fichiers-a-editer">
+<pre class="example" id="orgc1b4c3b">
+- %HOME%/.authinfo
+- %HOME%/.emacs.d/config/config-emms.el
+- %HOME%/.emacs.d/config/config-org.el
+- %HOME%/.emacs.d/config/config-gnus.el
+- %HOME%/.emacs.d/config/config-biome.el (coordonnées GPS)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0b4c852" class="outline-2">
+<h2 id="org0b4c852"><span class="section-number-2">5.</span> Prise de notes Orgzly Emacs-Pour-Windows</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Orgzly</li>
+</ul>
+<p>
+J'utilise Orgzly pour la prise de notes rapide sur un tél Android, que je synchronise avec SyncThing.
+<a href="https://www.orgzly.com/">https://www.orgzly.com/</a>
+</p>
+<ul class="org-ul">
+<li>Denote</li>
+</ul>
+<p>
+<a href="https://protesilaos.com/emacs/denote">https://protesilaos.com/emacs/denote</a>
+Outils Emacs pour la prise de notes et l'orginisation.
+</p>
+<ul class="org-ul">
+<li><p>
+my-os est défini dans early-init.el
+</p>
+
+
+<div id="org935ad7f" class="figure">
+<p><img src="graph_prise_de_note.png" alt="graph_prise_de_note.png" />
+</p>
+</div></li>
+</ul>
+</div>
+<div id="outline-container-org1dd5ce3" class="outline-3">
+<h3 id="org1dd5ce3"><span class="section-number-3">5.1.</span> Orglzly</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Télécharger:
+<a href="https://www.orgzly.com/">https://www.orgzly.com/</a>
+La configuration se fait par l'interface
+</p>
+</div>
+</div>
+<div id="outline-container-org0bef49b" class="outline-3">
+<h3 id="org0bef49b"><span class="section-number-3">5.2.</span> Denote</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Manuel:
+<a href="https://protesilaos.com/emacs/denote">https://protesilaos.com/emacs/denote</a>
+</p>
+<ul class="org-ul">
+<li>Choix du répertoire de travail de Denote.</li>
+<li>Conditions pour décider quel sera le répertoire de destination des notes Denote.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-lisp"><span style="color: #7f4f4a;">;;  </span><span style="color: #7f4f4a;">my-os est d&#233;fini dans early-init.el .
+</span>
+(<span style="color: #894852;">defvar</span> <span style="color: #80308f;">my-denote-directory</span>
+  (expand-file-name
+   (<span style="color: #894852;">cond</span>
+    <span style="color: #7f4f4a;">;; </span><span style="color: #7f4f4a;">Windows natif
+</span>    ((eq my-os 'windows)
+     (expand-file-name <span style="color: #007047;">"Documents/Denote"</span> home-dir))
+
+    <span style="color: #7f4f4a;">;; </span><span style="color: #7f4f4a;">WSL Linux
+</span>    ((and (symbolp my-os)
+          (string-prefix-p <span style="color: #007047;">"wsl-"</span> (symbol-name my-os)))
+     (expand-file-name
+      (format <span style="color: #007047;">"/mnt/c/Users/%s/Documents/Denote"</span>
+              my-windows-username)))
+
+    <span style="color: #7f4f4a;">;; </span><span style="color: #7f4f4a;">Linux natif
+</span>    ((eq my-os 'linux)
+     (expand-file-name <span style="color: #007047;">"Documents/Denote"</span> home-dir))
+
+    <span style="color: #7f4f4a;">;; </span><span style="color: #7f4f4a;">fallback
+</span>    (t
+     (expand-file-name <span style="color: #007047;">"Documents/Denote"</span> home-dir))))
+  <span style="color: #4f677f;">"R&#233;pertoire Denote selon OS."</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgefc2cb5" class="outline-2">
+<h2 id="orgefc2cb5"><span class="section-number-2">6.</span> Synchronisation Agenda Google et Emacs</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orga00006e" class="outline-3">
+<h3 id="orga00006e"><span class="section-number-3">6.1.</span> Configuration Google Cloud agenda</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Créer un projet sur Google Cloud Console
+<a href="https://cloud.google.com">https://cloud.google.com</a></li>
+<li>Activer Google Calendar API</li>
+<li>Créer des identifiants OAuth</li>
+<li>Type : Application Desktop</li>
+<li>Récupérer :
+Client ID
+Client Secret</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd2c02fb" class="outline-3">
+<h3 id="orgd2c02fb"><span class="section-number-3">6.2.</span> Org-gcal</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Package de synchronisation des agendas Emacs et google.
+dans .emacs.d/config/config-org.el
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #894852;">use-package</span> org-gcal
+  <span style="color: #6a4a9f;">:after</span> org
+  <span style="color: #6a4a9f;">:config</span>
+  (<span style="color: #894852;">setq</span> org-gcal-client-id <span style="color: #007047;">"YOUR_CLIENT_ID"</span>
+        org-gcal-client-secret <span style="color: #007047;">"YOUR_CLIENT_SECRET"</span>)
+
+  (<span style="color: #894852;">setq</span> org-gcal-file-alist
+        '((<span style="color: #007047;">"your-email@gmail.com"</span>
+           . <span style="color: #007047;">"~/org/google-calendar.org))))
+(add-to-list 'org-agenda-files "</span>~/org/google-calendar.org<span style="color: #007047;">")     ;; fichier calendrier
+(setq plstore-cache-passphrase-for-symmetric-encryption t)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-06-04 Thu 10:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
