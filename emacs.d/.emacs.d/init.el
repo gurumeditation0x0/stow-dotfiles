@@ -20,8 +20,6 @@
 ;; (add-hook 'message-mode-hook
 ;;           (lambda ()
 ;;             (remove-hook 'find-file-hook #'openwith-file-handler t)))
-
-
 ;;; init.el --- Configuration principale
 ;; Sécurité : définir my-os si absent
 ;; (unless (boundp 'my-os)
@@ -51,8 +49,6 @@
 ;; (add-to-list 'load-path my-elisp-dir)
 ;; (add-to-list 'load-path my-config-dir)
 ;; (add-to-list 'load-path my-dev-dir)
-
-
 (set-fontset-font t 'emoji
 		  (cond
 		   ((eq system-type 'gnu/linux)
@@ -190,12 +186,8 @@
   (setq undo-tree-visualizer-timestamps t
 	undo-tree-visualizer-diff t)
   (global-undo-tree-mode t))
-
-
 ;; multiple-cursors : édition multiple
 (use-package multiple-cursors)
-
-
 ;; smartparens : gestion avancée des paires
 (use-package smartparens
   :hook (prog-mode text-mode markdown-mode)
@@ -241,8 +233,6 @@
       kept-new-versions 10
       kept-old-versions 5
       version-control t)
-
-
 (setq dired-omit-files "^\\.[^.]|^#|#$|~$"
       dired-listing-switches "-alh --group-directories-first"
       dired-kill-when-opening-new-dired-buffer t
@@ -315,13 +305,8 @@
 
 ;; Org-Mode
 (load "config-org.el")
-
-
-;; calfw (Calendar Framework)
-(load "config-calfw.el")
-
-;; org-gcal (Google Calendar)
-(load "config-gcal.el")
+;; Calendrier (calfw + org-gcal)
+(load "config-calendrier.el")
 ;; Org-Babel
 (load "config-org-babel.el")
 
@@ -361,8 +346,6 @@
 
 ;; Perspective
 (load "config-persp.el")
-
-
 ;;
 ;; Elfeed
 ;; (load "~/.emacs.d/config/config-elfeed.el")
@@ -378,8 +361,6 @@
 
 ;; Fonctions perso
 ;; (load "~/.emacs.d/elisp/mes_fonctions.el")
-
-
 (message " 🖥️ Operating System my-os %s" my-os)
 (message " 🐧 my-windows-username = %s" my-windows-username)
 (message " 🐧 Nom Utilisateurs Emacs = %s" user-login-name)
@@ -387,8 +368,6 @@
 (message " 📁 Répertoire user-emacs-directory %s" user-emacs-directory)
 
 (message " 📁 Répertoire = %s" my-denote-directory)
-
-
 
 ;; (use-package workgroups
 ;; ;;  :ensure t
@@ -442,8 +421,6 @@
 ;; (when (eq system-type 'gnu/linux)
 ;; ;; Email
 ;; (load "~/.emacs.d/config/email.el"))
-
-
 ;; ;; Assure que ispell est chargé avant de configurer Hunspell
 ;; (with-eval-after-load 'ispell
 ;;   ;; chemin vers Hunspell.exe
