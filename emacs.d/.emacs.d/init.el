@@ -316,6 +316,12 @@
 ;; Org-Mode
 (load "config-org.el")
 
+
+;; calfw (Calendar Framework)
+(load "config-calfw.el")
+
+;; org-gcal (Google Calendar)
+(load "config-gcal.el")
 ;; Org-Babel
 (load "config-org-babel.el")
 
